@@ -10,11 +10,14 @@ public class Main extends JFrame implements ActionListener {
 	Main() {
 		super("Go Game");
 		Board board = new Board();
+		add(board);
+		pack();
 	}
 
 	public static void main(String[] args) {
 		Main okno = new Main();
 		okno.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		okno.setVisible(true);
 	}
 
 
