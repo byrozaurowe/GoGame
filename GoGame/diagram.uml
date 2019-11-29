@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="134.0" y="0.0">go.StoneChain</node>
+    <node x="3.5" y="152.0">go.Board</node>
+    <node x="7.5" y="228.0">go.Main</node>
+    <node x="0.0" y="0.0">go.Player</node>
+    <node x="3.5" y="76.0">go.Stone</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="go.Stone" target="go.Player">
+      <point x="20.5" y="-13.0" />
+      <point x="65.0" y="51.0" />
+      <point x="66.75" y="51.0" />
+      <point x="22.25" y="13.0" />
+    </edge>
+    <edge source="go.Board" target="go.Stone">
+      <point x="0.0" y="-13.0" />
+      <point x="0.0" y="13.0" />
+    </edge>
+    <edge source="go.Main" target="go.Board">
+      <point x="18.5" y="-13.0" />
+      <point x="63.0" y="203.0" />
+      <point x="65.0" y="203.0" />
+      <point x="20.5" y="13.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="379.0" y="31.5" />
+  <SelectedNodes />
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
