@@ -10,13 +10,10 @@ public class Board extends JPanel{
 	static Stone[][] boardTab;
 
 	public Board() {
-		this.setSize(new Dimension(DIMX, DIMY));
+		setBackground(new Color(193,154,107));
+		this.setPreferredSize(new Dimension(DIMX, DIMY));
 		boardTab = new Stone [SIZE][SIZE];
 		repaint();
-	}
-
-	public void paintBackground() {
-
 	}
 
 	@Override
@@ -35,6 +32,5 @@ public class Board extends JPanel{
 			Line2D line = new Line2D.Double(x,y);
 			g2d.draw(line);
 		}
-
 	}
 }
