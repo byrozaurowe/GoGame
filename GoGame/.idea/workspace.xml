@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="23df1589-9a88-484b-b16c-0d131e237639" name="Default Changelist" comment="" />
+    <list default="true" id="23df1589-9a88-484b-b16c-0d131e237639" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/go/Board.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/go/Player.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/go/Stone.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +34,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -79,8 +85,16 @@
       <option name="presentableId" value="Default" />
       <updated>1575046332630</updated>
       <workItem from="1575046336164" duration="169000" />
-      <workItem from="1575047318708" duration="452000" />
+      <workItem from="1575047318708" duration="2516000" />
     </task>
+    <task id="LOCAL-00001" summary="nvm">
+      <created>1575047811584</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1575047811585</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -96,5 +110,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="nvm" />
+    <option name="LAST_COMMIT_MESSAGE" value="nvm" />
   </component>
 </project>
