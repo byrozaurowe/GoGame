@@ -7,9 +7,11 @@ import java.awt.geom.Point2D;
 public class Board extends JPanel{
 	final int SIZE = 13;
 	final int DIMX = 600, DIMY = 600;
+	static Stone[][] boardTab;
 
 	public Board() {
 		this.setSize(new Dimension(DIMX, DIMY));
+		boardTab = new Stone [SIZE][SIZE];
 		repaint();
 	}
 
@@ -33,5 +35,6 @@ public class Board extends JPanel{
 			Line2D line = new Line2D.Double(x,y);
 			g2d.draw(line);
 		}
+
 	}
 }
