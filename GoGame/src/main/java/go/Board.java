@@ -22,14 +22,14 @@ public class Board extends JPanel{
 		super.paintComponent(g);
 		Graphics2D g2d = (Graphics2D) g;
 		for (int i=0; i<SIZE; i++) { // pionowe linie
-				Point2D x = new Point2D.Double((DIMX / SIZE) * i, 0);
-				Point2D y = new Point2D.Double((DIMX / SIZE) * (i + 1), DIMY);
+				Point2D x = new Point2D.Double((DIMX / (SIZE-1)) * i, 0);
+				Point2D y = new Point2D.Double((DIMX / (SIZE-1)) * i, DIMY);
 				Line2D line = new Line2D.Double(x,y);
 				g2d.draw(line);
 		}
 		for (int i=0; i<SIZE; i++) { // poziome linie
-			Point2D x = new Point2D.Double(0, (DIMY / SIZE) * i);
-			Point2D y = new Point2D.Double(DIMX, (DIMX / SIZE) * (i + 1));
+			Point2D x = new Point2D.Double(0, (DIMY / (SIZE-1)) * i);
+			Point2D y = new Point2D.Double(DIMX, (DIMX / (SIZE-1)) * i);
 			Line2D line = new Line2D.Double(x,y);
 			g2d.draw(line);
 		}
