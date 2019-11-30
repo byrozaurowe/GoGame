@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="23df1589-9a88-484b-b16c-0d131e237639" name="Default Changelist" comment="Menu">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="23df1589-9a88-484b-b16c-0d131e237639" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/diagram.uml" beforeDir="false" afterPath="$PROJECT_DIR$/diagram.uml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/go/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/go/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/go/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/go/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/go/Stone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/go/Stone.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +48,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/Studia/designpatterns/facade" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/Studia/designpatterns/iterator" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -133,7 +133,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575108918109</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Naprawienie paru errorow w rysowaniu">
+      <created>1575132879132</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1575132879132</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -157,7 +164,8 @@
     <MESSAGE value="Menu" />
     <MESSAGE value="wyświetlanie kamieni" />
     <MESSAGE value="stawianie pojedyńczych kamieni" />
-    <option name="LAST_COMMIT_MESSAGE" value="stawianie pojedyńczych kamieni" />
+    <MESSAGE value="Naprawienie paru errorow w rysowaniu" />
+    <option name="LAST_COMMIT_MESSAGE" value="Naprawienie paru errorow w rysowaniu" />
   </component>
   <component name="WindowStateProjectService">
     <state x="493" y="104" width="671" height="717" key="#Main" timestamp="1575055351978">
