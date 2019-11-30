@@ -21,9 +21,8 @@ public class Stone {
 	/** współrzędne kamienia */
 	final double x;
 	final double y;
-	/** widoczność kamienia */
+	/** Widoczność kamienia */
 	Visibility visibility = Visibility.INVISIBLE;
-
 	Ellipse2D circle;
 
 	/** Konstruktor kamienia */
@@ -36,16 +35,18 @@ public class Stone {
 		circle = new Ellipse2D.Double(x-STONERADIUS, y-STONERADIUS, STONERADIUS*2, STONERADIUS*2);
 	}
 
+	/** Status kamienia (widocznosc) */
 	public enum Visibility {
 		INVISIBLE, VISIBLE, HALFVISIBLE;
 	}
 
+	/** Przypisuje gracza kamieniowi */
 	public void setPlayer(Player player) {
 		this.player = player;
 		visibility = Visibility.VISIBLE;
-		return;
-	}
+    }
 
+    /** Ustawienie koloru kamieniowi */
 	public Color stoneColor() {
 		if (player == Player.BLACK) return Color.BLACK;
 		if (player == Player.WHITE) return Color.WHITE;
@@ -53,6 +54,10 @@ public class Stone {
 		else return null;
 	}
 
+    /** Sprawdza czy wspolrzedne sa wewnatrz jakiegos kamienia
+     * @param x wspolrzedna x myszy
+     * @param y wspolrzedna y myszy
+     */
 	public boolean isInsideStone(double x, double y) {
 		if (((x-this.x)*(x-this.x))+((y-this.y)*(y-this.y)) <= STONERADIUS* STONERADIUS) return true;
 		else return false;

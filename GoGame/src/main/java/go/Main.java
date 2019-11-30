@@ -6,41 +6,26 @@ import java.awt.event.*;
 
 import static java.lang.Integer.SIZE;
 
+/** Głowna klasa gracza */
 public class Main extends JFrame implements ActionListener, MouseListener, MouseMotionListener {
 
-	/**
-	 * Pasek menu
-	 */
+	/** Pasek menu */
 	JMenuBar menuBar;
-	/**
-	 * Opcje na pasku menu
-	 */
+	/** Opcje na pasku menu */
 	JMenu optionsMenu;
-	/**
-	 * Info na pasku menu
-	 */
+	/** Info na pasku menu */
 	JMenu infoMenu;
-	/**
-	 * Opcja nowa gra
-	 */
+	/** Opcja nowa gra */
 	JMenuItem newGameItem;
-	/**
-	 * Opcja wyjdz z gry
-	 */
+	/** Opcja wyjdz z gry */
 	JMenuItem exitItem;
-	/**
-	 * Opcja spasuj kolejke
-	 */
+	/** Opcja spasuj kolejke */
 	JMenuItem passItem;
-	/**
-	 * Informacja o zasadach
-	 */
+	/** Informacja o zasadach */
 	JMenuItem rulesItem;
-	/**
-	 * Informacja o autorach
-	 */
+	/** Informacja o autorach */
 	JMenuItem authorsItem;
-
+	/** Plansza */
 	Board board;
 
 	/**
@@ -90,12 +75,10 @@ public class Main extends JFrame implements ActionListener, MouseListener, Mouse
 		JFrame frame = new Main();
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setVisible(true);
-		//frame.setResizable(false);
+		frame.setResizable(false);
 	}
 
-	/**
-	 * Metoda actionPerformed
-	 */
+	/** Metoda actionPerformed */
 	public void actionPerformed(ActionEvent actionEvent) {
 		Object event = actionEvent.getSource();
 		if (event == exitItem) {
@@ -115,7 +98,7 @@ public class Main extends JFrame implements ActionListener, MouseListener, Mouse
 	}
 
 	public void mouseReleased(MouseEvent mouseEvent) {
-		board.releasedStone(mouseEvent);
+		board.releasedStone();
 	}
 
 	public void mouseEntered(MouseEvent mouseEvent) {
