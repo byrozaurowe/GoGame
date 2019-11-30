@@ -23,6 +23,17 @@ public class Board extends JPanel{
 		repaint();
 	}
 
+	public void clickedOnStone(double x, double y) {
+		for (int i=0; i<SIZE; i++) {
+			for (int j=0; j<SIZE; j++) {
+				if (boardTab[i][j].isInsideStone(x,y)) {
+					boardTab[i][j].setPlayer(Player.BLACK);
+				}
+			}
+		}
+		repaint();
+	}
+
 	@Override
 	protected void paintComponent(Graphics g) {
 		super.paintComponent(g);

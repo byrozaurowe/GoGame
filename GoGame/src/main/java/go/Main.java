@@ -26,6 +26,8 @@ public class Main extends JFrame implements ActionListener, MouseListener {
 	/** Informacja o autorach */
 	JMenuItem authorsItem;
 
+	Board board;
+
 	/** Konstruktor maina */
 	Main() {
 		super("Go Game");
@@ -49,9 +51,7 @@ public class Main extends JFrame implements ActionListener, MouseListener {
 		infoMenu.add(authorsItem);
 		menuBar.add(infoMenu);
 
-		setLocationByPlatform(true);
-
-		Board board = new Board();
+		setLocationByPlatform(true);board = new Board();
 		add(board, BorderLayout.CENTER);
 
 		// action Listenery
@@ -86,8 +86,7 @@ public class Main extends JFrame implements ActionListener, MouseListener {
 	}
 
 	public void mouseClicked(MouseEvent mouseEvent) {
-		mouseEvent.getX();
-		mouseEvent.getY();
+		board.clickedOnStone(mouseEvent.getX(),mouseEvent.getY());
 	}
 
 	public void mousePressed(MouseEvent mouseEvent) {

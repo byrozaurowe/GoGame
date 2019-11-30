@@ -20,6 +20,8 @@ public class Stone {
 	/** widoczność kamienia */
 	boolean visibility = false;
 
+	final int STONERADIUS = 15;
+
 	/** Konstruktor kamienia */
 	Stone(int row, int column, double x, double y) {
 		//this.player = player;
@@ -39,6 +41,11 @@ public class Stone {
 		if (player == Player.BLACK) return Color.BLACK;
 		if (player == Player.WHITE) return Color.WHITE;
 		else return null;
+	}
+
+	public boolean isInsideStone(double x, double y) {
+		if (((x-this.x)*(x-this.x))+((y-this.y)*(y-this.y)) <= STONERADIUS*STONERADIUS) return true;
+		else return false;
 	}
 	/*private void setNeighbours() {
 		neighbour = new ArrayList<Stone>();
