@@ -2,33 +2,50 @@ package go;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
+import java.awt.event.*;
 
-public class Main extends JFrame implements ActionListener, MouseListener {
+import static java.lang.Integer.SIZE;
 
-	/** Pasek menu */
+public class Main extends JFrame implements ActionListener, MouseListener, MouseMotionListener {
+
+	/**
+	 * Pasek menu
+	 */
 	JMenuBar menuBar;
-	/** Opcje na pasku menu */
+	/**
+	 * Opcje na pasku menu
+	 */
 	JMenu optionsMenu;
-	/** Info na pasku menu */
+	/**
+	 * Info na pasku menu
+	 */
 	JMenu infoMenu;
-	/** Opcja nowa gra */
+	/**
+	 * Opcja nowa gra
+	 */
 	JMenuItem newGameItem;
-	/** Opcja wyjdz z gry */
+	/**
+	 * Opcja wyjdz z gry
+	 */
 	JMenuItem exitItem;
-	/** Opcja spasuj kolejke */
+	/**
+	 * Opcja spasuj kolejke
+	 */
 	JMenuItem passItem;
-	/** Informacja o zasadach */
+	/**
+	 * Informacja o zasadach
+	 */
 	JMenuItem rulesItem;
-	/** Informacja o autorach */
+	/**
+	 * Informacja o autorach
+	 */
 	JMenuItem authorsItem;
 
 	Board board;
 
-	/** Konstruktor maina */
+	/**
+	 * Konstruktor maina
+	 */
 	Main() {
 		super("Go Game");
 		// tworzenie menu
@@ -51,7 +68,8 @@ public class Main extends JFrame implements ActionListener, MouseListener {
 		infoMenu.add(authorsItem);
 		menuBar.add(infoMenu);
 
-		setLocationByPlatform(true);board = new Board();
+		setLocationByPlatform(true);
+		board = new Board();
 		add(board, BorderLayout.CENTER);
 
 		// action Listenery
@@ -63,6 +81,7 @@ public class Main extends JFrame implements ActionListener, MouseListener {
 
 		//mouse listener
 		board.addMouseListener(this);
+		board.addMouseMotionListener(this);
 
 		pack();
 	}
@@ -74,27 +93,29 @@ public class Main extends JFrame implements ActionListener, MouseListener {
 		//frame.setResizable(false);
 	}
 
-	/** Metoda actionPerformed */
+	/**
+	 * Metoda actionPerformed
+	 */
 	public void actionPerformed(ActionEvent actionEvent) {
 		Object event = actionEvent.getSource();
-		if(event == exitItem) {
+		if (event == exitItem) {
 			System.exit(0);
-		}
-		else if(event == authorsItem) {
+		} else if (event == authorsItem) {
 			JOptionPane.showMessageDialog(null, "Authors: Wiktoria Byra, Wojciech Pakulski", "Authors", JOptionPane.INFORMATION_MESSAGE);
 		}
 	}
 
 	public void mouseClicked(MouseEvent mouseEvent) {
-		board.clickedOnStone(mouseEvent.getX(),mouseEvent.getY());
+		board.clickedOnStone(mouseEvent.getX(), mouseEvent.getY());
 	}
 
 	public void mousePressed(MouseEvent mouseEvent) {
+		board.enteredStone(mouseEvent);
 
 	}
 
 	public void mouseReleased(MouseEvent mouseEvent) {
-
+		board.releasedStone(mouseEvent);
 	}
 
 	public void mouseEntered(MouseEvent mouseEvent) {
@@ -102,6 +123,14 @@ public class Main extends JFrame implements ActionListener, MouseListener {
 	}
 
 	public void mouseExited(MouseEvent mouseEvent) {
+
+	}
+
+	public void mouseDragged(MouseEvent mouseEvent) {
+		board.draggedStone(mouseEvent);
+	}
+
+	public void mouseMoved(MouseEvent mouseEvent) {
 
 	}
 }

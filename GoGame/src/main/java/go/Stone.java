@@ -1,7 +1,11 @@
 package go;
 
+import javax.swing.*;
 import java.awt.*;
+import java.awt.geom.Ellipse2D;
 import java.util.ArrayList;
+
+import static go.Board.STONERADIUS;
 
 /** Klasa kamien */
 public class Stone {
@@ -18,9 +22,9 @@ public class Stone {
 	final double x;
 	final double y;
 	/** widoczność kamienia */
-	boolean visibility = false;
+	Visibility visibility = Visibility.INVISIBLE;
 
-	final int STONERADIUS = 15;
+	Ellipse2D circle;
 
 	/** Konstruktor kamienia */
 	Stone(int row, int column, double x, double y) {
@@ -29,22 +33,28 @@ public class Stone {
 		this.column = column;
 		this.x = x;
 		this.y = y;
+		circle = new Ellipse2D.Double(x-STONERADIUS, y-STONERADIUS, STONERADIUS*2, STONERADIUS*2);
+	}
+
+	public enum Visibility {
+		INVISIBLE, VISIBLE, HALFVISIBLE;
 	}
 
 	public void setPlayer(Player player) {
 		this.player = player;
-		visibility = true;
+		visibility = Visibility.VISIBLE;
 		return;
 	}
 
 	public Color stoneColor() {
 		if (player == Player.BLACK) return Color.BLACK;
 		if (player == Player.WHITE) return Color.WHITE;
+		if (visibility == Visibility.HALFVISIBLE) return Color.DARK_GRAY;
 		else return null;
 	}
 
 	public boolean isInsideStone(double x, double y) {
-		if (((x-this.x)*(x-this.x))+((y-this.y)*(y-this.y)) <= STONERADIUS*STONERADIUS) return true;
+		if (((x-this.x)*(x-this.x))+((y-this.y)*(y-this.y)) <= STONERADIUS* STONERADIUS) return true;
 		else return false;
 	}
 	/*private void setNeighbours() {
