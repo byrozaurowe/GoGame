@@ -52,10 +52,13 @@ public class Board extends JPanel{
 		for (int i=0; i<SIZE; i++) {
 			for (int j=0; j<SIZE; j++) {
 				if (boardTab[i][j].circle.contains(event.getPoint()) && boardTab[i][j].visibility == Stone.Visibility.INVISIBLE) {
-					lastMovedField.visibility = Stone.Visibility.INVISIBLE;
-					lastMovedField = boardTab[i][j];
-					boardTab[i][j].visibility= Stone.Visibility.HALFVISIBLE;
+				    if(lastMovedField != null) {
+                        lastMovedField.visibility = Stone.Visibility.INVISIBLE;
+                        lastMovedField = boardTab[i][j];
+                        boardTab[i][j].visibility = Stone.Visibility.HALFVISIBLE;
+                    }
 				}
+
 			}
 		}
 		repaint();
@@ -63,7 +66,9 @@ public class Board extends JPanel{
 	public void releasedStone(MouseEvent event) {
 		for (int i=0; i<SIZE; i++) {
 			for (int j=0; j<SIZE; j++) {
-				lastMovedField.setPlayer(Player.BLACK);
+			    if(lastMovedField != null) {
+                    lastMovedField.setPlayer(Player.BLACK);
+                }
 			}
 		}
 		repaint();

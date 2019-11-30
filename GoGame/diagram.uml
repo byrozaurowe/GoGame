@@ -3,34 +3,79 @@
   <ID>JAVA</ID>
   <OriginalElement />
   <nodes>
-    <node x="134.0" y="0.0">go.StoneChain</node>
-    <node x="3.5" y="152.0">go.Board</node>
-    <node x="7.5" y="228.0">go.Main</node>
-    <node x="0.0" y="0.0">go.Player</node>
-    <node x="3.5" y="76.0">go.Stone</node>
+    <node x="316.07440476190476" y="0.0">go.StoneChain</node>
+    <node x="5.285714285714292" y="631.0">go.Board</node>
+    <node x="8.285714285714292" y="975.0">go.Main</node>
+    <node x="15.252480158730165" y="487.0">go.Stone.Visibility</node>
+    <node x="41.75248015873015" y="0.0">go.Player</node>
+    <node x="19.07440476190476" y="122.0">go.Stone</node>
   </nodes>
   <notes />
   <edges>
-    <edge source="go.Stone" target="go.Player">
-      <point x="20.5" y="-13.0" />
-      <point x="65.0" y="51.0" />
-      <point x="66.75" y="51.0" />
-      <point x="22.25" y="13.0" />
+    <edge source="go.Stone" target="go.Board">
+      <point x="110.25" y="147.5" />
+      <point x="255.32440476190476" y="467.0" />
+      <point x="187.75248015873015" y="467.0" />
+      <point x="187.75248015873015" y="601.0" />
+      <point x="231.85714285714283" y="601.0" />
+      <point x="104.57142857142856" y="-147.0" />
+    </edge>
+    <edge source="go.Board" target="go.Player">
+      <point x="-104.57142857142858" y="-147.0" />
+      <point x="22.714285714285708" y="611.0" />
+      <point x="0.0" y="611.0" />
+      <point x="0.0" y="97.0" />
+      <point x="56.585813492063494" y="97.0" />
+      <point x="-29.666666666666657" y="36.0" />
     </edge>
     <edge source="go.Board" target="go.Stone">
-      <point x="0.0" y="-13.0" />
-      <point x="0.0" y="13.0" />
+      <point x="69.7142857142857" y="-147.0" />
+      <point x="197.0" y="611.0" />
+      <point x="176.75248015873018" y="611.0" />
+      <point x="176.75248015873018" y="457.0" />
+      <point x="223.82440476190476" y="457.0" />
+      <point x="78.75" y="147.5" />
+    </edge>
+    <edge source="go.Stone" target="go.Player">
+      <point x="-63.0" y="-147.5" />
+      <point x="82.07440476190476" y="97.0" />
+      <point x="86.25248015873015" y="97.0" />
+      <point x="0.0" y="36.0" />
     </edge>
     <edge source="go.Main" target="go.Board">
-      <point x="18.5" y="-13.0" />
-      <point x="63.0" y="203.0" />
-      <point x="65.0" y="203.0" />
-      <point x="20.5" y="13.0" />
+      <point x="58.0" y="-224.0" />
+      <point x="182.28571428571428" y="950.0" />
+      <point x="188.28571428571428" y="950.0" />
+      <point x="61.0" y="147.0" />
+    </edge>
+    <edge source="go.Stone" target="go.Stone.Visibility">
+      <point x="-78.75" y="147.5" />
+      <point x="66.32440476190476" y="467.0" />
+      <point x="74.25248015873017" y="467.0" />
+      <point x="0.0" y="-47.0" />
+    </edge>
+    <edge source="go.Board" target="go.Stone.Visibility">
+      <point x="-69.71428571428572" y="-147.0" />
+      <point x="57.57142857142857" y="611.0" />
+      <point x="74.25248015873017" y="611.0" />
+      <point x="0.0" y="47.0" />
+    </edge>
+    <edge source="go.Stone.Visibility" target="go.Stone">
+      <point x="-39.33333333333334" y="-47.0" />
+      <point x="-110.25" y="147.5" />
     </edge>
   </edges>
-  <settings layout="Hierarchic Group" zoom="1.0" x="379.0" y="31.5" />
-  <SelectedNodes />
-  <Categories />
+  <settings layout="Hierarchic Group" zoom="1.0" x="574.5000000000001" y="422.5" />
+  <SelectedNodes>
+    <node>go.StoneChain</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+    <Category>Inner Classes</Category>
+  </Categories>
   <SCOPE>All</SCOPE>
   <VISIBILITY>private</VISIBILITY>
 </Diagram>
