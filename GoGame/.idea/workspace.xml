@@ -2,202 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="23df1589-9a88-484b-b16c-0d131e237639" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/.idea/Lista 4 - Paint.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/Doxyfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/annotated.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/bc_s.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/bdwn.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/classFigura-members.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/classFigura.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/classFigura__coll__graph.dot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/classFigura__coll__graph.md5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/classFigura__inherit__graph.dot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/classFigura__inherit__graph.md5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/classKolo-members.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/classKolo.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/classKolo__coll__graph.dot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/classKolo__coll__graph.md5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/classKolo__inherit__graph.dot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/classKolo__inherit__graph.md5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/classMain-members.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/classMain.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/classMain__coll__graph.dot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/classMain__coll__graph.md5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/classMain__inherit__graph.dot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/classMain__inherit__graph.md5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/classProstokat-members.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/classProstokat.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/classProstokat__coll__graph.dot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/classProstokat__coll__graph.md5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/classProstokat__inherit__graph.dot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/classProstokat__inherit__graph.md5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/classWielokat-members.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/classWielokat.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/classWielokat__coll__graph.dot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/classWielokat__coll__graph.md5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/classWielokat__inherit__graph.dot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/classWielokat__inherit__graph.md5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/classes.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/closed.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/doc.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/doxygen.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/doxygen.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/dynsections.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/folderclosed.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/folderopen.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/functions.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/functions_func.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/graph_legend.dot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/graph_legend.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/graph_legend.md5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/hierarchy.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/inherit_graph_0.dot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/inherit_graph_0.md5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/inherit_graph_1.dot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/inherit_graph_1.md5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/inherits.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/jquery.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/menu.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/menudata.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/nav_f.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/nav_g.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/nav_h.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/open.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/search/all_0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/search/all_0.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/search/all_1.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/search/all_1.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/search/all_2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/search/all_2.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/search/all_3.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/search/all_3.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/search/all_4.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/search/all_4.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/search/all_5.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/search/all_5.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/search/all_6.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/search/all_6.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/search/all_7.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/search/all_7.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/search/all_8.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/search/all_8.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/search/all_9.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/search/all_9.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/search/all_a.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/search/all_a.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/search/all_b.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/search/all_b.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/search/classes_0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/search/classes_0.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/search/classes_1.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/search/classes_1.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/search/classes_2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/search/classes_2.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/search/classes_3.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/search/classes_3.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/search/classes_4.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/search/classes_4.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/search/close.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/search/functions_0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/search/functions_0.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/search/functions_1.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/search/functions_1.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/search/functions_2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/search/functions_2.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/search/functions_3.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/search/functions_3.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/search/functions_4.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/search/functions_4.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/search/functions_5.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/search/functions_5.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/search/functions_6.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/search/functions_6.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/search/functions_7.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/search/functions_7.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/search/functions_8.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/search/functions_8.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/search/mag_sel.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/search/nomatches.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/search/search.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/search/search.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/search/search_l.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/search/search_m.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/search/search_r.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/search/searchdata.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/splitbar.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/sync_off.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/sync_on.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/tab_a.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/tab_b.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/tab_h.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/tab_s.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/html/tabs.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/latex/Makefile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/latex/annotated.tex" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/latex/classFigura.tex" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/latex/classFigura__coll__graph.dot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/latex/classFigura__coll__graph.md5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/latex/classFigura__inherit__graph.dot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/latex/classFigura__inherit__graph.md5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/latex/classKolo.tex" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/latex/classKolo__coll__graph.dot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/latex/classKolo__coll__graph.md5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/latex/classKolo__inherit__graph.dot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/latex/classKolo__inherit__graph.md5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/latex/classMain.tex" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/latex/classMain__coll__graph.dot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/latex/classMain__coll__graph.md5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/latex/classMain__inherit__graph.dot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/latex/classMain__inherit__graph.md5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/latex/classProstokat.tex" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/latex/classProstokat__coll__graph.dot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/latex/classProstokat__coll__graph.md5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/latex/classProstokat__inherit__graph.dot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/latex/classProstokat__inherit__graph.md5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/latex/classWielokat.tex" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/latex/classWielokat__coll__graph.dot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/latex/classWielokat__coll__graph.md5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/latex/classWielokat__inherit__graph.dot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/latex/classWielokat__inherit__graph.md5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/latex/doxygen.sty" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/latex/hierarchy.tex" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Doxygen/latex/refman.tex" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Figura.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Figura.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Javadoc/Figura.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Javadoc/Kolo.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Javadoc/Main.Rysownik.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Javadoc/Main.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Javadoc/Prostokat.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Javadoc/Wielokat.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Javadoc/allclasses-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Javadoc/allclasses-noframe.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Javadoc/constant-values.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Javadoc/deprecated-list.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Javadoc/help-doc.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Javadoc/index-all.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Javadoc/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Javadoc/overview-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Javadoc/package-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Javadoc/package-list" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Javadoc/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Javadoc/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Javadoc/script.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Javadoc/serialized-form.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Javadoc/stylesheet.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Kolo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Kolo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Main$Rysownik.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Prostokat.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Prostokat.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Wielokat.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lista 4 - Paint/Wielokat.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/go/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/go/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/go/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/go/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/go/Stone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/go/Stone.java" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -247,22 +57,10 @@
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="go.Main" />
-      <module name="go" />
+      <module name="GoGame" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="go.*" />
@@ -278,6 +76,18 @@
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -341,25 +151,29 @@
       <screen x="67" y="27" width="1533" height="873" />
     </state>
     <state x="428" y="124" width="800" height="677" key="#Project_Structure/67.27.1533.873@67.27.1533.873" timestamp="1575055282711" />
-    <state x="291" y="120" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1575055417135">
+    <state x="291" y="120" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1575102865207">
       <screen x="67" y="27" width="1533" height="873" />
     </state>
-    <state x="291" y="120" key="#com.intellij.execution.impl.EditConfigurationsDialog/67.27.1533.873@67.27.1533.873" timestamp="1575055417135" />
-    <state width="1533" height="218" key="GridCell.Tab.0.bottom" timestamp="1575055639947">
+    <state x="291" y="120" key="#com.intellij.execution.impl.EditConfigurationsDialog/67.27.1533.873@67.27.1533.873" timestamp="1575102865207" />
+    <state x="641" y="181" width="374" height="562" key="#com.intellij.ide.util.MemberChooser" timestamp="1575103823948">
       <screen x="67" y="27" width="1533" height="873" />
     </state>
-    <state width="1533" height="218" key="GridCell.Tab.0.bottom/67.27.1533.873@67.27.1533.873" timestamp="1575055639947" />
-    <state width="1533" height="218" key="GridCell.Tab.0.center" timestamp="1575055639947">
+    <state x="641" y="181" width="374" height="562" key="#com.intellij.ide.util.MemberChooser/67.27.1533.873@67.27.1533.873" timestamp="1575103823948" />
+    <state width="1533" height="218" key="GridCell.Tab.0.bottom" timestamp="1575105657141">
       <screen x="67" y="27" width="1533" height="873" />
     </state>
-    <state width="1533" height="218" key="GridCell.Tab.0.center/67.27.1533.873@67.27.1533.873" timestamp="1575055639947" />
-    <state width="1533" height="218" key="GridCell.Tab.0.left" timestamp="1575055639947">
+    <state width="1533" height="218" key="GridCell.Tab.0.bottom/67.27.1533.873@67.27.1533.873" timestamp="1575105657141" />
+    <state width="1533" height="218" key="GridCell.Tab.0.center" timestamp="1575105657141">
       <screen x="67" y="27" width="1533" height="873" />
     </state>
-    <state width="1533" height="218" key="GridCell.Tab.0.left/67.27.1533.873@67.27.1533.873" timestamp="1575055639947" />
-    <state width="1533" height="218" key="GridCell.Tab.0.right" timestamp="1575055639947">
+    <state width="1533" height="218" key="GridCell.Tab.0.center/67.27.1533.873@67.27.1533.873" timestamp="1575105657141" />
+    <state width="1533" height="218" key="GridCell.Tab.0.left" timestamp="1575105657140">
       <screen x="67" y="27" width="1533" height="873" />
     </state>
-    <state width="1533" height="218" key="GridCell.Tab.0.right/67.27.1533.873@67.27.1533.873" timestamp="1575055639947" />
+    <state width="1533" height="218" key="GridCell.Tab.0.left/67.27.1533.873@67.27.1533.873" timestamp="1575105657140" />
+    <state width="1533" height="218" key="GridCell.Tab.0.right" timestamp="1575105657141">
+      <screen x="67" y="27" width="1533" height="873" />
+    </state>
+    <state width="1533" height="218" key="GridCell.Tab.0.right/67.27.1533.873@67.27.1533.873" timestamp="1575105657141" />
   </component>
 </project>

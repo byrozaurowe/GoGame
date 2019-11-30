@@ -4,8 +4,10 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
-public class Main extends JFrame implements ActionListener {
+public class Main extends JFrame implements ActionListener, MouseListener {
 
 	/** Pasek menu */
 	JMenuBar menuBar;
@@ -58,6 +60,10 @@ public class Main extends JFrame implements ActionListener {
 		exitItem.addActionListener(this);
 		rulesItem.addActionListener(this);
 		authorsItem.addActionListener(this);
+
+		//mouse listener
+		board.addMouseListener(this);
+
 		pack();
 	}
 
@@ -77,5 +83,26 @@ public class Main extends JFrame implements ActionListener {
 		else if(event == authorsItem) {
 			JOptionPane.showMessageDialog(null, "Authors: Wiktoria Byra, Wojciech Pakulski", "Authors", JOptionPane.INFORMATION_MESSAGE);
 		}
+	}
+
+	public void mouseClicked(MouseEvent mouseEvent) {
+		mouseEvent.getX();
+		mouseEvent.getY();
+	}
+
+	public void mousePressed(MouseEvent mouseEvent) {
+
+	}
+
+	public void mouseReleased(MouseEvent mouseEvent) {
+
+	}
+
+	public void mouseEntered(MouseEvent mouseEvent) {
+
+	}
+
+	public void mouseExited(MouseEvent mouseEvent) {
+
 	}
 }

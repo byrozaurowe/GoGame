@@ -1,5 +1,6 @@
 package go;
 
+import java.awt.*;
 import java.util.ArrayList;
 
 /** Klasa kamien */
@@ -12,15 +13,33 @@ public class Stone {
 	/** Numer kolumny */
 	final int column;
 	/** Kolor kamienia */
-	final Player player;
+	Player player;
+	/** współrzędne kamienia */
+	final double x;
+	final double y;
+	/** widoczność kamienia */
+	boolean visibility = false;
 
 	/** Konstruktor kamienia */
-	Stone(Player player, int row, int column) {
-		this.player = player;
+	Stone(int row, int column, double x, double y) {
+		//this.player = player;
 		this.row = row;
 		this.column = column;
+		this.x = x;
+		this.y = y;
 	}
 
+	public void setPlayer(Player player) {
+		this.player = player;
+		visibility = true;
+		return;
+	}
+
+	public Color stoneColor() {
+		if (player == Player.BLACK) return Color.BLACK;
+		if (player == Player.WHITE) return Color.WHITE;
+		else return null;
+	}
 	/*private void setNeighbours() {
 		neighbour = new ArrayList<Stone>();
 		if(row > 0) {
