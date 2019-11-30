@@ -6,13 +6,21 @@ import java.awt.geom.Ellipse2D;
 import java.awt.geom.Line2D;
 import java.awt.geom.Point2D;
 
+/** Klasa plansza */
 public class Board extends JPanel{
+
+    /** Ilosc pol nq planszy w pionie/poziomie */
 	final int SIZE = 13;
+	/** Promien kamieni */
 	final static int STONERADIUS = 15;
+	/** Rozmiar planszy w pixelach */
 	final int DIMX = 600, DIMY = 600;
+	/** Tablica z kamieniami na planszy */
 	static Stone[][] boardTab;
+	/** Ostatni tymczasowy kamień */
 	Stone lastMovedField;
 
+	/** Konstruktor planszy */
 	public Board() {
 		setBackground(new Color(193,154,107));
 		this.setPreferredSize(new Dimension(DIMX+2*STONERADIUS, DIMY+2*STONERADIUS));
@@ -25,7 +33,10 @@ public class Board extends JPanel{
 		repaint();
 	}
 
-	//postawienie kamienia
+	/** Metoda klikniecie na kamien
+     * @parm x wspolrzedna x w kliknietym miejsu
+     * @param y wspolrzedna y w kliknietym miejscu
+     * */
 	public void clickedOnStone(double x, double y) {
 		for (int i=0; i<SIZE; i++) {
 			for (int j=0; j<SIZE; j++) {
@@ -37,7 +48,9 @@ public class Board extends JPanel{
 		repaint();
 	}
 
-	//podświetlanie najechanych pól
+	/** Podświetlanie najechanych pól
+     * @param event ruch myszki
+     * */
 	public void enteredStone(MouseEvent event) {
 		for (int i=0; i<SIZE; i++) {
 			for (int j=0; j<SIZE; j++) {
@@ -49,27 +62,36 @@ public class Board extends JPanel{
 		}
 		repaint();
 	}
+
+	/** Podswietlanie kamieni podczas ruszania mysza
+     * @param event ruch myszki
+     * */
 	public void draggedStone(MouseEvent event) {
 		for (int i=0; i<SIZE; i++) {
 			for (int j=0; j<SIZE; j++) {
 				if (boardTab[i][j].circle.contains(event.getPoint()) && boardTab[i][j].visibility == Stone.Visibility.INVISIBLE) {
-					if (lastMovedField.visibility != Stone.Visibility.VISIBLE) lastMovedField.visibility = Stone.Visibility.INVISIBLE;
-					lastMovedField = boardTab[i][j];
-					boardTab[i][j].visibility= Stone.Visibility.HALFVISIBLE;
+				    if(lastMovedField != null) {
+                        lastMovedField.visibility = Stone.Visibility.INVISIBLE;
+                        lastMovedField = boardTab[i][j];
+                        boardTab[i][j].visibility = Stone.Visibility.HALFVISIBLE;
+                    }
 				}
-			}
-		}
-		repaint();
-	}
-	public void releasedStone(MouseEvent event) {
-		for (int i=0; i<SIZE; i++) {
-			for (int j=0; j<SIZE; j++) {
-				lastMovedField.setPlayer(Player.BLACK);
+
 			}
 		}
 		repaint();
 	}
 
+    /** Utworzenie kamienia przy puszczeniu myszki */
+	public void releasedStone() {
+	    if(lastMovedField != null) {
+	        lastMovedField.setPlayer(Player.BLACK);
+	    }
+		repaint();
+		lastMovedField = null;
+	}
+
+	/** Rysowanie */
 	@Override
 	protected void paintComponent(Graphics g) {
 		super.paintComponent(g);
