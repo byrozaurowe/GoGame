@@ -25,6 +25,7 @@ public class Board extends JPanel{
 		repaint();
 	}
 
+	//postawienie kamienia
 	public void clickedOnStone(double x, double y) {
 		for (int i=0; i<SIZE; i++) {
 			for (int j=0; j<SIZE; j++) {
@@ -52,7 +53,7 @@ public class Board extends JPanel{
 		for (int i=0; i<SIZE; i++) {
 			for (int j=0; j<SIZE; j++) {
 				if (boardTab[i][j].circle.contains(event.getPoint()) && boardTab[i][j].visibility == Stone.Visibility.INVISIBLE) {
-					lastMovedField.visibility = Stone.Visibility.INVISIBLE;
+					if (lastMovedField.visibility != Stone.Visibility.VISIBLE) lastMovedField.visibility = Stone.Visibility.INVISIBLE;
 					lastMovedField = boardTab[i][j];
 					boardTab[i][j].visibility= Stone.Visibility.HALFVISIBLE;
 				}
