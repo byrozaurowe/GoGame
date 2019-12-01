@@ -7,6 +7,7 @@ import java.awt.event.*;
 /** Głowna klasa gracza */
 public class Main extends JFrame implements ActionListener, MouseListener, MouseMotionListener {
 
+	static Main frame;
 	/** Pasek menu */
 	JMenuBar menuBar;
 	/** Opcje na pasku menu */
@@ -26,36 +27,63 @@ public class Main extends JFrame implements ActionListener, MouseListener, Mouse
 	/** Plansza */
 	Board board;
 
+	/** Guzik rozpoczynajacy gre z botem */
 	JButton botStartButton;
-
+	/** Guzik rozpoczynajacy gre z graczem */
 	JButton playerStartButton;
-
-	JPanel menuPanel;
-
-	JPanel titlePanel;
-
-	JPanel descPanel;
-
-	JPanel radioPanel;
-
-	JPanel playerPanel;
-
-	JPanel botPanel;
-
+	/** Panele do menu */
+	JPanel menuPanel, titlePanel, descPanel, radioPanel, playerPanel, botPanel;
+	/** Etykieta z tytulem gry */
 	JLabel titleLabel;
-
+	/** Etykieta z opisem */
 	JLabel descLabel;
-
+	/** Grupa radio buttonow */
 	ButtonGroup buttonGroup;
-
+	/** Radio button plansza 19x19 */
 	JRadioButton big;
+	/** Radio button plansza 13x13 */
 	JRadioButton normal;
+	/** Radio button plansza 9x9 */
 	JRadioButton small;
-	/**
-	 * Konstruktor maina
-	 */
+
+	/** Konstruktor maina */
 	Main() {
 		super("Go Game");
+			menuInitialize();
+	}
+	Main(int gameSize) {
+		gameInitialize(gameSize);
+	}
+
+	public static void main(String[] args) {
+		frame = new Main();
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setVisible(true);
+		frame.setResizable(false);
+	}
+
+	/** Metoda actionPerformed */
+	public void actionPerformed(ActionEvent actionEvent) {
+		Object event = actionEvent.getSource();
+		if (event == exitItem) {
+			System.exit(0);
+		} else if (event == authorsItem) {
+			JOptionPane.showMessageDialog(null, "Authors: Wiktoria Byra, Wojciech Pakulski", "Authors", JOptionPane.INFORMATION_MESSAGE);
+		}
+		else if(event == playerStartButton) {
+			if (big.isSelected()) {
+				gameInitialize(19);
+			}
+
+			else if (normal.isSelected()) {
+				gameInitialize(13);
+			}
+			else if (small.isSelected()){
+				gameInitialize(9);
+			}
+		}
+	}
+	void menuInitialize() {
 		// ustawianie nazw buttonow i labeli
 		Font labelFont = new Font("Segoe UI", Font.PLAIN, 20);
 		botStartButton = new JButton("Start game against a computer");
@@ -105,31 +133,11 @@ public class Main extends JFrame implements ActionListener, MouseListener, Mouse
 		menuPanel.add(playerPanel);
 		menuPanel.add(botPanel);
 		add(menuPanel);
+		botStartButton.addActionListener(this);
+		playerStartButton.addActionListener(this);
 		pack();
-
 	}
-
-	public static void main(String[] args) {
-		JFrame frame = new Main();
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setVisible(true);
-		//frame.setResizable(false);
-	}
-
-	/** Metoda actionPerformed */
-	public void actionPerformed(ActionEvent actionEvent) {
-		Object event = actionEvent.getSource();
-		if (event == exitItem) {
-			System.exit(0);
-		} else if (event == authorsItem) {
-			JOptionPane.showMessageDialog(null, "Authors: Wiktoria Byra, Wojciech Pakulski", "Authors", JOptionPane.INFORMATION_MESSAGE);
-		}
-		else if(event == botStartButton) {
-			gameInitialize();
-		}
-	}
-
-	void gameInitialize() {
+	void gameInitialize(int boardSize) {
 		// tworzenie menu
 		menuBar = new JMenuBar();
 		optionsMenu = new JMenu("Options");
@@ -141,7 +149,7 @@ public class Main extends JFrame implements ActionListener, MouseListener, Mouse
 		optionsMenu.add(newGameItem);
 		optionsMenu.add(exitItem);
 		menuBar.add(optionsMenu);
-		setJMenuBar(menuBar);
+		frame.setJMenuBar(menuBar);
 		// menu info z opcjami zasady i autorzy
 		infoMenu = new JMenu("Info");
 		rulesItem = new JMenuItem("Rules");
@@ -149,11 +157,12 @@ public class Main extends JFrame implements ActionListener, MouseListener, Mouse
 		infoMenu.add(rulesItem);
 		infoMenu.add(authorsItem);
 		menuBar.add(infoMenu);
-
+		JPanel panel = new JPanel();
+		panel.add(board, BorderLayout.CENTER);
 		setLocationByPlatform(true);
-		board = new Board();
-		add(board, BorderLayout.CENTER);
-
+		board = new Board(boardSize);
+		frame.add(panel, BorderLayout.CENTER);
+		panel.setVisible(true);
 		// action Listenery
 		passItem.addActionListener(this);
 		newGameItem.addActionListener(this);
