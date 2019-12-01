@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="23df1589-9a88-484b-b16c-0d131e237639" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/go/Menu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/go/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/go/Main.java" afterDir="false" />
     </list>
@@ -172,7 +173,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575137544702</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Menu główne">
+      <created>1575214085530</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1575214085530</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -198,7 +206,8 @@
     <MESSAGE value="stawianie pojedyńczych kamieni" />
     <MESSAGE value="Naprawienie paru errorow w rysowaniu" />
     <MESSAGE value="Komentarze i drobna korekta rysowania tymczasowych kamyków" />
-    <option name="LAST_COMMIT_MESSAGE" value="Komentarze i drobna korekta rysowania tymczasowych kamyków" />
+    <MESSAGE value="Menu główne" />
+    <option name="LAST_COMMIT_MESSAGE" value="Menu główne" />
   </component>
   <component name="WindowStateProjectService">
     <state x="493" y="104" width="671" height="717" key="#Main" timestamp="1575055351978">
