@@ -5,7 +5,19 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/go/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/go/Board.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/go/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/go/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/go/Stone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/go/Stone.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../_windows/laf.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../_windows/path.macros.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../acceptedLanguageLevels.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../checkstyle-idea.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../codestyles/Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../colors.scheme.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../debugger.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../filetypes.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ide-features-trainer.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ide.general.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../scala.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../scala_config.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vcs.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +44,7 @@
   <component name="Git.Settings">
     <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="UPDATE_TYPE" value="MERGE" />
   </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
@@ -45,35 +58,31 @@
   </component>
   <component name="ProjectId" id="1UIZzXHwUU9vUUFcLqKicJB5JG2" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$USER_HOME$/Desktop/Studia/designpatterns/iterator" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="11.0.4" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="go.Main" />
-      <module name="go" />
+      <module name="GoGame" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="go.*" />
@@ -90,6 +99,18 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -104,6 +125,7 @@
       <workItem from="1575047109947" duration="245000" />
       <workItem from="1575066191872" duration="5062000" />
       <workItem from="1575072501208" duration="291000" />
+      <workItem from="1575202669785" duration="2372000" />
     </task>
     <task id="LOCAL-00001" summary="board">
       <created>1575056393338</created>
@@ -168,10 +190,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="Naprawienie paru errorow w rysowaniu" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="493" y="104" width="671" height="717" key="#Main" timestamp="1575055351978">
+    <state x="493" y="104" width="671" height="717" key="#Main" timestamp="1575204751301">
       <screen x="67" y="27" width="1533" height="873" />
     </state>
-    <state x="493" y="104" width="671" height="717" key="#Main/67.27.1533.873@67.27.1533.873" timestamp="1575055351978" />
+    <state x="493" y="104" width="671" height="717" key="#Main/67.27.1533.873@67.27.1533.873" timestamp="1575204751301" />
     <state x="428" y="124" width="800" height="677" key="#Project_Structure" timestamp="1575055282711">
       <screen x="67" y="27" width="1533" height="873" />
     </state>
@@ -184,26 +206,30 @@
       <screen x="67" y="27" width="1533" height="873" />
     </state>
     <state x="641" y="181" width="374" height="562" key="#com.intellij.ide.util.MemberChooser/67.27.1533.873@67.27.1533.873" timestamp="1575117922943" />
+    <state x="674" y="354" width="308" height="216" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1575202711621">
+      <screen x="67" y="27" width="1533" height="873" />
+    </state>
+    <state x="674" y="354" width="308" height="216" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/67.27.1533.873@67.27.1533.873" timestamp="1575202711621" />
     <state x="398" y="59" width="860" height="807" key="CommitChangelistDialog2" timestamp="1575115362130">
       <screen x="67" y="27" width="1533" height="873" />
     </state>
     <state x="398" y="59" width="860" height="807" key="CommitChangelistDialog2/67.27.1533.873@67.27.1533.873" timestamp="1575115362130" />
-    <state width="1533" height="64" key="GridCell.Tab.0.bottom" timestamp="1575123417178">
+    <state width="1533" height="64" key="GridCell.Tab.0.bottom" timestamp="1575206245490">
       <screen x="67" y="27" width="1533" height="873" />
     </state>
-    <state width="1533" height="64" key="GridCell.Tab.0.bottom/67.27.1533.873@67.27.1533.873" timestamp="1575123417178" />
-    <state width="1533" height="64" key="GridCell.Tab.0.center" timestamp="1575123417177">
+    <state width="1533" height="64" key="GridCell.Tab.0.bottom/67.27.1533.873@67.27.1533.873" timestamp="1575206245490" />
+    <state width="1533" height="64" key="GridCell.Tab.0.center" timestamp="1575206245490">
       <screen x="67" y="27" width="1533" height="873" />
     </state>
-    <state width="1533" height="64" key="GridCell.Tab.0.center/67.27.1533.873@67.27.1533.873" timestamp="1575123417177" />
-    <state width="1533" height="64" key="GridCell.Tab.0.left" timestamp="1575123417177">
+    <state width="1533" height="64" key="GridCell.Tab.0.center/67.27.1533.873@67.27.1533.873" timestamp="1575206245490" />
+    <state width="1533" height="64" key="GridCell.Tab.0.left" timestamp="1575206245489">
       <screen x="67" y="27" width="1533" height="873" />
     </state>
-    <state width="1533" height="64" key="GridCell.Tab.0.left/67.27.1533.873@67.27.1533.873" timestamp="1575123417177" />
-    <state width="1533" height="64" key="GridCell.Tab.0.right" timestamp="1575123417177">
+    <state width="1533" height="64" key="GridCell.Tab.0.left/67.27.1533.873@67.27.1533.873" timestamp="1575206245489" />
+    <state width="1533" height="64" key="GridCell.Tab.0.right" timestamp="1575206245490">
       <screen x="67" y="27" width="1533" height="873" />
     </state>
-    <state width="1533" height="64" key="GridCell.Tab.0.right/67.27.1533.873@67.27.1533.873" timestamp="1575123417177" />
+    <state width="1533" height="64" key="GridCell.Tab.0.right/67.27.1533.873@67.27.1533.873" timestamp="1575206245490" />
     <state width="1533" height="271" key="GridCell.Tab.1.bottom" timestamp="1575113983209">
       <screen x="67" y="27" width="1533" height="873" />
     </state>
@@ -224,5 +250,9 @@
       <screen x="67" y="27" width="1533" height="873" />
     </state>
     <state x="428" y="198" width="800" height="528" key="Vcs.Push.Dialog.v2/67.27.1533.873@67.27.1533.873" timestamp="1575108930972" />
+    <state x="601" y="382" width="454" height="160" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1575204719521">
+      <screen x="67" y="27" width="1533" height="873" />
+    </state>
+    <state x="601" y="382" width="454" height="160" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/67.27.1533.873@67.27.1533.873" timestamp="1575204719521" />
   </component>
 </project>
