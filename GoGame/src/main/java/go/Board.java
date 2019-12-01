@@ -100,7 +100,7 @@ public class Board extends JPanel{
 		Graphics2D g2d = (Graphics2D) g;
 
 		//wydrukowanie tła
-		Image bgImage = new ImageIcon("wood.jpg").getImage();
+		Image bgImage = new ImageIcon("src/main/resources/wood.jpg").getImage();
 		g.drawImage(bgImage, 0, 0, null);
 
 		for (int i=0; i<SIZE; i++) { // pionowe linie
