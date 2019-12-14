@@ -2,16 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="23df1589-9a88-484b-b16c-0d131e237639" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/diagram.uml" beforeDir="false" afterPath="$PROJECT_DIR$/diagram.uml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/go/GameClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/go/GameClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/go/GameHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/go/GameServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/go/GameServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/go/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/go/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/go/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/go/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/go/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/go/StoneChain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/go/StoneChain.java" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -146,9 +140,9 @@
     </configuration>
     <list>
       <item itemvalue="Application.GUI" />
-      <item itemvalue="JAR Application.Unnamed" />
       <item itemvalue="Application.GameServer" />
       <item itemvalue="Application.GameClient" />
+      <item itemvalue="JAR Application.Unnamed" />
     </list>
     <recent_temporary>
       <list>
