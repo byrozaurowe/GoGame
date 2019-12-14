@@ -2,9 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="23df1589-9a88-484b-b16c-0d131e237639" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/Winchester.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/diagram.uml" beforeDir="false" afterPath="$PROJECT_DIR$/diagram.uml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/go/GameClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/go/GameClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/go/GameServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/go/GameServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/go/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/go/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/go/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/go/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/go/Player.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -59,6 +64,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/target/go-1.0-SNAPSHOT.jar" />
@@ -89,11 +95,37 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Application.GameClient">
+    <configuration name="GUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="11.0.4" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="MAIN_CLASS_NAME" value="go.Main" />
+      <option name="MAIN_CLASS_NAME" value="go.GUI" />
+      <module name="go" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="go.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GameClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="go.GameClient" />
+      <module name="go" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="go.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GameServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="go.GameServer" />
       <module name="go" />
       <extension name="coverage">
         <pattern>
@@ -113,12 +145,16 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Application.Main" />
+      <item itemvalue="Application.GUI" />
       <item itemvalue="JAR Application.Unnamed" />
+      <item itemvalue="Application.GameServer" />
+      <item itemvalue="Application.GameClient" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.GameClient" />
+        <item itemvalue="Application.GameServer" />
+        <item itemvalue="Application.GUI" />
       </list>
     </recent_temporary>
   </component>
@@ -143,6 +179,8 @@
       <workItem from="1575245398174" duration="59000" />
       <workItem from="1575282692276" duration="1072000" />
       <workItem from="1575920831566" duration="3890000" />
+      <workItem from="1576282245589" duration="321000" />
+      <workItem from="1576315248542" duration="14072000" />
     </task>
     <task id="LOCAL-00001" summary="board">
       <created>1575056393338</created>
@@ -193,7 +231,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575214085530</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Serwer, klient cz 1">
+      <created>1576282361496</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1576282361496</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -220,7 +265,8 @@
     <MESSAGE value="Naprawienie paru errorow w rysowaniu" />
     <MESSAGE value="Komentarze i drobna korekta rysowania tymczasowych kamyków" />
     <MESSAGE value="Menu główne" />
-    <option name="LAST_COMMIT_MESSAGE" value="Menu główne" />
+    <MESSAGE value="Serwer, klient cz 1" />
+    <option name="LAST_COMMIT_MESSAGE" value="Serwer, klient cz 1" />
   </component>
   <component name="WindowStateProjectService">
     <state x="493" y="104" width="671" height="717" key="#Main" timestamp="1575055351978">

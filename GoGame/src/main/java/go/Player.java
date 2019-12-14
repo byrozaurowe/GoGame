@@ -1,18 +1,13 @@
 package go;
 
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.Socket;
 import java.util.Scanner;
 
 /** Klasa gracz */
-public class Player implements Runnable {
-	@Override
-	public void run() {
+public class Player {
 
-	}
 	/** Enum kolor kamienia */
 	enum StoneColor {
 		WHITE,

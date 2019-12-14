@@ -19,6 +19,7 @@ public class GameServer {
     /** Wysylanie info do gracza 2 */
     private PrintWriter dataOutPlayer2;
 
+
     /** Konstruktor serwera */
     public GameServer() {
         System.out.println("----Game Server----");
