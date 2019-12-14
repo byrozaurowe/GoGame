@@ -90,9 +90,9 @@ class Menu extends JFrame implements ActionListener {
         if(event == playerStartButton) {
             if (big.isSelected()) {
                 frame = new Main(19);
-                setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                setVisible(true);
-                setResizable(false);
+                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.setVisible(true);
+                frame.setResizable(false);
                 this.dispose();
             }
             else if (normal.isSelected()) {

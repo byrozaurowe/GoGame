@@ -48,8 +48,8 @@ public class Stone {
 
     /** Ustawienie koloru kamieniowi */
 	public Color stoneColor() {
-		if (player == Player.BLACK) return Color.BLACK;
-		if (player == Player.WHITE) return Color.WHITE;
+		if (player.getStoneColor() == Player.StoneColor.WHITE) return Color.BLACK;
+		if (player.getStoneColor() == Player.StoneColor.WHITE) return Color.WHITE;
 		if (visibility == Visibility.HALFVISIBLE) return Color.DARK_GRAY;
 		else return null;
 	}
