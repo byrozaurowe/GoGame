@@ -60,8 +60,6 @@ public class GameServer {
         while (line != null) {
             try {
                 line = dataInPlayer.readLine();
-                makeTurnInformationLine(line);
-                line = dataInPlayer.readLine();
                 if (line == "pass") {
                     passTurn();
                 }
@@ -82,6 +80,7 @@ public class GameServer {
             }
         }
     }
+
     private void makeMoveInformationLine(String line) {
         String[] coordinates = line.split(".");
         moveX = Integer.parseInt(String.valueOf(coordinates[0]));

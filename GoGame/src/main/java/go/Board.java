@@ -9,9 +9,8 @@ import java.awt.geom.Point2D;
 /** Klasa plansza */
 public class Board extends JPanel{
 
-	static Player currentPlayer;
     /** Ilosc pol nq planszy w pionie/poziomie */
-	static int SIZE = 13;
+	static int SIZE;
 	/** Promien kamieni */
 	final static int STONERADIUS = 15;
 	/** Rozmiar planszy w pixelach */
@@ -21,6 +20,10 @@ public class Board extends JPanel{
 	static Stone[][] boardTab;
 	/** Ostatni tymczasowy kamień */
 	Stone lastMovedField;
+
+	Stone[][] getBoardTab() {
+        return boardTab;
+    }
 
 	/** Konstruktor planszy */
 	public Board(int size) {
@@ -36,6 +39,9 @@ public class Board extends JPanel{
 		repaint();
 	}
 
+	int getSIZE () {
+	    return SIZE;
+    }
 	/** Metoda klikniecie na kamien
      * @parm x wspolrzedna x w kliknietym miejsu
      * @param y wspolrzedna y w kliknietym miejscu
@@ -44,7 +50,7 @@ public class Board extends JPanel{
 		for (int i=0; i<SIZE; i++) {
 			for (int j=0; j<SIZE; j++) {
 				if (boardTab[i][j].isInsideStone(x,y)) {
-					//boardTab[i][j].setPlayer(Player.BLACK);
+				    boardTab[i][j].setPlayer(Player.BLACK);
 				}
 			}
 		}
@@ -86,12 +92,14 @@ public class Board extends JPanel{
 	}
 
     /** Utworzenie kamienia przy puszczeniu myszki */
-	public void releasedStone() {
+	public String releasedStone() {
 	    if(lastMovedField != null) {
-	        //lastMovedField.setPlayer(Player.BLACK);
+	        lastMovedField.setPlayer(Player.BLACK);
 	    }
 		repaint();
+	    String line = lastMovedField.column + "." + lastMovedField.row;
 		lastMovedField = null;
+		return line;
 	}
 
 	/** Rysowanie */

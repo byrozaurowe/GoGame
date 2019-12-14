@@ -103,11 +103,14 @@ class Menu extends JFrame implements ActionListener {
             }
             else if (normal.isSelected()) {
                 frame = new GUI(13);
-
+                GameClient.gui = frame;
+                GameClient.gameClient.connectClient();
                 this.dispose();
             }
             else if (small.isSelected()){
                 frame = new GUI(9);
+                GameClient.gui = frame;
+                GameClient.gameClient.connectClient();
                 this.dispose();
             }
         }

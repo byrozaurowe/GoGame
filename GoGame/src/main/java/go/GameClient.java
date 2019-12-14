@@ -1,11 +1,8 @@
 package go;
 
-import java.awt.event.MouseEvent;
 import java.io.*;
-import java.net.InetAddress;
 import java.net.Socket;
 import java.net.UnknownHostException;
-import java.util.Scanner;
 
 /** Klient gry */
 public class GameClient implements Runnable{
@@ -30,12 +27,36 @@ public class GameClient implements Runnable{
     }
 
     /** Gra */
-    public void run () {
+    public void run() {
         while (true) {
             try {
-                System.out.println(dataIn.readLine());
+                String line = dataIn.readLine();
+                if(line.charAt(0) == playerID)
+                    isYourTurn = true;
+                String player;
+                if(playerID == 1) {
+                    player = "WHITE";
+                }
+                else player = "BLACK";
+                for (int i =0; i <board.getSIZE(); i++) {
+                    for (int j=0; j<board.getSIZE(); j++) {
+                        if(Character.getNumericValue(line.charAt((i*board.getSIZE())+j+1)) == 0)
+                            board.getBoardTab()[i][j].setVisibility(Stone.Visibility.INVISIBLE);
+                        else if(Character.getNumericValue(line.charAt((i*board.getSIZE())+j+1)) == 1) {
+                            board.getBoardTab()[i][j].setVisibility(Stone.Visibility.VISIBLE);
+                            board.getBoardTab()[i][j].setPlayer(player);
+                        }
+                        else if(Character.getNumericValue(line.charAt((i*board.getSIZE())+j+1)) == 2) {
+                            board.getBoardTab()[i][j].setVisibility(Stone.Visibility.VISIBLE);
+                            board.getBoardTab()[i][j].setPlayer(player);
+                        }
+                    }
+                }
             } catch (IOException e) {
-                System.out.println("Blad");
+                e.printStackTrace();
+            }
+            if(isYourTurn) {
+
             }
         }
     }
@@ -61,8 +82,12 @@ public class GameClient implements Runnable{
         }
         Thread thread = new Thread(gameClient);
         thread.start();
+        board = gui.getBoard();
     }
 
+    void sendCoordinates (String line) {
+        String[] coordinates = line.split(".");
+    }
 
     /** Wyslij informacje na serwer
      * @param msg informacja do serwera
@@ -77,6 +102,10 @@ public class GameClient implements Runnable{
             e.printStackTrace();
         }
         return resp;
+    }
+
+    private void sendPass() {
+        dataOut.println("pass");
     }
 
     /** Main

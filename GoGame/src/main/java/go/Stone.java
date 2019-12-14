@@ -46,10 +46,17 @@ public class Stone {
 		visibility = Visibility.VISIBLE;
     }
 
+    public void setPlayer(String player) {
+		if(player == "WHITE")
+			setPlayer(Player.WHITE);
+		else if(player == "BLACK")
+			setPlayer(Player.BLACK);
+	}
+
     /** Ustawienie koloru kamieniowi */
 	public Color stoneColor() {
-		if (player.getStoneColor() == Player.StoneColor.WHITE) return Color.BLACK;
-		if (player.getStoneColor() == Player.StoneColor.WHITE) return Color.WHITE;
+		if (player == Player.WHITE) return Color.BLACK;
+		if (player == Player.WHITE) return Color.WHITE;
 		if (visibility == Visibility.HALFVISIBLE) return Color.DARK_GRAY;
 		else return null;
 	}
@@ -62,17 +69,7 @@ public class Stone {
 		if (((x-this.x)*(x-this.x))+((y-this.y)*(y-this.y)) <= STONERADIUS* STONERADIUS) return true;
 		else return false;
 	}
-	/*private void setNeighbours() {
-		neighbour = new ArrayList<Stone>();
-		if(row > 0) {
-			neighbour.add(board[row - 1][column]);
-		}
-		if(row < Board.SIZE - 1) {
-			neighbour.add(board[Board.SIZE - 1][column]);
-		}
-		if(column > 0) {
-			neighbour.add(board[row][column - 1]);
-		}
-		if(column < )
-	}*/
+	void setVisibility(Visibility visibility) {
+		this.visibility = visibility;
+	}
 }

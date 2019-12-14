@@ -43,6 +43,8 @@ public class GUI extends JFrame implements ActionListener, MouseListener, MouseM
         } else if (event == authorsItem) {
             JOptionPane.showMessageDialog(null, "Authors: Wiktoria Byra, Wojciech Pakulski", "Authors", JOptionPane.INFORMATION_MESSAGE);
         }
+        else if(event == passItem) {
+        }
     }
 
     /** Tworzy okno gry */
@@ -95,7 +97,7 @@ public class GUI extends JFrame implements ActionListener, MouseListener, MouseM
         return board;
     }
     public void mouseClicked(MouseEvent mouseEvent) {
-        board.clickedOnStone(mouseEvent.getX(), mouseEvent.getY());
+        //board.clickedOnStone(mouseEvent.getX(), mouseEvent.getY());
     }
 
     public void mousePressed(MouseEvent mouseEvent) {
@@ -104,7 +106,8 @@ public class GUI extends JFrame implements ActionListener, MouseListener, MouseM
     }
 
     public void mouseReleased(MouseEvent mouseEvent) {
-        board.releasedStone();
+        String toSent = board.releasedStone();
+        GameClient.gameClient.sendCoordinates(toSent);
     }
 
     public void mouseEntered(MouseEvent mouseEvent) {
