@@ -7,11 +7,13 @@ import java.awt.event.ActionListener;
 /** Klasa obslugujaca menu glowne */
 class Menu extends JFrame implements ActionListener {
 
-    static Main frame;
+    GUI frame;
     /** Guzik rozpoczynajacy gre z botem */
     private JButton botStartButton;
     /** Guzik rozpoczynajacy gre z graczem */
     private JButton playerStartButton;
+
+    private JButton joinGameButton;
     /** Panele do menu */
     private JPanel menuPanel, titlePanel, descPanel, radioPanel, playerPanel, botPanel;
     /** Etykieta z tytulem gry */
@@ -30,6 +32,11 @@ class Menu extends JFrame implements ActionListener {
     /** Konstruktor menu */
     Menu(){
         super("Go Menu");
+
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setVisible(true);
+        setResizable(false);
+
         // ustawianie nazw buttonow i labeli
         Font labelFont = new Font("Segoe UI", Font.PLAIN, 20);
         botStartButton = new JButton("Start game against a computer");
@@ -89,24 +96,18 @@ class Menu extends JFrame implements ActionListener {
         Object event = actionEvent.getSource();
         if(event == playerStartButton) {
             if (big.isSelected()) {
-                frame = new Main(19);
-                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                frame.setVisible(true);
-                frame.setResizable(false);
+                frame = new GUI(19);
+                GameClient.gui = frame;
+                GameClient.gameClient.connectClient();
                 this.dispose();
             }
             else if (normal.isSelected()) {
-                frame = new Main(13);
-                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                frame.setVisible(true);
-                frame.setResizable(false);
+                frame = new GUI(13);
+
                 this.dispose();
             }
             else if (small.isSelected()){
-                frame = new Main(9);
-                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                frame.setVisible(true);
-                frame.setResizable(false);
+                frame = new GUI(9);
                 this.dispose();
             }
         }
