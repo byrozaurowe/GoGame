@@ -9,8 +9,9 @@ import java.awt.geom.Point2D;
 /** Klasa plansza */
 public class Board extends JPanel{
 
+	static Player currentPlayer;
     /** Ilosc pol nq planszy w pionie/poziomie */
-	int SIZE = 13;
+	static int SIZE = 13;
 	/** Promien kamieni */
 	final static int STONERADIUS = 15;
 	/** Rozmiar planszy w pixelach */
@@ -43,7 +44,7 @@ public class Board extends JPanel{
 		for (int i=0; i<SIZE; i++) {
 			for (int j=0; j<SIZE; j++) {
 				if (boardTab[i][j].isInsideStone(x,y)) {
-					boardTab[i][j].setPlayer(Player.BLACK);
+					//boardTab[i][j].setPlayer(Player.BLACK);
 				}
 			}
 		}
@@ -87,7 +88,7 @@ public class Board extends JPanel{
     /** Utworzenie kamienia przy puszczeniu myszki */
 	public void releasedStone() {
 	    if(lastMovedField != null) {
-	        lastMovedField.setPlayer(Player.BLACK);
+	        //lastMovedField.setPlayer(Player.BLACK);
 	    }
 		repaint();
 		lastMovedField = null;
