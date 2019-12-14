@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="23df1589-9a88-484b-b16c-0d131e237639" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/go/GameHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/go/GameServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/go/GameServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/go/GameHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/go/GameHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/go/StoneChain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/go/StoneChain.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -77,18 +77,6 @@
       <recent name="C:\Users\wojte\git\IntelliJ_TP\GoGame\src\main\resources" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
   <component name="RunManager" selected="Application.GameClient">
     <configuration name="GUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="11.0.4" />
@@ -151,6 +139,18 @@
         <item itemvalue="Application.GUI" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -232,7 +232,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576282361496</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="odczytywanie wiadomości od klienta, gamehandler">
+      <created>1576335210872</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1576335210872</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -260,7 +267,8 @@
     <MESSAGE value="Komentarze i drobna korekta rysowania tymczasowych kamyków" />
     <MESSAGE value="Menu główne" />
     <MESSAGE value="Serwer, klient cz 1" />
-    <option name="LAST_COMMIT_MESSAGE" value="Serwer, klient cz 1" />
+    <MESSAGE value="odczytywanie wiadomości od klienta, gamehandler" />
+    <option name="LAST_COMMIT_MESSAGE" value="odczytywanie wiadomości od klienta, gamehandler" />
   </component>
   <component name="WindowStateProjectService">
     <state x="493" y="104" width="671" height="717" key="#Main" timestamp="1575055351978">
@@ -279,10 +287,10 @@
       <screen x="67" y="27" width="1533" height="873" />
     </state>
     <state x="641" y="181" width="374" height="562" key="#com.intellij.ide.util.MemberChooser/67.27.1533.873@67.27.1533.873" timestamp="1575117922943" />
-    <state x="398" y="59" width="860" height="807" key="CommitChangelistDialog2" timestamp="1575115362130">
+    <state x="398" y="59" width="860" height="807" key="CommitChangelistDialog2" timestamp="1576335210677">
       <screen x="67" y="27" width="1533" height="873" />
     </state>
-    <state x="398" y="59" width="860" height="807" key="CommitChangelistDialog2/67.27.1533.873@67.27.1533.873" timestamp="1575115362130" />
+    <state x="398" y="59" width="860" height="807" key="CommitChangelistDialog2/67.27.1533.873@67.27.1533.873" timestamp="1576335210677" />
     <state width="1533" height="64" key="GridCell.Tab.0.bottom" timestamp="1575219571689">
       <screen x="67" y="27" width="1533" height="873" />
     </state>
@@ -315,13 +323,13 @@
       <screen x="67" y="27" width="1533" height="873" />
     </state>
     <state width="1533" height="271" key="GridCell.Tab.1.right/67.27.1533.873@67.27.1533.873" timestamp="1575113983208" />
-    <state x="428" y="198" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1575108930972">
+    <state x="428" y="198" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1576335259549">
       <screen x="67" y="27" width="1533" height="873" />
     </state>
-    <state x="428" y="198" width="800" height="528" key="Vcs.Push.Dialog.v2/67.27.1533.873@67.27.1533.873" timestamp="1575108930972" />
-    <state x="601" y="382" width="464" height="160" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1575219085495">
+    <state x="428" y="198" width="800" height="528" key="Vcs.Push.Dialog.v2/67.27.1533.873@67.27.1533.873" timestamp="1576335259549" />
+    <state x="601" y="382" width="454" height="160" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1576338629485">
       <screen x="67" y="27" width="1533" height="873" />
     </state>
-    <state x="601" y="382" width="464" height="160" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/67.27.1533.873@67.27.1533.873" timestamp="1575219085495" />
+    <state x="601" y="382" width="454" height="160" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/67.27.1533.873@67.27.1533.873" timestamp="1576338629485" />
   </component>
 </project>

@@ -39,15 +39,24 @@ public class GameHandler {
     private void isPartOfChain() {
         StoneChain lastFoundIn = null;
         for (StoneChain stoneChain: stoneChainList) {
-            if (stoneChain.isPartOfThisChain(moveX, moveY)) {
-                if (lastFoundIn == null) lastFoundIn = stoneChain;
-                else {
-                    stoneChain.mergeChains(lastFoundIn);
-                    stoneChainList.remove(lastFoundIn);
-                    lastFoundIn = stoneChain;
+            if (stoneChain.owner == whoseTurn) {
+                if (stoneChain.isPartOfThisChain(moveX, moveY)) {
+                    if (lastFoundIn == null) {
+                        lastFoundIn = stoneChain;
+                    }
+                    else {
+                        stoneChain.mergeChains(lastFoundIn);
+                        stoneChainList.remove(lastFoundIn);
+                        lastFoundIn = stoneChain;
+                    }
                 }
             }
+            if (stoneChain.owner != whoseTurn) {
+                stoneChain.removeLiberty(moveX, moveY);
+            }
         }
-     //utworz nowy lancuch bo nie bylo, wyżej sprawdz czy to twoj lancuch
+        if (lastFoundIn == null) {
+            stoneChainList.add(new StoneChain(whoseTurn, moveX, moveY));
+        }
     }
 }
