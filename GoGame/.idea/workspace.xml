@@ -61,13 +61,13 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/target/go-1.0-SNAPSHOT.jar" />
+    <property name="last_opened_file_path" value="$USER_HOME$/javafx-sdk-13.0.1/lib" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Global Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.20483871" />
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
@@ -239,7 +239,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576335210872</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="chainy, które nic nie robią">
+      <created>1576338657446</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1576338657446</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -268,7 +275,8 @@
     <MESSAGE value="Menu główne" />
     <MESSAGE value="Serwer, klient cz 1" />
     <MESSAGE value="odczytywanie wiadomości od klienta, gamehandler" />
-    <option name="LAST_COMMIT_MESSAGE" value="odczytywanie wiadomości od klienta, gamehandler" />
+    <MESSAGE value="chainy, które nic nie robią" />
+    <option name="LAST_COMMIT_MESSAGE" value="chainy, które nic nie robią" />
   </component>
   <component name="WindowStateProjectService">
     <state x="493" y="104" width="671" height="717" key="#Main" timestamp="1575055351978">
@@ -287,10 +295,14 @@
       <screen x="67" y="27" width="1533" height="873" />
     </state>
     <state x="641" y="181" width="374" height="562" key="#com.intellij.ide.util.MemberChooser/67.27.1533.873@67.27.1533.873" timestamp="1575117922943" />
-    <state x="398" y="59" width="860" height="807" key="CommitChangelistDialog2" timestamp="1576335210677">
+    <state x="398" y="59" width="860" height="807" key="CommitChangelistDialog2" timestamp="1576338657302">
       <screen x="67" y="27" width="1533" height="873" />
     </state>
-    <state x="398" y="59" width="860" height="807" key="CommitChangelistDialog2/67.27.1533.873@67.27.1533.873" timestamp="1576335210677" />
+    <state x="398" y="59" width="860" height="807" key="CommitChangelistDialog2/67.27.1533.873@67.27.1533.873" timestamp="1576338657302" />
+    <state x="455" y="206" width="735" height="513" key="FileChooserDialogImpl" timestamp="1576342696829">
+      <screen x="67" y="27" width="1533" height="873" />
+    </state>
+    <state x="455" y="206" width="735" height="513" key="FileChooserDialogImpl/67.27.1533.873@67.27.1533.873" timestamp="1576342696829" />
     <state width="1533" height="64" key="GridCell.Tab.0.bottom" timestamp="1575219571689">
       <screen x="67" y="27" width="1533" height="873" />
     </state>
@@ -323,13 +335,21 @@
       <screen x="67" y="27" width="1533" height="873" />
     </state>
     <state width="1533" height="271" key="GridCell.Tab.1.right/67.27.1533.873@67.27.1533.873" timestamp="1575113983208" />
-    <state x="428" y="198" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1576335259549">
+    <state x="366" y="120" width="924" height="684" key="Maven.ArtifactSearchDialog" timestamp="1576342588084">
       <screen x="67" y="27" width="1533" height="873" />
     </state>
-    <state x="428" y="198" width="800" height="528" key="Vcs.Push.Dialog.v2/67.27.1533.873@67.27.1533.873" timestamp="1576335259549" />
-    <state x="601" y="382" width="454" height="160" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1576338629485">
+    <state x="366" y="120" width="924" height="684" key="Maven.ArtifactSearchDialog/67.27.1533.873@67.27.1533.873" timestamp="1576342588084" />
+    <state x="316" y="40" width="1024" height="845" key="SettingsEditor" timestamp="1576342704978">
       <screen x="67" y="27" width="1533" height="873" />
     </state>
-    <state x="601" y="382" width="454" height="160" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/67.27.1533.873@67.27.1533.873" timestamp="1576338629485" />
+    <state x="316" y="40" width="1024" height="845" key="SettingsEditor/67.27.1533.873@67.27.1533.873" timestamp="1576342704978" />
+    <state x="428" y="198" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1576338673259">
+      <screen x="67" y="27" width="1533" height="873" />
+    </state>
+    <state x="428" y="198" width="800" height="528" key="Vcs.Push.Dialog.v2/67.27.1533.873@67.27.1533.873" timestamp="1576338673259" />
+    <state x="601" y="382" width="464" height="160" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1576346913529">
+      <screen x="67" y="27" width="1533" height="873" />
+    </state>
+    <state x="601" y="382" width="464" height="160" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/67.27.1533.873@67.27.1533.873" timestamp="1576346913529" />
   </component>
 </project>

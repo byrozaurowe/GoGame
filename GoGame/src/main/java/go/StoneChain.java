@@ -1,7 +1,5 @@
 package go;
-
-import jdk.internal.net.http.common.Pair;
-
+import javafx.util.Pair;
 import java.util.ArrayList;
 
 import static java.lang.Math.abs;
@@ -12,30 +10,31 @@ public class StoneChain {
     int owner;
 
     public StoneChain (int owner, int x, int y) {
-        stoneChain.add(Pair.pair(x, y));
-        initialLiberties(x, y);
+        stoneChain.add(new Pair(x, y));
+        findLiberties(x, y);
         this.owner = owner;
     }
 
-    void initialLiberties (int x, int y) {
+    void findLiberties (int x, int y) {
         if ((x-1) >= 0 && GameServer.gameServer.gameHandler.stoneLogicTable[x-1][y] == 0) {
-            liberties.add(Pair.pair(x-1, y));
+            liberties.add(new Pair(x-1, y));
         }
         if ((y-1) >= 0 && GameServer.gameServer.gameHandler.stoneLogicTable[x][y-1] == 0) {
-            liberties.add(Pair.pair(x, y-1));
+            liberties.add(new Pair(x, y-1));
         }
         if ((x+1) < GameServer.gameServer.gameHandler.boardSize && GameServer.gameServer.gameHandler.stoneLogicTable[x+1][y] == 0) {
-            liberties.add(Pair.pair(x+1, y));
+            liberties.add(new Pair(x+1, y));
         }
         if ((y+1) < GameServer.gameServer.gameHandler.boardSize && GameServer.gameServer.gameHandler.stoneLogicTable[x][y+1] == 0) {
-            liberties.add(Pair.pair(x, y+1));
+            liberties.add(new Pair(x, y+1));
         }
     }
 
     boolean isPartOfThisChain(int x, int y) {
         for (Pair<Integer, Integer> field: stoneChain) {
-            if ((field.first == x && abs(field.second - y) == 1) ||  (field.second == y && abs(field.first - x) == 1)) {
-                stoneChain.add(Pair.pair(x, y));
+            if ((field.getKey() == x && abs(field.getValue() - y) == 1) ||  (field.getValue() == y && abs(field.getKey() - x) == 1)) {
+                stoneChain.add(new Pair(x, y));
+                findLiberties(x, y);
                 removeLiberty(x, y);
                 return true;
             }
@@ -44,12 +43,22 @@ public class StoneChain {
     }
 
     void removeLiberty (int x, int y) {
-        liberties.remove(Pair.pair(x,y));
+        for (Pair<Integer, Integer> pair: liberties) {
+            if (pair.getKey() == x && pair.getValue() == y) {
+                liberties.remove(pair);
+            }
+        }
     }
 
     void mergeChains(StoneChain toMerge) {
         for (Pair<Integer, Integer> pair: toMerge.stoneChain) {
             stoneChain.add(pair);
         }
+        for (Pair<Integer, Integer> pair: toMerge.liberties) {
+            liberties.add(pair);
+        }
     }
+
+
+
 }
