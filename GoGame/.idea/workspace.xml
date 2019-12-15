@@ -3,9 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="23df1589-9a88-484b-b16c-0d131e237639" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/go/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/go/GUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/go/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/go/Board.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/go/GameClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/go/GameClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/go/GameHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/go/GameHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/go/GameServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/go/GameServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/go/Stone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/go/Stone.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -255,7 +257,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576346949643</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="przesylanie wspolrzednych dziala">
+      <created>1576412553719</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1576412553719</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -286,7 +295,8 @@
     <MESSAGE value="odczytywanie wiadomości od klienta, gamehandler" />
     <MESSAGE value="chainy, które nic nie robią" />
     <MESSAGE value="logika gry cd ale nie testowana" />
-    <option name="LAST_COMMIT_MESSAGE" value="logika gry cd ale nie testowana" />
+    <MESSAGE value="przesylanie wspolrzednych dziala" />
+    <option name="LAST_COMMIT_MESSAGE" value="przesylanie wspolrzednych dziala" />
   </component>
   <component name="WindowStateProjectService">
     <state x="493" y="104" width="671" height="717" key="#Main" timestamp="1575055351978">
@@ -370,19 +380,59 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/go/GUI.java</url>
+          <line>118</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/go/GameClient.java</url>
+          <line>60</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/go/GameClient.java</url>
+          <line>61</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/go/GameClient.java</url>
+          <line>62</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/go/GameClient.java</url>
+          <line>64</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/go/GameClient.java</url>
+          <line>63</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/go/GameClient.java</url>
+          <line>35</line>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/go/GameClient.java</url>
           <line>36</line>
-          <option name="timeStamp" value="1" />
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/go/GameClient.java</url>
+          <line>37</line>
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/go/GameClient.java</url>
+          <line>39</line>
+          <option name="timeStamp" value="30" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/go/GameClient.java</url>
           <line>40</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/go/GUI.java</url>
-          <line>118</line>
-          <option name="timeStamp" value="3" />
+          <option name="timeStamp" value="31" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

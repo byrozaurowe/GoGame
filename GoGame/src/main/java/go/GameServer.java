@@ -22,7 +22,7 @@ public class GameServer {
 
     GameHandler gameHandler;
 
-    int whoseTurn;
+    int whoseTurn = 1;
     int[][] stoneLogicTable;
     int boardSize;
     int moveX, moveY;
@@ -41,15 +41,16 @@ public class GameServer {
     }
 
     /** Wyslij wiadomosc do obu graczy
-     * @param msg sygnal do klienta
      * */
     private void sendToPlayers () {
+        System.out.println("czyja tura po ruchu" + whoseTurn);
         String msg = Integer.toString(whoseTurn);
         for (int i=0; i<boardSize; i++) {
             for (int j=0; j<boardSize; j++) {
                 msg = msg + stoneLogicTable[i][j];
             }
         }
+        System.out.println(msg);
         dataOutPlayer1.println(msg);
         dataOutPlayer2.println(msg);
     }
@@ -57,26 +58,26 @@ public class GameServer {
     /** Sluchanie socketa gracza 1 */
     private void listenPlayer (BufferedReader dataInPlayer) {
         String line = "";
-        while (line != null) {
-            try {
-                line = dataInPlayer.readLine();
-                if (line == "pass") {
-                    passTurn();
-                }
-                else {
-                    makeMoveInformationLine(line);
-                }
-            } catch (IOException e) {
-                e.printStackTrace();
+        try {
+            line = dataInPlayer.readLine();
+            if (line == "pass") {
+                passTurn();
             }
+            else {
+                makeMoveInformationLine(line);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
     private void makeMoveInformationLine(String line) {
-        String[] coordinates = line.split(".");
-        moveX = Integer.parseInt(String.valueOf(coordinates[0]));
-        moveY = Integer.parseInt(String.valueOf(coordinates[1]));
+        String[] coordinates = line.split(" ");
+        moveX = Integer.parseInt(coordinates[0]);
+        moveY = Integer.parseInt(coordinates[1]);
+        System.out.println(moveX +" " + moveY);
         whoseTurn = gameHandler.move(moveX, moveY, whoseTurn, stoneLogicTable);
+        System.out.println(whoseTurn);
     }
 
     private void passTurn() {
@@ -132,11 +133,15 @@ public class GameServer {
     private void play() {
         gameHandler = new GameHandler(boardSize);
         gameIsFinished = false;
+        System.out.println("Board Size" + boardSize);
         while (gameIsFinished == false) {
             if(whoseTurn == 1)
                 listenPlayer(dataInPlayer1);
-            else if(whoseTurn == 2)
+            else if(whoseTurn == 2) {
+                //System.out.println("nie tu");
                 listenPlayer(dataInPlayer2);
+            }
+
             sendToPlayers();
         }
     }

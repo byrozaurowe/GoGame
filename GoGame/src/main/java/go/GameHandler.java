@@ -32,6 +32,7 @@ public class GameHandler {
             if (isLibertyLeft(isPartOfChain(fakeStoneChainList)) || doesItKill(fakeStoneChainList)) {
                 isPartOfChain(stoneChainList);
                 stoneLogicTable[moveX][moveY] = whoseTurn;
+                System.out.println("Przypisuje graczowi " + whoseTurn);
                 removeDead(stoneChainList);
                 if (whoseTurn == 1) whoseTurn = 2;
                 else whoseTurn = 1;

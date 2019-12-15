@@ -94,7 +94,7 @@ public class Board extends JPanel{
 
     /** Utworzenie kamienia przy puszczeniu myszki */
 	public String releasedStone() {
-	    String line = lastMovedField.column + "." + lastMovedField.row;
+	    String line = lastMovedField.row + " " + lastMovedField.column;
 		lastMovedField = null;
 		return line;
 	}

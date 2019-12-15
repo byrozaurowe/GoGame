@@ -36,7 +36,7 @@ public class GameClient implements Runnable{
                 moveMsg = null;
                 while (moveMsg == null) {
                     moveMsg = gui.getMsg();
-                };
+                }
                 System.out.println(moveMsg);
                 dataOut.println(moveMsg);
                 try {
@@ -58,7 +58,7 @@ public class GameClient implements Runnable{
         }
     }
     private void readServerMsg (String line) {
-        if (line.charAt(0) == playerID) {
+        if (line.charAt(0)- 48 == playerID ) {
             isYourTurn = true;
             gui.nullMsg();
         }
@@ -76,6 +76,7 @@ public class GameClient implements Runnable{
                 }
             }
         }
+        gui.repaint();
     }
 
     public void connectClient() {
