@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Iterator;
 
 import static java.lang.Math.abs;
 
@@ -30,8 +31,8 @@ public class StoneChain {
         return neighbours;
     }
 
-    void findLiberties(ArrayList<Pair> neigbours, ArrayList<Pair> liberties) {
-        for (Pair pair: neigbours) {
+    void findLiberties(ArrayList<Pair> neighbours, ArrayList<Pair> liberties) {
+        for (Pair pair: neighbours) {
             if (GameServer.gameServer.gameHandler.stoneLogicTable[pair.getKey()][pair.getValue()] == 0) {
                 liberties.add(new Pair(pair.getKey(), pair.getValue()));
             }
@@ -51,11 +52,20 @@ public class StoneChain {
     }
 
     void removeLiberty (int x, int y) {
-        for (Pair pair: liberties) {
+        // zle bo nie mozesz usuwac w foreachu
+        /*for (Pair pair: liberties) {
             if (pair.getKey() == x && pair.getValue() == y) {
                 liberties.remove(pair);
             }
-        }
+        }*/
+        /* dobrze ale dlugo, uzywamy remove iteratora
+        for (Iterator<Pair> it = liberties.iterator(); it.hasNext();) {
+            Pair pair = it.next();
+            if (pair.getKey() == x && pair.getValue() == y) {
+                it.remove();
+            }
+        }*/
+        liberties.removeIf(pair -> pair.getKey() == x && pair.getValue() == y);
     }
 
     void mergeChains(StoneChain toMerge) {

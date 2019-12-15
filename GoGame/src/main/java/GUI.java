@@ -104,31 +104,32 @@ public class GUI extends JFrame implements ActionListener, MouseListener, MouseM
     Board getBoard () {
         return board;
     }
+    @Override
     public void mouseClicked(MouseEvent mouseEvent) {
         //board.clickedOnStone(mouseEvent.getX(), mouseEvent.getY());
     }
-
+    @Override
     public void mousePressed(MouseEvent mouseEvent) {
        board.enteredStone(mouseEvent);
 
     }
-
+    @Override
     public void mouseReleased(MouseEvent mouseEvent) {
         msg = board.releasedStone();
     }
-
+    @Override
     public void mouseEntered(MouseEvent mouseEvent) {
 
     }
-
+    @Override
     public void mouseExited(MouseEvent mouseEvent) {
 
     }
-
+    @Override
     public void mouseDragged(MouseEvent mouseEvent) {
         board.draggedStone(mouseEvent);
     }
-
+    @Override
     public void mouseMoved(MouseEvent mouseEvent) {
 
     }

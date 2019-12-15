@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class GameHandler {
     int whoseTurn;
@@ -46,6 +47,7 @@ public class GameHandler {
     }
     private StoneChain isPartOfChain(ArrayList<StoneChain> list) {
         StoneChain lastFoundIn = null;
+        /*
         for (StoneChain stoneChain: list) {
             if (stoneChain.owner == whoseTurn) {
                 if (stoneChain.isPartOfThisChain(moveX, moveY)) {
@@ -55,6 +57,24 @@ public class GameHandler {
                     else {
                         stoneChain.mergeChains(lastFoundIn);
                         list.remove(lastFoundIn);
+                        lastFoundIn = stoneChain;
+                    }
+                }
+            }
+            if (stoneChain.owner != whoseTurn) {
+                stoneChain.removeLiberty(moveX, moveY);
+            }
+        }*/
+        for (Iterator<StoneChain> it = list.iterator(); it.hasNext();) {
+            StoneChain stoneChain = it.next();
+            if (stoneChain.owner == whoseTurn) {
+                if (stoneChain.isPartOfThisChain(moveX, moveY)) {
+                    if (lastFoundIn == null) {
+                        lastFoundIn = stoneChain;
+                    }
+                    else {
+                        stoneChain.mergeChains(lastFoundIn);
+                        it.remove();
                         lastFoundIn = stoneChain;
                     }
                 }
@@ -87,12 +107,22 @@ public class GameHandler {
     }
 
     private void removeDead (ArrayList<StoneChain> stoneChainList) {
-        for (StoneChain chain: stoneChainList) {
+        /*for (StoneChain chain: stoneChainList) {
             if (chain.owner != whoseTurn && chain.liberties.isEmpty()) {
                 for(Pair pair: chain.stoneChain) {
                     stoneLogicTable[pair.getKey()][pair.getValue()] = 0;
                 }
                 stoneChainList.remove(chain);
+                chain.restoreLibertiesToNeighbours();
+            }
+        }*/
+        for (Iterator<StoneChain> it = stoneChainList.iterator(); it.hasNext();) {
+            StoneChain chain = it.next();
+            if (chain.owner != whoseTurn && chain.liberties.isEmpty()) {
+                for(Pair pair: chain.stoneChain) {
+                    stoneLogicTable[pair.getKey()][pair.getValue()] = 0;
+                }
+                it.remove();
                 chain.restoreLibertiesToNeighbours();
             }
         }

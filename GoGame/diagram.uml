@@ -3,116 +3,131 @@
   <ID>JAVA</ID>
   <OriginalElement />
   <nodes>
-    <node x="247.00416666666666" y="0.0">go.StoneChain</node>
-    <node x="92.67083333333333" y="228.0">go.GUI</node>
-    <node x="66.69027777777778" y="152.0">go.Board</node>
-    <node x="0.0" y="304.0">go.GameClient</node>
-    <node x="227.87916666666666" y="76.0">go.GameHandler</node>
-    <node x="252.12604166666665" y="152.0">go.GameServer</node>
-    <node x="68.85694444444445" y="0.0">go.Player</node>
-    <node x="51.19027777777779" y="76.0">go.Stone</node>
-    <node x="62.22361111111112" y="380.0">go.Menu</node>
+    <node x="220.66442123994338" y="248.0">StoneChain</node>
+    <node x="0.0" y="0.0">Player</node>
+    <node x="8.499999999999993" y="152.0">Board</node>
+    <node x="3.439102564102555" y="380.0">GameClient</node>
+    <node x="273.9961672716894" y="76.0">GameHandler</node>
+    <node x="4.8333333333333215" y="228.0">GUI</node>
+    <node x="19.83333333333332" y="304.0">Menu</node>
+    <node x="221.57697084311798" y="152.0">GameServer</node>
+    <node x="24.0" y="76.0">Stone</node>
+    <node x="170.00544306534022" y="0.0">Pair</node>
   </nodes>
   <notes />
   <edges>
-    <edge source="go.GameHandler" target="go.GameServer">
-      <point x="41.666666666666686" y="13.0" />
-      <point x="332.04583333333335" y="127.0" />
-      <point x="325.87604166666665" y="127.0" />
-      <point x="14.750000000000028" y="-13.0" />
-    </edge>
-    <edge source="go.Stone" target="go.Board">
-      <point x="34.16666666666666" y="13.0" />
-      <point x="126.35694444444445" y="127.0" />
-      <point x="128.1902777777778" y="127.0" />
-      <point x="20.5" y="-13.0" />
-    </edge>
-    <edge source="go.GameClient" target="go.Board">
-      <point x="0.0" y="-13.0" />
-      <point x="59.0" y="279.0" />
-      <point x="54.10694444444444" y="279.0" />
-      <point x="54.10694444444444" y="203.0" />
-      <point x="76.94027777777778" y="203.0" />
-      <point x="-30.75" y="13.0" />
-    </edge>
-    <edge source="go.Board" target="go.Player">
-      <point x="34.16666666666666" y="-13.0" />
-      <point x="141.85694444444442" y="127.0" />
-      <point x="143.6902777777778" y="127.0" />
-      <point x="29.66666666666667" y="13.0" />
-    </edge>
-    <edge source="go.GameHandler" target="go.StoneChain">
-      <point x="46.875" y="-13.0" />
-      <point x="337.25416666666666" y="51.0" />
-      <point x="329.60416666666663" y="51.0" />
-      <point x="23.599999999999966" y="13.0" />
-    </edge>
-    <edge source="go.GameClient" target="go.Menu">
-      <point x="39.33333333333334" y="13.0" />
-      <point x="0.0" y="-13.0" />
-    </edge>
-    <edge source="go.GameServer" target="go.GameHandler">
-      <point x="-44.24999999999997" y="-13.0" />
-      <point x="266.87604166666665" y="127.0" />
-      <point x="248.7125" y="127.0" />
-      <point x="-41.66666666666666" y="13.0" />
-    </edge>
-    <edge source="go.Menu" target="go.GameClient">
-      <point x="-29.599999999999994" y="-13.0" />
-      <point x="69.62361111111113" y="360.0" />
-      <point x="19.666666666666657" y="360.0" />
-      <point x="-39.333333333333336" y="13.0" />
-    </edge>
-    <edge source="go.GameClient" target="go.Stone">
-      <point x="-39.33333333333334" y="-13.0" />
-      <point x="19.666666666666657" y="279.0" />
-      <point x="42.419444444444444" y="279.0" />
-      <point x="42.419444444444444" y="127.0" />
-      <point x="58.02361111111112" y="127.0" />
-      <point x="-34.166666666666664" y="13.0" />
-    </edge>
-    <edge source="go.Board" target="go.Stone">
-      <point x="-34.16666666666666" y="-13.0" />
-      <point x="73.52361111111112" y="127.0" />
-      <point x="71.6902777777778" y="127.0" />
-      <point x="-20.5" y="13.0" />
-    </edge>
-    <edge source="go.Stone" target="go.Player">
-      <point x="20.5" y="-13.0" />
+    <edge source="Stone" target="Player">
+      <point x="-20.5" y="-13.0" />
       <point x="0.0" y="13.0" />
     </edge>
-    <edge source="go.StoneChain" target="go.GameServer">
-      <point x="47.19999999999999" y="13.0" />
-      <point x="353.20416666666665" y="51.0" />
-      <point x="363.37916666666666" y="51.0" />
-      <point x="363.37916666666666" y="127.0" />
-      <point x="355.37604166666665" y="127.0" />
-      <point x="44.25000000000003" y="-13.0" />
+    <edge source="GameHandler" target="StoneChain">
+      <point x="53.571428571428555" y="13.0" />
+      <point x="390.06759584311794" y="132.0" />
+      <point x="383.076970843118" y="132.0" />
+      <point x="383.076970843118" y="228.0" />
+      <point x="332.10886568438787" y="228.0" />
+      <point x="52.444444444444464" y="-13.0" />
     </edge>
-    <edge source="go.GUI" target="go.Board">
-      <point x="22.33333333333333" y="-13.0" />
-      <point x="148.50416666666666" y="203.0" />
-      <point x="138.4402777777778" y="203.0" />
+    <edge source="GameClient" target="Menu">
+      <point x="-9.833333333333329" y="-13.0" />
+      <point x="52.605769230769226" y="355.0" />
+      <point x="56.83333333333332" y="355.0" />
+      <point x="0.0" y="13.0" />
+    </edge>
+    <edge source="GameHandler" target="GameServer">
+      <point x="-17.857142857142833" y="13.0" />
+      <point x="318.6390244145466" y="132.0" />
+      <point x="319.9103041764513" y="132.0" />
+      <point x="39.333333333333314" y="-13.0" />
+    </edge>
+    <edge source="StoneChain" target="GameServer">
+      <point x="0.0" y="-13.0" />
+      <point x="0.0" y="13.0" />
+    </edge>
+    <edge source="Board" target="Stone">
+      <point x="20.5" y="-13.0" />
+      <point x="70.0" y="127.0" />
+      <point x="71.83333333333333" y="127.0" />
+      <point x="6.833333333333329" y="13.0" />
+    </edge>
+    <edge source="StoneChain" target="Pair">
+      <point x="-26.22222222222223" y="-13.0" />
+      <point x="253.44219901772115" y="208.0" />
+      <point x="200.07697084311798" y="208.0" />
+      <point x="200.07697084311798" y="46.0" />
+      <point x="207.00544306534022" y="46.0" />
+      <point x="0.0" y="13.0" />
+    </edge>
+    <edge source="GameClient" target="Stone">
+      <point x="49.16666666666666" y="-13.0" />
+      <point x="111.60576923076921" y="355.0" />
+      <point x="115.33333333333331" y="355.0" />
+      <point x="115.33333333333331" y="127.0" />
+      <point x="99.16666666666666" y="127.0" />
+      <point x="34.16666666666666" y="13.0" />
+    </edge>
+    <edge source="Stone" target="Board">
+      <point x="20.5" y="13.0" />
+      <point x="85.5" y="127.0" />
+      <point x="83.66666666666666" y="127.0" />
+      <point x="34.16666666666666" y="-13.0" />
+    </edge>
+    <edge source="Menu" target="GUI">
+      <point x="18.5" y="-13.0" />
+      <point x="75.33333333333331" y="279.0" />
+      <point x="60.666666666666664" y="279.0" />
+      <point x="22.333333333333343" y="13.0" />
+    </edge>
+    <edge source="GameHandler" target="Pair">
+      <point x="0.0" y="-13.0" />
+      <point x="336.4961672716894" y="56.0" />
+      <point x="236.60544306534024" y="56.0" />
+      <point x="29.600000000000023" y="13.0" />
+    </edge>
+    <edge source="GameServer" target="GameHandler">
+      <point x="0.0" y="-13.0" />
+      <point x="280.576970843118" y="132.0" />
+      <point x="300.7818815574037" y="132.0" />
+      <point x="-35.71428571428572" y="13.0" />
+    </edge>
+    <edge source="Board" target="Player">
+      <point x="-34.16666666666666" y="-13.0" />
+      <point x="15.333333333333336" y="127.0" />
+      <point x="13.5" y="127.0" />
+      <point x="13.5" y="51.0" />
+      <point x="14.833333333333329" y="51.0" />
+      <point x="-29.66666666666667" y="13.0" />
+    </edge>
+    <edge source="Menu" target="GameClient">
+      <point x="24.666666666666686" y="13.0" />
+      <point x="81.5" y="355.0" />
+      <point x="72.2724358974359" y="355.0" />
+      <point x="9.833333333333343" y="-13.0" />
+    </edge>
+    <edge source="GUI" target="Board">
+      <point x="22.333333333333343" y="-13.0" />
+      <point x="10.25" y="13.0" />
+    </edge>
+    <edge source="GameClient" target="Board">
+      <point x="29.5" y="-13.0" />
+      <point x="91.93910256410255" y="355.0" />
+      <point x="104.33333333333331" y="355.0" />
+      <point x="104.33333333333331" y="203.0" />
+      <point x="80.25" y="203.0" />
       <point x="30.75" y="13.0" />
     </edge>
-    <edge source="go.Menu" target="go.GUI">
-      <point x="14.800000000000011" y="-13.0" />
-      <point x="114.02361111111114" y="350.0" />
-      <point x="128.5" y="350.0" />
-      <point x="128.5" y="279.0" />
-      <point x="126.17083333333333" y="279.0" />
-      <point x="0.0" y="13.0" />
-    </edge>
-    <edge source="go.GameClient" target="go.GUI">
-      <point x="39.33333333333334" y="-13.0" />
-      <point x="98.33333333333334" y="279.0" />
-      <point x="103.8375" y="279.0" />
-      <point x="-22.333333333333332" y="13.0" />
+    <edge source="GameClient" target="GUI">
+      <point x="-49.16666666666667" y="-13.0" />
+      <point x="13.272435897435884" y="355.0" />
+      <point x="9.333333333333321" y="355.0" />
+      <point x="9.333333333333321" y="279.0" />
+      <point x="15.999999999999979" y="279.0" />
+      <point x="-22.333333333333343" y="13.0" />
     </edge>
   </edges>
-  <settings layout="Hierarchic Group" zoom="1.0" x="210.0" y="185.0" />
+  <settings layout="Hierarchic Group" zoom="1.0" x="599.0" y="186.0" />
   <SelectedNodes>
-    <node>go.Stone</node>
+    <node>StoneChain</node>
   </SelectedNodes>
   <Categories />
   <SCOPE>All</SCOPE>

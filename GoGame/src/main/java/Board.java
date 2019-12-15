@@ -73,7 +73,7 @@ public class Board extends JPanel{
 	public void enteredStone(MouseEvent event) {
 		for (int i=0; i<SIZE; i++) {
 			for (int j=0; j<SIZE; j++) {
-				if (boardTab[i][j].circle.contains(event.getPoint()) && boardTab[i][j].visibility == Stone.Visibility.INVISIBLE) {
+				if (boardTab[i][j].circle.contains(event.getPoint())) {//&& boardTab[i][j].visibility == Stone.Visibility.INVISIBLE) {
 					lastMovedField = boardTab[i][j];
 					//boardTab[i][j].visibility= Stone.Visibility.HALFVISIBLE;
 				}
@@ -89,7 +89,7 @@ public class Board extends JPanel{
 	public void draggedStone(MouseEvent event) {
 		for (int i=0; i<SIZE; i++) {
 			for (int j=0; j<SIZE; j++) {
-				if (boardTab[i][j].circle.contains(event.getPoint()) && boardTab[i][j].visibility == Stone.Visibility.INVISIBLE) {
+				if (boardTab[i][j].circle.contains(event.getPoint())){// && boardTab[i][j].visibility == Stone.Visibility.INVISIBLE) {
 				    if(lastMovedField != null) {
                         //lastMovedField.visibility = Stone.Visibility.INVISIBLE;
                         lastMovedField = boardTab[i][j];
