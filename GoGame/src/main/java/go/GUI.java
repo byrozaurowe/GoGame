@@ -44,6 +44,7 @@ public class GUI extends JFrame implements ActionListener, MouseListener, MouseM
             JOptionPane.showMessageDialog(null, "Authors: Wiktoria Byra, Wojciech Pakulski", "Authors", JOptionPane.INFORMATION_MESSAGE);
         }
         else if(event == passItem) {
+            GameClient.gameClient.sendPass();
         }
     }
 

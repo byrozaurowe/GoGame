@@ -132,9 +132,10 @@ public class GameServer {
         gameHandler = new GameHandler(boardSize);
         gameIsFinished = false;
         while (gameIsFinished == false) {
-            listenPlayer(dataInPlayer1);
-            sendToPlayers();
-            listenPlayer(dataInPlayer2);
+            if(whoseTurn == 1)
+                listenPlayer(dataInPlayer1);
+            else if(whoseTurn == 2)
+                listenPlayer(dataInPlayer2);
             sendToPlayers();
         }
     }

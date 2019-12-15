@@ -3,19 +3,22 @@
   <ID>JAVA</ID>
   <OriginalElement />
   <nodes>
-    <node x="119.0" y="213.0">go.GUI</node>
-    <node x="0.0" y="0.0">go.StoneChain</node>
-    <node x="0.0" y="142.0">go.Board</node>
-    <node x="163.0" y="0.0">go.GameClient</node>
+    <node x="163.0" y="71.0">go.StoneChain</node>
+    <node x="119.0" y="284.0">go.GUI</node>
+    <node x="127.0" y="213.0">go.Board</node>
+    <node x="0.0" y="142.0">go.GameClient</node>
+    <node x="0.0" y="0.0">go.GameHandler</node>
     <node x="0.0" y="71.0">go.GameServer</node>
-    <node x="163.0" y="71.0">go.Player</node>
-    <node x="127.0" y="142.0">go.Stone</node>
-    <node x="0.0" y="213.0">go.Menu</node>
+    <node x="163.0" y="142.0">go.Player</node>
+    <node x="0.0" y="213.0">go.Stone</node>
+    <node x="0.0" y="284.0">go.Menu</node>
   </nodes>
   <notes />
   <edges />
-  <settings layout="Hierarchic Group" zoom="1.0" x="118.5" y="205.0" />
-  <SelectedNodes />
+  <settings layout="Hierarchic Group" zoom="1.0" x="169.5" y="203.0" />
+  <SelectedNodes>
+    <node>go.StoneChain</node>
+  </SelectedNodes>
   <Categories />
   <SCOPE>All</SCOPE>
   <VISIBILITY>private</VISIBILITY>
