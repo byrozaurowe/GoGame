@@ -88,6 +88,7 @@ public class GameServer {
         String line;
         line = dataInPlayer1.readLine(); //informacje o rozmiarze planszy
         boardSize = Integer.parseInt(String.valueOf(line));
+        //System.out.println(boardSize);
         stoneLogicTable = new int[boardSize][boardSize];
     }
 

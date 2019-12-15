@@ -116,8 +116,7 @@ public class GUI extends JFrame implements ActionListener, MouseListener, MouseM
     }
 
     public void mouseReleased(MouseEvent mouseEvent) {
-        String toSent = board.releasedStone();
-        GameClient.gameClient.setMoveMsg(toSent);
+        msg = board.releasedStone();
     }
 
     public void mouseEntered(MouseEvent mouseEvent) {

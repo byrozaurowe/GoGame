@@ -37,6 +37,7 @@ public class GameClient implements Runnable{
                 while (moveMsg == null) {
                     moveMsg = gui.getMsg();
                 };
+                System.out.println(moveMsg);
                 dataOut.println(moveMsg);
                 try {
                     line = dataIn.readLine();
@@ -103,15 +104,6 @@ public class GameClient implements Runnable{
         Thread thread = new Thread(gameClient);
         thread.start();
 
-
-    }
-
-    void setMoveMsg (String moveMsg) {
-        this.moveMsg = moveMsg;
-    }
-
-    void sendCoordinates (String line) {
-        String[] coordinates = line.split(".");
 
     }
 
