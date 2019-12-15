@@ -34,7 +34,9 @@ public class GameClient implements Runnable{
             String line;
             if (isYourTurn) {
                 moveMsg = null;
-                while (moveMsg == null);
+                while (moveMsg == null) {
+                    System.out.println("Ojojoj");
+                };
                 dataOut.println(moveMsg);
                 try {
                     line = dataIn.readLine();
@@ -55,8 +57,9 @@ public class GameClient implements Runnable{
         }
     }
     private void readServerMsg (String line) {
-        if (line.charAt(0) != playerID)
+        if (line.charAt(0) == playerID)
             isYourTurn = true;
+        else isYourTurn = false;
         for (int i = 0; i < board.getSIZE(); i++) {
             for (int j = 0; j < board.getSIZE(); j++) {
                 if (Character.getNumericValue(line.charAt((i * board.getSIZE()) + j + 1)) == 0)
@@ -87,14 +90,15 @@ public class GameClient implements Runnable{
         } catch (IOException e) {
             e.printStackTrace();
         }
-        Thread thread = new Thread(gameClient);
-        thread.start();
         board = gui.getBoard();
         if (playerID == 1) {
             isYourTurn = true;
             dataOut.println(board.getSIZE());
         }
         else isYourTurn = false;
+        Thread thread = new Thread(gameClient);
+        thread.start();
+
 
     }
 
@@ -106,11 +110,6 @@ public class GameClient implements Runnable{
         String[] coordinates = line.split(".");
 
     }
-
-    /** Wyslij informacje na serwer
-     * @param msg informacja do serwera
-     * @return informacja zwrotna od serwera
-     */
 
     void sendPass() {
         if(isYourTurn) {
