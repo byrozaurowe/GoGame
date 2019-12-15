@@ -25,6 +25,7 @@ public class GUI extends JFrame implements ActionListener, MouseListener, MouseM
     /** Plansza */
     static Board board;
     private int boardSize;
+    String msg = null;
 
     /** Konstruktor maina
      * @param boardSize rozmiar planszy
@@ -35,6 +36,13 @@ public class GUI extends JFrame implements ActionListener, MouseListener, MouseM
     }
 
 
+    String getMsg() {
+        return msg;
+    }
+
+    void nullMsg() {
+        msg = null;
+    }
     /** Metoda actionPerformed */
     public void actionPerformed(ActionEvent actionEvent) {
         Object event = actionEvent.getSource();
@@ -44,7 +52,8 @@ public class GUI extends JFrame implements ActionListener, MouseListener, MouseM
             JOptionPane.showMessageDialog(null, "Authors: Wiktoria Byra, Wojciech Pakulski", "Authors", JOptionPane.INFORMATION_MESSAGE);
         }
         else if(event == passItem) {
-            GameClient.gameClient.setMoveMsg("pass");
+            msg = "pass";
+            //GameClient.gameClient.setMoveMsg("pass");
         }
     }
 

@@ -35,7 +35,7 @@ public class GameClient implements Runnable{
             if (isYourTurn) {
                 moveMsg = null;
                 while (moveMsg == null) {
-                    System.out.println("Ojojoj");
+                    moveMsg = gui.getMsg();
                 };
                 dataOut.println(moveMsg);
                 try {
@@ -57,8 +57,10 @@ public class GameClient implements Runnable{
         }
     }
     private void readServerMsg (String line) {
-        if (line.charAt(0) == playerID)
+        if (line.charAt(0) == playerID) {
             isYourTurn = true;
+            gui.nullMsg();
+        }
         else isYourTurn = false;
         for (int i = 0; i < board.getSIZE(); i++) {
             for (int j = 0; j < board.getSIZE(); j++) {
@@ -95,7 +97,9 @@ public class GameClient implements Runnable{
             isYourTurn = true;
             dataOut.println(board.getSIZE());
         }
-        else isYourTurn = false;
+        else {
+            isYourTurn = false;
+        }
         Thread thread = new Thread(gameClient);
         thread.start();
 
