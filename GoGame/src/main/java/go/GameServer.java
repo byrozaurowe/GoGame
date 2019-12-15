@@ -72,15 +72,6 @@ public class GameServer {
         }
     }
 
-    private void makeTurnInformationLine(String line) {
-        whoseTurn = Character.getNumericValue(line.charAt(0));
-        for (int i =0; i <boardSize; i++) {
-            for (int j=0; j<boardSize; j++) {
-                stoneLogicTable[i][j] = Character.getNumericValue(line.charAt((i*boardSize)+j+1));
-            }
-        }
-    }
-
     private void makeMoveInformationLine(String line) {
         String[] coordinates = line.split(".");
         moveX = Integer.parseInt(String.valueOf(coordinates[0]));

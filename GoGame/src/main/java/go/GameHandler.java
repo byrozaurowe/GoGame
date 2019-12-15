@@ -95,9 +95,18 @@ public class GameHandler {
                 for(Pair<Integer, Integer> pair: chain.stoneChain) {
                     stoneLogicTable[pair.getKey()][pair.getValue()] = 0;
                 }
-                //trzeba dodać odzyskane oddechy
                 stoneChainList.remove(chain);
+                chain.restoreLibertiesToNeighbours();
             }
         }
+    }
+
+    StoneChain findStonesChain(Pair<Integer, Integer> pair) {
+        for (StoneChain chain: stoneChainList) {
+            if (chain.contains(pair)) {
+                return chain;
+            }
+        }
+        return null;
     }
 }
