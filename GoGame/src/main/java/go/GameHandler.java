@@ -1,7 +1,5 @@
 package go;
 
-import javafx.util.Pair;
-
 import java.util.ArrayList;
 
 public class GameHandler {
@@ -93,7 +91,7 @@ public class GameHandler {
     private void removeDead (ArrayList<StoneChain> stoneChainList) {
         for (StoneChain chain: stoneChainList) {
             if (chain.owner != whoseTurn && chain.liberties.isEmpty()) {
-                for(Pair<Integer, Integer> pair: chain.stoneChain) {
+                for(Pair pair: chain.stoneChain) {
                     stoneLogicTable[pair.getKey()][pair.getValue()] = 0;
                 }
                 stoneChainList.remove(chain);
@@ -102,7 +100,7 @@ public class GameHandler {
         }
     }
 
-    StoneChain findStonesChain(Pair<Integer, Integer> pair) {
+    StoneChain findStonesChain(Pair pair) {
         for (StoneChain chain: stoneChainList) {
             if (chain.contains(pair)) {
                 return chain;

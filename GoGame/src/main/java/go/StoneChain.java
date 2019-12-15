@@ -1,49 +1,48 @@
 package go;
-import javafx.util.Pair;
 import java.util.ArrayList;
 
 import static java.lang.Math.abs;
 
 public class StoneChain {
-    ArrayList<Pair<Integer, Integer>> stoneChain = new ArrayList<Pair<Integer, Integer>>();
-    ArrayList<Pair<Integer, Integer>> liberties = new ArrayList<Pair<Integer, Integer>>();
+    ArrayList<Pair> stoneChain = new ArrayList<Pair>();
+    ArrayList<Pair> liberties = new ArrayList<Pair>();
     int owner;
 
     public StoneChain (int owner, int x, int y) {
-        stoneChain.add(new Pair<Integer, Integer>(x, y));
+        stoneChain.add(new Pair(x, y));
         findLiberties(findNeighbours(x, y), liberties);
         this.owner = owner;
     }
 
-    ArrayList<Pair<Integer, Integer>> findNeighbours (int x, int y) {
-        ArrayList<Pair<Integer, Integer>> neighbours = new ArrayList<Pair<Integer, Integer>>();
+    ArrayList<Pair> findNeighbours (int x, int y) {
+        ArrayList<Pair> neighbours = new ArrayList<Pair>();
         if ((x-1) >= 0) {
-            neighbours.add(new Pair<Integer, Integer>(x-1, y));
+            neighbours.add(new Pair(x-1, y));
         }
         if ((y-1) >= 0 ) {
-            neighbours.add(new Pair<Integer, Integer>(x, y-1));
+            neighbours.add(new Pair(x, y-1));
         }
         if ((x+1) < GameServer.gameServer.gameHandler.boardSize ) {
-            neighbours.add(new Pair<Integer, Integer>(x+1, y));
+            neighbours.add(new Pair(x+1, y));
         }
         if ((y+1) < GameServer.gameServer.gameHandler.boardSize ) {
-            neighbours.add(new Pair<Integer, Integer>(x, y+1));
+            neighbours.add(new Pair(x, y+1));
         }
         return neighbours;
     }
 
-    void findLiberties(ArrayList<Pair<Integer, Integer>> neigbours, ArrayList<Pair<Integer, Integer>> liberties) {
-        for (Pair<Integer, Integer> pair: neigbours) {
+    void findLiberties(ArrayList<Pair> neigbours, ArrayList<Pair> liberties) {
+        for (Pair pair: neigbours) {
             if (GameServer.gameServer.gameHandler.stoneLogicTable[pair.getKey()][pair.getValue()] == 0) {
-                liberties.add(new Pair<Integer, Integer>(pair.getKey(), pair.getValue()));
+                liberties.add(new Pair(pair.getKey(), pair.getValue()));
             }
         }
     }
 
     boolean isPartOfThisChain(int x, int y) {
-        for (Pair<Integer, Integer> field: stoneChain) {
+        for (Pair field: stoneChain) {
             if ((field.getKey() == x && abs(field.getValue() - y) == 1) ||  (field.getValue() == y && abs(field.getKey() - x) == 1)) {
-                stoneChain.add(new Pair<Integer, Integer>(x, y));
+                stoneChain.add(new Pair(x, y));
                 findLiberties(findNeighbours(x, y), liberties);
                 removeLiberty(x, y);
                 return true;
@@ -53,7 +52,7 @@ public class StoneChain {
     }
 
     void removeLiberty (int x, int y) {
-        for (Pair<Integer, Integer> pair: liberties) {
+        for (Pair pair: liberties) {
             if (pair.getKey() == x && pair.getValue() == y) {
                 liberties.remove(pair);
             }
@@ -61,24 +60,24 @@ public class StoneChain {
     }
 
     void mergeChains(StoneChain toMerge) {
-        for (Pair<Integer, Integer> pair: toMerge.stoneChain) {
+        for (Pair pair: toMerge.stoneChain) {
             stoneChain.add(pair);
         }
-        for (Pair<Integer, Integer> pair: toMerge.liberties) {
+        for (Pair pair: toMerge.liberties) {
             liberties.add(pair);
         }
     }
 
     void restoreLibertiesToNeighbours() {
-        for (Pair<Integer, Integer> pair: stoneChain) {
-            for (Pair<Integer, Integer> neigbour: findNeighbours(pair.getKey(), pair.getValue())) {
-              findLiberties(findNeighbours(pair.getKey(), pair.getValue()), GameServer.gameServer.gameHandler.findStonesChain(neigbour).liberties);
+        for (Pair pair: stoneChain) {
+            for (Pair neighbour: findNeighbours(pair.getKey(), pair.getValue())) {
+              findLiberties(findNeighbours(pair.getKey(), pair.getValue()), GameServer.gameServer.gameHandler.findStonesChain(neighbour).liberties);
             }
         }
     }
 
-    boolean contains(Pair<Integer, Integer> checkPair) {
-        for (Pair<Integer, Integer> pair: stoneChain) {
+    boolean contains(Pair checkPair) {
+        for (Pair pair: stoneChain) {
             if (pair == checkPair) {
                 return true;
             }
