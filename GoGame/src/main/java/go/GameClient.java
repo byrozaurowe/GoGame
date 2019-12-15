@@ -31,30 +31,43 @@ public class GameClient implements Runnable{
     /** Gra */
     public void run() {
         while (true) {
+            String line;
             if (isYourTurn) {
+                moveMsg = null;
+                while (moveMsg == null);
+                dataOut.println(moveMsg);
                 try {
-                    String line = dataIn.readLine();
-                    if (line.charAt(0) != playerID)
-                        isYourTurn = true;
-                    for (int i = 0; i < board.getSIZE(); i++) {
-                        for (int j = 0; j < board.getSIZE(); j++) {
-                            if (Character.getNumericValue(line.charAt((i * board.getSIZE()) + j + 1)) == 0)
-                                board.getBoardTab()[i][j].setVisibility(Stone.Visibility.INVISIBLE);
-                            else if (Character.getNumericValue(line.charAt((i * board.getSIZE()) + j + 1)) == 1) {
-                                board.getBoardTab()[i][j].setVisibility(Stone.Visibility.VISIBLE);
-                                board.getBoardTab()[i][j].setPlayer("WHITE");
-                            } else if (Character.getNumericValue(line.charAt((i * board.getSIZE()) + j + 1)) == 2) {
-                                board.getBoardTab()[i][j].setVisibility(Stone.Visibility.VISIBLE);
-                                board.getBoardTab()[i][j].setPlayer("BLACK");
-                            }
-                        }
-                    }
+                    line = dataIn.readLine();
+                    readServerMsg(line);
                 } catch(IOException e){
                     e.printStackTrace();
                 }
             }
             else {
+                try {
+                    line = dataIn.readLine();
+                    readServerMsg(line);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
 
+            }
+        }
+    }
+    private void readServerMsg (String line) {
+        if (line.charAt(0) != playerID)
+            isYourTurn = true;
+        for (int i = 0; i < board.getSIZE(); i++) {
+            for (int j = 0; j < board.getSIZE(); j++) {
+                if (Character.getNumericValue(line.charAt((i * board.getSIZE()) + j + 1)) == 0)
+                    board.getBoardTab()[i][j].setVisibility(Stone.Visibility.INVISIBLE);
+                else if (Character.getNumericValue(line.charAt((i * board.getSIZE()) + j + 1)) == 1) {
+                    board.getBoardTab()[i][j].setVisibility(Stone.Visibility.VISIBLE);
+                    board.getBoardTab()[i][j].setPlayer("WHITE");
+                } else if (Character.getNumericValue(line.charAt((i * board.getSIZE()) + j + 1)) == 2) {
+                    board.getBoardTab()[i][j].setVisibility(Stone.Visibility.VISIBLE);
+                    board.getBoardTab()[i][j].setPlayer("BLACK");
+                }
             }
         }
     }
@@ -98,16 +111,6 @@ public class GameClient implements Runnable{
      * @param msg informacja do serwera
      * @return informacja zwrotna od serwera
      */
-    private String sendMessage(String msg) {
-        dataOut.println(msg);
-        String resp = null;
-        try {
-            resp = dataIn.readLine();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return resp;
-    }
 
     void sendPass() {
         if(isYourTurn) {
