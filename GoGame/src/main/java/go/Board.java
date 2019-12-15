@@ -12,7 +12,7 @@ public class Board extends JPanel{
     /** Ilosc pol nq planszy w pionie/poziomie */
 	static int SIZE;
 	/** Promien kamieni */
-	final static int STONERADIUS = 15;
+	static int STONERADIUS=15;
 	/** Rozmiar planszy w pixelach */
 	final double DIMX = 600, DIMY = 600;
 	final int MARGIN = 2*STONERADIUS;
@@ -27,6 +27,17 @@ public class Board extends JPanel{
 
 	/** Konstruktor planszy */
 	public Board(int size) {
+	    switch (size) {
+            case 9:
+                STONERADIUS = 25;
+                break;
+            case 13:
+                STONERADIUS = 20;
+                break;
+            case 19:
+                STONERADIUS = 15;
+                break;
+        }
 		SIZE = size;
 		setBackground(new Color(193,154,107));
 		this.setPreferredSize(new Dimension((int)DIMX+2*MARGIN, (int)DIMY+2*MARGIN));

@@ -3,7 +3,7 @@ package go;
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.util.Scanner;
+
 /** Serwer gry */
 public class GameServer {
     static GameServer gameServer;

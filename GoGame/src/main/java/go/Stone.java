@@ -1,17 +1,11 @@
 package go;
 
-import javax.swing.*;
 import java.awt.*;
 import java.awt.geom.Ellipse2D;
-import java.util.ArrayList;
-
-import static go.Board.STONERADIUS;
 
 /** Klasa kamien */
 public class Stone {
-
-	/** Lista sasiadow kamienia */
-	ArrayList<Stone> neighbour;
+	
 	/** Numer wiersza */
 	final int row;
 	/** Numer kolumny */
@@ -32,7 +26,7 @@ public class Stone {
 		this.column = column;
 		this.x = x;
 		this.y = y;
-		circle = new Ellipse2D.Double(x-STONERADIUS, y-STONERADIUS, STONERADIUS*2, STONERADIUS*2);
+		circle = new Ellipse2D.Double(x-Board.STONERADIUS, y-Board.STONERADIUS, Board.STONERADIUS*2, Board.STONERADIUS*2);
 	}
 
 	/** Status kamienia (widocznosc) */
@@ -66,7 +60,7 @@ public class Stone {
      * @param y wspolrzedna y myszy
      */
 	public boolean isInsideStone(double x, double y) {
-		if (((x-this.x)*(x-this.x))+((y-this.y)*(y-this.y)) <= STONERADIUS* STONERADIUS) return true;
+		if (((x-this.x)*(x-this.x))+((y-this.y)*(y-this.y)) <= Board.STONERADIUS* Board.STONERADIUS) return true;
 		else return false;
 	}
 	void setVisibility(Visibility visibility) {
