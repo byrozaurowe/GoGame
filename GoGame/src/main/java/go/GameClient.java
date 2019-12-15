@@ -20,6 +20,8 @@ public class GameClient implements Runnable{
     private boolean isYourTurn;
     Board board;
     static GUI gui;
+    String moveMsg;
+
 
     /** Konstruktor klienta */
     GameClient () {
@@ -83,8 +85,13 @@ public class GameClient implements Runnable{
 
     }
 
+    void setMoveMsg (String moveMsg) {
+        this.moveMsg = moveMsg;
+    }
+
     void sendCoordinates (String line) {
         String[] coordinates = line.split(".");
+
     }
 
     /** Wyslij informacje na serwer
