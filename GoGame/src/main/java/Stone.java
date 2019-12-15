@@ -1,5 +1,3 @@
-package go;
-
 import java.awt.*;
 import java.awt.geom.Ellipse2D;
 

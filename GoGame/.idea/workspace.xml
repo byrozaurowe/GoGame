@@ -2,10 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="23df1589-9a88-484b-b16c-0d131e237639" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/diagram.uml" beforeDir="false" afterPath="$PROJECT_DIR$/diagram.uml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/go/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/go/Board.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/go/GameServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/go/GameServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/go/Stone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/go/Stone.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/go/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/go/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/go/GameClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GameClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/go/GameHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GameHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/go/GameServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GameServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/go/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/go/Pair.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pair.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/go/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/go/Stone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Stone.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/go/StoneChain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/StoneChain.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,31 +82,22 @@
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\wojte\git\IntelliJ_TP\GoGame\src\main\resources" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
-  <component name="RunManager" selected="Application.GameServer">
+  <component name="RunManager" selected="Application.GameClient">
     <configuration name="GUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="11.0.4" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="MAIN_CLASS_NAME" value="go.GUI" />
-      <module name="go" />
+      <option name="MAIN_CLASS_NAME" value="GUI" />
+      <module name="GoGame" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="go.*" />
+          <option name="PATTERN" value=".*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -108,11 +106,11 @@
       </method>
     </configuration>
     <configuration name="GameClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="go.GameClient" />
-      <module name="go" />
+      <option name="MAIN_CLASS_NAME" value="GameClient" />
+      <module name="GoGame" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="go.*" />
+          <option name="PATTERN" value=".*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -121,11 +119,11 @@
       </method>
     </configuration>
     <configuration name="GameServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="go.GameServer" />
+      <option name="MAIN_CLASS_NAME" value="GameServer" />
       <module name="GoGame" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="go.*" />
+          <option name="PATTERN" value=".*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -148,11 +146,23 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.GameServer" />
         <item itemvalue="Application.GameClient" />
+        <item itemvalue="Application.GameServer" />
         <item itemvalue="Application.GUI" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -318,6 +328,14 @@
       <screen x="67" y="27" width="1533" height="873" />
     </state>
     <state x="641" y="181" width="374" height="562" key="#com.intellij.ide.util.MemberChooser/67.27.1533.873@67.27.1533.873" timestamp="1575117922943" />
+    <state x="530" y="210" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1576418440000">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="530" y="210" key="#com.intellij.ide.util.PackageChooserDialog/0.0.1600.860@0.0.1600.860" timestamp="1576418440000" />
+    <state x="596" y="314" width="407" height="240" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1576418443062">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="596" y="314" width="407" height="240" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1600.860@0.0.1600.860" timestamp="1576418443062" />
     <state x="398" y="59" width="860" height="807" key="CommitChangelistDialog2" timestamp="1576346949533">
       <screen x="67" y="27" width="1533" height="873" />
     </state>
@@ -326,25 +344,25 @@
       <screen x="67" y="27" width="1533" height="873" />
     </state>
     <state x="455" y="206" width="735" height="513" key="FileChooserDialogImpl/67.27.1533.873@67.27.1533.873" timestamp="1576342696829" />
-    <state width="1557" height="250" key="GridCell.Tab.0.bottom" timestamp="1576418050720">
+    <state width="1557" height="250" key="GridCell.Tab.0.bottom" timestamp="1576418572852">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="250" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1576418050720" />
+    <state width="1557" height="250" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1576418572852" />
     <state width="1533" height="64" key="GridCell.Tab.0.bottom/67.27.1533.873@67.27.1533.873" timestamp="1575219571689" />
-    <state width="1557" height="250" key="GridCell.Tab.0.center" timestamp="1576418050720">
+    <state width="1557" height="250" key="GridCell.Tab.0.center" timestamp="1576418572852">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="250" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1576418050720" />
+    <state width="1557" height="250" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1576418572852" />
     <state width="1533" height="64" key="GridCell.Tab.0.center/67.27.1533.873@67.27.1533.873" timestamp="1575219571688" />
-    <state width="1557" height="250" key="GridCell.Tab.0.left" timestamp="1576418050720">
+    <state width="1557" height="250" key="GridCell.Tab.0.left" timestamp="1576418572852">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="250" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1576418050720" />
+    <state width="1557" height="250" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1576418572852" />
     <state width="1533" height="64" key="GridCell.Tab.0.left/67.27.1533.873@67.27.1533.873" timestamp="1575219571688" />
-    <state width="1557" height="250" key="GridCell.Tab.0.right" timestamp="1576418050720">
+    <state width="1557" height="250" key="GridCell.Tab.0.right" timestamp="1576418572852">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="250" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1576418050720" />
+    <state width="1557" height="250" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1576418572852" />
     <state width="1533" height="64" key="GridCell.Tab.0.right/67.27.1533.873@67.27.1533.873" timestamp="1575219571688" />
     <state width="1533" height="271" key="GridCell.Tab.1.bottom" timestamp="1575113983209">
       <screen x="67" y="27" width="1533" height="873" />
@@ -388,57 +406,57 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/go/GUI.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/GUI.java</url>
           <line>118</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/go/GameClient.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/GameClient.java</url>
           <line>60</line>
           <option name="timeStamp" value="12" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/go/GameClient.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/GameClient.java</url>
           <line>61</line>
           <option name="timeStamp" value="13" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/go/GameClient.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/GameClient.java</url>
           <line>62</line>
           <option name="timeStamp" value="14" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/go/GameClient.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/GameClient.java</url>
           <line>64</line>
           <option name="timeStamp" value="16" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/go/GameClient.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/GameClient.java</url>
           <line>63</line>
           <option name="timeStamp" value="17" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/go/GameClient.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/GameClient.java</url>
           <line>35</line>
           <option name="timeStamp" value="24" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/go/GameClient.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/GameClient.java</url>
           <line>36</line>
           <option name="timeStamp" value="25" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/go/GameClient.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/GameClient.java</url>
           <line>37</line>
           <option name="timeStamp" value="26" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/go/GameClient.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/GameClient.java</url>
           <line>39</line>
           <option name="timeStamp" value="30" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/go/GameClient.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/GameClient.java</url>
           <line>40</line>
           <option name="timeStamp" value="31" />
         </line-breakpoint>

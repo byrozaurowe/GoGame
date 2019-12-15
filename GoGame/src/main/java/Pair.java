@@ -1,5 +1,3 @@
-package go;
-
 public class Pair {
     Integer x;
     Integer y;

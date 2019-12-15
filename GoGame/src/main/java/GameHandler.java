@@ -1,5 +1,3 @@
-package go;
-
 import java.util.ArrayList;
 
 public class GameHandler {

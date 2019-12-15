@@ -1,4 +1,3 @@
-package go;
 import java.util.ArrayList;
 
 import static java.lang.Math.abs;
