@@ -65,7 +65,7 @@ public class Board extends JPanel{
 			for (int j=0; j<SIZE; j++) {
 				if (boardTab[i][j].circle.contains(event.getPoint()) && boardTab[i][j].visibility == Stone.Visibility.INVISIBLE) {
 					lastMovedField = boardTab[i][j];
-					boardTab[i][j].visibility= Stone.Visibility.HALFVISIBLE;
+					//boardTab[i][j].visibility= Stone.Visibility.HALFVISIBLE;
 				}
 			}
 		}
@@ -73,6 +73,7 @@ public class Board extends JPanel{
 	}
 
 	/** Podswietlanie kamieni podczas ruszania mysza
+	 *
      * @param event ruch myszki
      * */
 	public void draggedStone(MouseEvent event) {
@@ -80,9 +81,9 @@ public class Board extends JPanel{
 			for (int j=0; j<SIZE; j++) {
 				if (boardTab[i][j].circle.contains(event.getPoint()) && boardTab[i][j].visibility == Stone.Visibility.INVISIBLE) {
 				    if(lastMovedField != null) {
-                        lastMovedField.visibility = Stone.Visibility.INVISIBLE;
+                        //lastMovedField.visibility = Stone.Visibility.INVISIBLE;
                         lastMovedField = boardTab[i][j];
-                        boardTab[i][j].visibility = Stone.Visibility.HALFVISIBLE;
+                        //boardTab[i][j].visibility = Stone.Visibility.HALFVISIBLE;
                     }
 				}
 
@@ -93,10 +94,6 @@ public class Board extends JPanel{
 
     /** Utworzenie kamienia przy puszczeniu myszki */
 	public String releasedStone() {
-	    if(lastMovedField != null) {
-	        lastMovedField.setPlayer(Player.BLACK);
-	    }
-		repaint();
 	    String line = lastMovedField.column + "." + lastMovedField.row;
 		lastMovedField = null;
 		return line;
