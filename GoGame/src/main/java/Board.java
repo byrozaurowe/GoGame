@@ -97,10 +97,9 @@ public class Board extends JPanel{
 			for (int j=0; j<SIZE; j++) {
 				if (boardTab[i][j].circle.contains(event.getPoint())) {
 				    if(lastMovedField != null) {
-				    	Stone save = lastMovedField;
-						lastMovedField = boardTab[i][j];
-                        if ((GameClient.gameClient.isYourTurn) && (lastMovedField.visibility == Stone.Visibility.INVISIBLE) && (!GameClient.gameClient.gameIsFinished)) {
-							save.visibility = Stone.Visibility.INVISIBLE;
+						if ((GameClient.gameClient.isYourTurn) && (!GameClient.gameClient.gameIsFinished) && boardTab[i][j].visibility == Stone.Visibility.INVISIBLE) {
+							lastMovedField.visibility = Stone.Visibility.INVISIBLE;
+							lastMovedField = boardTab[i][j];
 							lastMovedField.visibility = Stone.Visibility.HALFVISIBLE;
 						}
                     }
@@ -114,7 +113,7 @@ public class Board extends JPanel{
     /** Utworzenie kamienia przy puszczeniu myszki */
 	String releasedStone() {
 	    if (lastMovedField != null) {
-            lastMovedField.visibility = Stone.Visibility.INVISIBLE;
+	    	lastMovedField.visibility = Stone.Visibility.INVISIBLE;
             String line = lastMovedField.row + " " + lastMovedField.column;
             lastMovedField = null;
             return line;
