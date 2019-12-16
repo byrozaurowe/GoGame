@@ -17,17 +17,21 @@ public class GameServer {
     private BufferedReader dataInPlayer2;
     /** Wysylanie info do gracza 2 */
     private PrintWriter dataOutPlayer2;
-
+    /** Obiekt zajmujacy sie logika */
     GameHandler gameHandler;
-
-    int whoseTurn = 1;
-    int[][] stoneLogicTable;
-    int boardSize;
-    int moveX, moveY;
-    boolean gameIsFinished = true;
+    /** Czyja tura- warosci 1/2 */
+    private int whoseTurn = 1;
+    /** Tablica ze stanem planszy */
+    private int[][] stoneLogicTable;
+    /** Rozmiar planszy */
+    private int boardSize;
+    /** Wspolrzedna x i y ruchu */
+    private int moveX, moveY;
+    /** Czy gra jest skończona */
+    private boolean gameIsFinished = true;
 
     /** Konstruktor serwera */
-    public GameServer() {
+    private GameServer() {
         System.out.println("----Game Server----");
         numPlayers = 0;
         try {
@@ -38,8 +42,7 @@ public class GameServer {
         }
     }
 
-    /** Wyslij wiadomosc do obu graczy
-     * */
+    /** Wyslij wiadomosc do obu graczy */
     private void sendToPlayers () {
         System.out.println("czyja tura po ruchu" + whoseTurn);
         String msg = Integer.toString(whoseTurn);
@@ -53,22 +56,27 @@ public class GameServer {
         dataOutPlayer2.println(msg);
     }
 
-    /** Sluchanie socketa gracza 1 */
+    /** Sluchanie socketa gracza
+     * @param dataInPlayer obiekt do nasluchiwania odpowiedniego gracza
+     * */
     private void listenPlayer (BufferedReader dataInPlayer) {
-        String line = "";
+        String line;
         try {
             line = dataInPlayer.readLine();
-            if (line == "pass") {
+            if (line.equals("pass")) {
                 passTurn();
             }
             else {
                 makeMoveInformationLine(line);
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("Player left the game");
         }
     }
 
+    /** Metoda odpowiadajaca za ruch graczy
+     * @param line koordynaty ruchu gracza
+     * */
     private void makeMoveInformationLine(String line) {
         String[] coordinates = line.split(" ");
         moveX = Integer.parseInt(coordinates[0]);
@@ -78,20 +86,24 @@ public class GameServer {
         System.out.println(whoseTurn);
     }
 
+    /** Metoda wykonujaca sie jak klient spasuje */
     private void passTurn() {
         if (whoseTurn == 1) whoseTurn = 2;
         else whoseTurn = 1;
     }
 
+    /** Ustawia roziar planszy i inicjalizuje tablice ze stanem planszy */
     private void setBoardSize() throws IOException {
         String line;
         line = dataInPlayer1.readLine(); //informacje o rozmiarze planszy
         boardSize = Integer.parseInt(String.valueOf(line));
-        //System.out.println(boardSize);
         stoneLogicTable = new int[boardSize][boardSize];
     }
 
-    public void setTable(int[][] table) {
+    /** Ustaw tablice ze stanem plaszy
+     * @param table stan planszy po stronie serwera
+     */
+    void setTable(int[][] table) {
         stoneLogicTable = table;
     }
 
@@ -128,15 +140,15 @@ public class GameServer {
         if (numPlayers == 2) System.out.println("Now we have two players");
     }
 
+    /** Metoda trwajaca cala gre, ustawia kiedy nasluchiwac, a kiedy wysylac*/
     private void play() {
         gameHandler = new GameHandler(boardSize);
         gameIsFinished = false;
         System.out.println("Board Size" + boardSize);
-        while (gameIsFinished == false) {
+        while (!gameIsFinished) {
             if(whoseTurn == 1)
                 listenPlayer(dataInPlayer1);
             else if(whoseTurn == 2) {
-                //System.out.println("nie tu");
                 listenPlayer(dataInPlayer2);
             }
 
@@ -144,7 +156,7 @@ public class GameServer {
         }
     }
     /** Main
-     * @param args
+     * @param args pusto
      * */
     public static void main(String[] args) {
         gameServer = new GameServer();

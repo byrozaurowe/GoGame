@@ -21,26 +21,29 @@ public class GUI extends JFrame implements ActionListener, MouseListener, MouseM
     /** Informacja o autorach */
     private JMenuItem authorsItem;
     /** Plansza */
-    static Board board;
-    private int boardSize;
-    String msg = null;
+    private static Board board;
+    /** Wiadomosc do serwera */
+    private String msg = null;
 
     /** Konstruktor maina
      * @param boardSize rozmiar planszy
      * */
     GUI(int boardSize) {
-        this.boardSize = boardSize;
         gameInitialize(boardSize);
     }
 
-
+    /** Zwroc msg
+     * @return wiadomosc do serwera
+     */
     String getMsg() {
         return msg;
     }
 
+    /** Ustaw msg na null */
     void nullMsg() {
         msg = null;
     }
+
     /** Metoda actionPerformed */
     public void actionPerformed(ActionEvent actionEvent) {
         Object event = actionEvent.getSource();
@@ -96,41 +99,40 @@ public class GUI extends JFrame implements ActionListener, MouseListener, MouseM
 
         pack();
     }
-
-    private int getBoardSize () {
-        return boardSize;
-    }
-
+    /** Zwroc obiekt plansza
+     * @return plansza
+     * */
     Board getBoard () {
         return board;
     }
+
+    /** Implementowana funkcja mouse listenera */
     @Override
     public void mouseClicked(MouseEvent mouseEvent) {
         //board.clickedOnStone(mouseEvent.getX(), mouseEvent.getY());
     }
+    /** Implementowana funkcja mouse listenera */
     @Override
     public void mousePressed(MouseEvent mouseEvent) {
        board.enteredStone(mouseEvent);
-
     }
+    /** Implementowana funkcja mouse listenera */
     @Override
     public void mouseReleased(MouseEvent mouseEvent) {
         msg = board.releasedStone();
     }
-    @Override
-    public void mouseEntered(MouseEvent mouseEvent) {
-
-    }
-    @Override
-    public void mouseExited(MouseEvent mouseEvent) {
-
-    }
+    /** Implementowana funkcja mouse listenera */
     @Override
     public void mouseDragged(MouseEvent mouseEvent) {
         board.draggedStone(mouseEvent);
     }
+    /** Implementowana funkcja mouse listenera */
     @Override
-    public void mouseMoved(MouseEvent mouseEvent) {
-
-    }
+    public void mouseEntered(MouseEvent mouseEvent) {}
+    /** Implementowana funkcja mouse listenera */
+    @Override
+    public void mouseExited(MouseEvent mouseEvent) {}
+    /** Implementowana funkcja mouse listenera */
+    @Override
+    public void mouseMoved(MouseEvent mouseEvent) {}
 }

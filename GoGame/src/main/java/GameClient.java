@@ -3,9 +3,9 @@ import java.net.Socket;
 import java.net.UnknownHostException;
 
 /** Klient gry */
-public class GameClient implements Runnable{
+public class GameClient implements Runnable {
 
-    Menu menu;
+    private Menu menu;
     /** Id gracza */
     private int playerID;
     /** Socket klienta */
@@ -16,13 +16,13 @@ public class GameClient implements Runnable{
     private PrintWriter dataOut;
     static GameClient gameClient;
     private boolean isYourTurn;
-    Board board;
+    private Board board;
     static GUI gui;
-    String moveMsg;
+    private String moveMsg;
 
 
     /** Konstruktor klienta */
-    GameClient () {
+    private GameClient() {
         menu = new Menu();
     }
 
@@ -55,6 +55,10 @@ public class GameClient implements Runnable{
             }
         }
     }
+
+    /** Odczytuje informajce z serwera
+     * @param line informacja z serwera
+     * */
     private void readServerMsg (String line) {
         if (line.charAt(0)- 48 == playerID ) {
             isYourTurn = true;
@@ -77,7 +81,8 @@ public class GameClient implements Runnable{
         gui.repaint();
     }
 
-    public void connectClient() {
+    /** Podlacza klienta do serwera */
+    void connectClient() {
         System.out.println("-----Client----");
         try {
             socket = new Socket("localhost", 4444);
@@ -102,8 +107,6 @@ public class GameClient implements Runnable{
         }
         Thread thread = new Thread(gameClient);
         thread.start();
-
-
     }
 
     void sendPass() {
@@ -115,16 +118,14 @@ public class GameClient implements Runnable{
     }
 
     /** Main
-     * @param args
+     * @param args puste
      */
     public static void main(String[] args) {
         gameClient = new GameClient();
     }
 
-
-
-    /** Zamknij socket */
-    private void close () {
+    /** Zamyka socket */
+     void close () {
         try {
             dataIn.close();
             dataOut.close();
@@ -133,5 +134,4 @@ public class GameClient implements Runnable{
             ex.printStackTrace();
         }
     }
-
 }

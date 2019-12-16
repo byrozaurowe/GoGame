@@ -9,23 +9,26 @@ import java.awt.geom.Point2D;
 public class Board extends JPanel{
 
     /** Ilosc pol nq planszy w pionie/poziomie */
-	static int SIZE;
+	private static int SIZE;
 	/** Promien kamieni */
 	static int STONERADIUS=15;
 	/** Rozmiar planszy w pixelach */
-	final double DIMX = 600, DIMY = 600;
-	final int MARGIN = 2*STONERADIUS;
+	private final double DIMX = 600, DIMY = 600;
+	private final int MARGIN;
 	/** Tablica z kamieniami na planszy */
-	static Stone[][] boardTab;
+	private static Stone[][] boardTab;
 	/** Ostatni tymczasowy kamień */
-	Stone lastMovedField;
+	private Stone lastMovedField;
 
+	/** Zwroc tablice ze stanem planszy
+	 * @return stan planszy
+	 */
 	Stone[][] getBoardTab() {
         return boardTab;
     }
 
 	/** Konstruktor planszy */
-	public Board(int size) {
+	Board(int size) {
 	    switch (size) {
             case 9:
                 STONERADIUS = 25;
@@ -37,6 +40,7 @@ public class Board extends JPanel{
                 STONERADIUS = 15;
                 break;
         }
+        MARGIN = 2*STONERADIUS;
 		SIZE = size;
 		setBackground(new Color(193,154,107));
 		this.setPreferredSize(new Dimension((int)DIMX+2*MARGIN, (int)DIMY+2*MARGIN));
@@ -53,7 +57,7 @@ public class Board extends JPanel{
 	    return SIZE;
     }
 	/** Metoda klikniecie na kamien
-     * @parm x wspolrzedna x w kliknietym miejsu
+     * @param x wspolrzedna x w kliknietym miejsu
      * @param y wspolrzedna y w kliknietym miejscu
      * */
 	public void clickedOnStone(double x, double y) {
@@ -70,7 +74,7 @@ public class Board extends JPanel{
 	/** Podświetlanie najechanych pól
      * @param event ruch myszki
      * */
-	public void enteredStone(MouseEvent event) {
+	void enteredStone(MouseEvent event) {
 		for (int i=0; i<SIZE; i++) {
 			for (int j=0; j<SIZE; j++) {
 				if (boardTab[i][j].circle.contains(event.getPoint())) {//&& boardTab[i][j].visibility == Stone.Visibility.INVISIBLE) {
@@ -86,10 +90,10 @@ public class Board extends JPanel{
 	 *
      * @param event ruch myszki
      * */
-	public void draggedStone(MouseEvent event) {
+	void draggedStone(MouseEvent event) {
 		for (int i=0; i<SIZE; i++) {
 			for (int j=0; j<SIZE; j++) {
-				if (boardTab[i][j].circle.contains(event.getPoint())){// && boardTab[i][j].visibility == Stone.Visibility.INVISIBLE) {
+				if (boardTab[i][j].circle.contains(event.getPoint())) {// && boardTab[i][j].visibility == Stone.Visibility.INVISIBLE) {
 				    if(lastMovedField != null) {
                         //lastMovedField.visibility = Stone.Visibility.INVISIBLE;
                         lastMovedField = boardTab[i][j];
@@ -103,7 +107,7 @@ public class Board extends JPanel{
 	}
 
     /** Utworzenie kamienia przy puszczeniu myszki */
-	public String releasedStone() {
+	String releasedStone() {
 	    String line = lastMovedField.row + " " + lastMovedField.column;
 		lastMovedField = null;
 		return line;

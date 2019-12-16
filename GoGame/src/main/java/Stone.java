@@ -2,19 +2,21 @@ import java.awt.*;
 import java.awt.geom.Ellipse2D;
 
 /** Klasa kamien */
-public class Stone {
+class Stone {
 	
 	/** Numer wiersza */
 	final int row;
 	/** Numer kolumny */
 	final int column;
 	/** Kolor kamienia */
-	Player player;
-	/** współrzędne kamienia */
+	private Player player;
+	/** Wspolrzedna x kamienia */
 	final double x;
+	/** Wspolrzedna y kamienia */
 	final double y;
 	/** Widoczność kamienia */
 	Visibility visibility = Visibility.INVISIBLE;
+	/** Kolo */
 	Ellipse2D circle;
 
 	/** Konstruktor kamienia */
@@ -33,20 +35,21 @@ public class Stone {
 	}
 
 	/** Przypisuje gracza kamieniowi */
-	public void setPlayer(Player player) {
+	void setPlayer(Player player) {
 		this.player = player;
 		visibility = Visibility.VISIBLE;
     }
 
-    public void setPlayer(String player) {
-		if(player == "WHITE")
+    /** Ustaw kolor playera na podstawie stringa */
+	void setPlayer(String player) {
+		if(player.equals("WHITE"))
 			setPlayer(Player.WHITE);
-		else if(player == "BLACK")
+		else if(player.equals("BLACK"))
 			setPlayer(Player.BLACK);
 	}
 
     /** Ustawienie koloru kamieniowi */
-	public Color stoneColor() {
+	Color stoneColor() {
 		if (player == Player.BLACK) return Color.BLACK;
 		if (player == Player.WHITE) return Color.WHITE;
 		if (visibility == Visibility.HALFVISIBLE) return Color.DARK_GRAY;
@@ -57,10 +60,11 @@ public class Stone {
      * @param x wspolrzedna x myszy
      * @param y wspolrzedna y myszy
      */
-	public boolean isInsideStone(double x, double y) {
-		if (((x-this.x)*(x-this.x))+((y-this.y)*(y-this.y)) <= Board.STONERADIUS* Board.STONERADIUS) return true;
-		else return false;
+	boolean isInsideStone(double x, double y) {
+		return ((x - this.x) * (x - this.x)) + ((y - this.y) * (y - this.y)) <= Board.STONERADIUS * Board.STONERADIUS;
 	}
+
+	/** Ustaw widocznosc */
 	void setVisibility(Visibility visibility) {
 		this.visibility = visibility;
 	}
