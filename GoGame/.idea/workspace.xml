@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="23df1589-9a88-484b-b16c-0d131e237639" name="Default Changelist" comment="">
+    <list default="true" id="23df1589-9a88-484b-b16c-0d131e237639" name="Default Changelist" comment="Zmniejszenie sprzężenia miedzy klasami zwiazanymi z klientem">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Visibility.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/diagram.uml" beforeDir="false" afterPath="$PROJECT_DIR$/diagram.uml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Board.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/GameClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GameClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GameServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GameServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Stone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Stone.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +38,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -68,7 +75,7 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.20483871" />
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
@@ -93,7 +100,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.GameClient">
+  <component name="RunManager" selected="Application.GameServer">
     <configuration name="GUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="11.0.4" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -124,7 +131,7 @@
     </configuration>
     <configuration name="GameServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="GameServer" />
-      <module name="GoGame" />
+      <module name="go" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value=".*" />
@@ -288,7 +295,21 @@
       <option name="project" value="LOCAL" />
       <updated>1576511463843</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="przeskakiwanie nad postawionymi kamieniami">
+      <created>1576517639983</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1576517639983</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Etykieta z tura u graczy; Brak bledu przy laczeniu sie gracza przy wylaczonym serwerze; Oczekiwanie na dolaczenie przeciwnika; Ustawienie rozmiaru planszy, w zaleznosci od wyboru gracza nr 1, u obu graczy">
+      <created>1576525761956</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1576525761961</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -324,7 +345,10 @@
     <MESSAGE value="koniec gry po dwoch spasowaniach i jeszcze nie dzialajace pytanie o wzowienie gry, player id jako nazwa okna gry" />
     <MESSAGE value="podwojne pasowanie i zapytanie o wznowienie gry juz dziala!" />
     <MESSAGE value="naprawienie errorow przy koncu gry" />
-    <option name="LAST_COMMIT_MESSAGE" value="naprawienie errorow przy koncu gry" />
+    <MESSAGE value="przeskakiwanie nad postawionymi kamieniami" />
+    <MESSAGE value="Etykieta z tura u graczy; Brak bledu przy laczeniu sie gracza przy wylaczonym serwerze; Oczekiwanie na dolaczenie przeciwnika; Ustawienie rozmiaru planszy, w zaleznosci od wyboru gracza nr 1, u obu graczy" />
+    <MESSAGE value="Zmniejszenie sprzężenia miedzy klasami zwiazanymi z klientem" />
+    <option name="LAST_COMMIT_MESSAGE" value="Zmniejszenie sprzężenia miedzy klasami zwiazanymi z klientem" />
   </component>
   <component name="WindowStateProjectService">
     <state x="517" y="88" key="#GameClient" timestamp="1576479721356">
@@ -339,15 +363,15 @@
       <screen x="67" y="27" width="1533" height="873" />
     </state>
     <state x="493" y="104" width="671" height="717" key="#Main/67.27.1533.873@67.27.1533.873" timestamp="1575055351978" />
-    <state x="377" y="96" width="800" height="677" key="#Project_Structure" timestamp="1576479576350">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state x="377" y="96" key="#Project_Structure/0.0.1600.860@0.0.1600.860" timestamp="1576479576350" />
-    <state x="428" y="124" width="800" height="677" key="#Project_Structure/67.27.1533.873@67.27.1533.873" timestamp="1575055282711" />
-    <state x="291" y="120" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1575214646217">
+    <state x="428" y="124" width="847" height="677" key="#Project_Structure" timestamp="1576514172556">
       <screen x="67" y="27" width="1533" height="873" />
     </state>
-    <state x="291" y="120" key="#com.intellij.execution.impl.EditConfigurationsDialog/67.27.1533.873@67.27.1533.873" timestamp="1575214646217" />
+    <state x="377" y="96" key="#Project_Structure/0.0.1600.860@0.0.1600.860" timestamp="1576479576350" />
+    <state x="428" y="124" width="847" height="677" key="#Project_Structure/67.27.1533.873@67.27.1533.873" timestamp="1576514172556" />
+    <state x="291" y="120" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1576515828542">
+      <screen x="67" y="27" width="1533" height="873" />
+    </state>
+    <state x="291" y="120" key="#com.intellij.execution.impl.EditConfigurationsDialog/67.27.1533.873@67.27.1533.873" timestamp="1576515828542" />
     <state x="641" y="181" width="374" height="562" key="#com.intellij.ide.util.MemberChooser" timestamp="1575117922943">
       <screen x="67" y="27" width="1533" height="873" />
     </state>
@@ -368,62 +392,62 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="677" y="132" key="#xdebugger.evaluate/0.0.1600.860@0.0.1600.860" timestamp="1576484977844" />
-    <state x="398" y="59" width="860" height="807" key="CommitChangelistDialog2" timestamp="1576346949533">
+    <state x="398" y="59" width="860" height="807" key="CommitChangelistDialog2" timestamp="1576517639724">
       <screen x="67" y="27" width="1533" height="873" />
     </state>
-    <state x="398" y="59" width="860" height="807" key="CommitChangelistDialog2/67.27.1533.873@67.27.1533.873" timestamp="1576346949533" />
+    <state x="398" y="59" width="860" height="807" key="CommitChangelistDialog2/67.27.1533.873@67.27.1533.873" timestamp="1576517639724" />
     <state x="455" y="206" width="735" height="513" key="FileChooserDialogImpl" timestamp="1576342696829">
       <screen x="67" y="27" width="1533" height="873" />
     </state>
     <state x="455" y="206" width="735" height="513" key="FileChooserDialogImpl/67.27.1533.873@67.27.1533.873" timestamp="1576342696829" />
-    <state width="1557" height="276" key="GridCell.Tab.0.bottom" timestamp="1576485274597">
-      <screen x="0" y="0" width="1600" height="860" />
+    <state width="1487" height="261" key="GridCell.Tab.0.bottom" timestamp="1576518696794">
+      <screen x="67" y="27" width="1533" height="873" />
     </state>
     <state width="1557" height="276" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1576485274597" />
-    <state width="1533" height="64" key="GridCell.Tab.0.bottom/67.27.1533.873@67.27.1533.873" timestamp="1575219571689" />
-    <state width="1557" height="276" key="GridCell.Tab.0.center" timestamp="1576485274597">
-      <screen x="0" y="0" width="1600" height="860" />
+    <state width="1487" height="261" key="GridCell.Tab.0.bottom/67.27.1533.873@67.27.1533.873" timestamp="1576518696794" />
+    <state width="1487" height="261" key="GridCell.Tab.0.center" timestamp="1576518696794">
+      <screen x="67" y="27" width="1533" height="873" />
     </state>
     <state width="1557" height="276" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1576485274597" />
-    <state width="1533" height="64" key="GridCell.Tab.0.center/67.27.1533.873@67.27.1533.873" timestamp="1575219571688" />
-    <state width="1557" height="276" key="GridCell.Tab.0.left" timestamp="1576485274597">
-      <screen x="0" y="0" width="1600" height="860" />
+    <state width="1487" height="261" key="GridCell.Tab.0.center/67.27.1533.873@67.27.1533.873" timestamp="1576518696794" />
+    <state width="1487" height="261" key="GridCell.Tab.0.left" timestamp="1576518696794">
+      <screen x="67" y="27" width="1533" height="873" />
     </state>
     <state width="1557" height="276" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1576485274597" />
-    <state width="1533" height="64" key="GridCell.Tab.0.left/67.27.1533.873@67.27.1533.873" timestamp="1575219571688" />
-    <state width="1557" height="276" key="GridCell.Tab.0.right" timestamp="1576485274597">
-      <screen x="0" y="0" width="1600" height="860" />
+    <state width="1487" height="261" key="GridCell.Tab.0.left/67.27.1533.873@67.27.1533.873" timestamp="1576518696794" />
+    <state width="1487" height="261" key="GridCell.Tab.0.right" timestamp="1576518696794">
+      <screen x="67" y="27" width="1533" height="873" />
     </state>
     <state width="1557" height="276" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1576485274597" />
-    <state width="1533" height="64" key="GridCell.Tab.0.right/67.27.1533.873@67.27.1533.873" timestamp="1575219571688" />
-    <state width="1557" height="276" key="GridCell.Tab.1.bottom" timestamp="1576485310910">
-      <screen x="0" y="0" width="1600" height="860" />
+    <state width="1487" height="261" key="GridCell.Tab.0.right/67.27.1533.873@67.27.1533.873" timestamp="1576518696794" />
+    <state width="1487" height="261" key="GridCell.Tab.1.bottom" timestamp="1576518380941">
+      <screen x="67" y="27" width="1533" height="873" />
     </state>
     <state width="1557" height="276" key="GridCell.Tab.1.bottom/0.0.1600.860@0.0.1600.860" timestamp="1576485310910" />
-    <state width="1533" height="271" key="GridCell.Tab.1.bottom/67.27.1533.873@67.27.1533.873" timestamp="1575113983209" />
-    <state width="1557" height="276" key="GridCell.Tab.1.center" timestamp="1576485310910">
-      <screen x="0" y="0" width="1600" height="860" />
+    <state width="1487" height="261" key="GridCell.Tab.1.bottom/67.27.1533.873@67.27.1533.873" timestamp="1576518380941" />
+    <state width="1487" height="261" key="GridCell.Tab.1.center" timestamp="1576518380941">
+      <screen x="67" y="27" width="1533" height="873" />
     </state>
     <state width="1557" height="276" key="GridCell.Tab.1.center/0.0.1600.860@0.0.1600.860" timestamp="1576485310910" />
-    <state width="1533" height="271" key="GridCell.Tab.1.center/67.27.1533.873@67.27.1533.873" timestamp="1575113983208" />
-    <state width="1557" height="276" key="GridCell.Tab.1.left" timestamp="1576485310910">
-      <screen x="0" y="0" width="1600" height="860" />
+    <state width="1487" height="261" key="GridCell.Tab.1.center/67.27.1533.873@67.27.1533.873" timestamp="1576518380941" />
+    <state width="1487" height="261" key="GridCell.Tab.1.left" timestamp="1576518380941">
+      <screen x="67" y="27" width="1533" height="873" />
     </state>
     <state width="1557" height="276" key="GridCell.Tab.1.left/0.0.1600.860@0.0.1600.860" timestamp="1576485310910" />
-    <state width="1533" height="271" key="GridCell.Tab.1.left/67.27.1533.873@67.27.1533.873" timestamp="1575113983208" />
-    <state width="1557" height="276" key="GridCell.Tab.1.right" timestamp="1576485310910">
-      <screen x="0" y="0" width="1600" height="860" />
+    <state width="1487" height="261" key="GridCell.Tab.1.left/67.27.1533.873@67.27.1533.873" timestamp="1576518380941" />
+    <state width="1487" height="261" key="GridCell.Tab.1.right" timestamp="1576518380941">
+      <screen x="67" y="27" width="1533" height="873" />
     </state>
     <state width="1557" height="276" key="GridCell.Tab.1.right/0.0.1600.860@0.0.1600.860" timestamp="1576485310910" />
-    <state width="1533" height="271" key="GridCell.Tab.1.right/67.27.1533.873@67.27.1533.873" timestamp="1575113983208" />
+    <state width="1487" height="261" key="GridCell.Tab.1.right/67.27.1533.873@67.27.1533.873" timestamp="1576518380941" />
     <state x="366" y="120" width="924" height="684" key="Maven.ArtifactSearchDialog" timestamp="1576342588084">
       <screen x="67" y="27" width="1533" height="873" />
     </state>
     <state x="366" y="120" width="924" height="684" key="Maven.ArtifactSearchDialog/67.27.1533.873@67.27.1533.873" timestamp="1576342588084" />
-    <state x="316" y="40" width="1024" height="845" key="SettingsEditor" timestamp="1576342704978">
+    <state x="316" y="40" width="1024" height="845" key="SettingsEditor" timestamp="1576515811969">
       <screen x="67" y="27" width="1533" height="873" />
     </state>
-    <state x="316" y="40" width="1024" height="845" key="SettingsEditor/67.27.1533.873@67.27.1533.873" timestamp="1576342704978" />
+    <state x="316" y="40" width="1024" height="845" key="SettingsEditor/67.27.1533.873@67.27.1533.873" timestamp="1576515811969" />
     <state x="428" y="198" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1576346966231">
       <screen x="67" y="27" width="1533" height="873" />
     </state>
@@ -442,14 +466,19 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/StoneChain.java</url>
-          <line>82</line>
-          <option name="timeStamp" value="34" />
+          <url>file://$PROJECT_DIR$/src/main/java/Board.java</url>
+          <line>174</line>
+          <option name="timeStamp" value="72" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/GameHandler.java</url>
-          <line>133</line>
-          <option name="timeStamp" value="35" />
+          <url>file://$PROJECT_DIR$/src/main/java/GameServer.java</url>
+          <line>184</line>
+          <option name="timeStamp" value="95" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/GameServer.java</url>
+          <line>183</line>
+          <option name="timeStamp" value="96" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

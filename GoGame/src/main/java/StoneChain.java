@@ -79,8 +79,12 @@ public class StoneChain {
 
     void restoreLibertiesToNeighbours() {
         for (Pair pair: stoneChain) {
+            System.out.println("Restoring Liberties to neighbours of:" + pair.getKey() + pair.getValue());
             for (Pair neighbour: findNeighbours(pair.getKey(), pair.getValue())) {
-              findLiberties(findNeighbours(pair.getKey(), pair.getValue()), GameServer.gameServer.gameHandler.findStonesChain(neighbour).liberties);
+                System.out.println("Neigbour: " + neighbour.getKey() + neighbour.getValue());
+                if (GameServer.gameServer.gameHandler.stoneLogicTable[neighbour.getKey()][neighbour.getValue()] != owner)
+                    System.out.println("jestem w ifie w restoreliberties");
+                     GameServer.gameServer.gameHandler.findStonesChain(neighbour).liberties.add(pair);
             }
         }
     }

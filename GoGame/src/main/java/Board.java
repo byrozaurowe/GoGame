@@ -19,6 +19,7 @@ public class Board extends JPanel{
 	private static Stone[][] boardTab;
 	/** Ostatni tymczasowy kamień */
 	private Stone lastMovedField;
+	private GUI gui;
 
 	/** Zwroc tablice ze stanem planszy
 	 * @return stan planszy
@@ -28,7 +29,8 @@ public class Board extends JPanel{
     }
 
 	/** Konstruktor planszy */
-	Board(int size) {
+	Board(GUI gui, int size) {
+		MARGIN = 3*STONERADIUS;
 	    switch (size) {
             case 9:
                 STONERADIUS = 25;
@@ -40,7 +42,7 @@ public class Board extends JPanel{
                 STONERADIUS = 15;
                 break;
         }
-        MARGIN = 2*STONERADIUS;
+        this.gui = gui;
 		SIZE = size;
 		setBackground(new Color(193,154,107));
 		this.setPreferredSize(new Dimension((int)DIMX+2*MARGIN, (int)DIMY+2*MARGIN));
@@ -53,13 +55,13 @@ public class Board extends JPanel{
 		repaint();
 	}
 
+	/** Zwroc rozmiar planszy
+	 * @return rozmiar palnszy
+	 */
 	int getSIZE () {
 	    return SIZE;
     }
-	/** Metoda klikniecie na kamien
-     * @param x wspolrzedna x w kliknietym miejsu
-     * @param y wspolrzedna y w kliknietym miejscu
-     * */
+
 	/* public void clickedOnStone(double x, double y) {
 		for (int i=0; i<SIZE; i++) {
 			for (int j=0; j<SIZE; j++) {
@@ -79,8 +81,8 @@ public class Board extends JPanel{
 			for (int j=0; j<SIZE; j++) {
 				if (boardTab[i][j].circle.contains(event.getPoint())) {
 					lastMovedField = boardTab[i][j];
-					if ((GameClient.gameClient.isYourTurn) && (boardTab[i][j].visibility == Stone.Visibility.INVISIBLE) && (!GameClient.gameClient.gameIsFinished)) {
-						boardTab[i][j].visibility= Stone.Visibility.HALFVISIBLE;
+					if ((gui.checkIfIsYourTurn()) && (boardTab[i][j].visibility == Visibility.INVISIBLE) && (!gui.checkIfGameIsFinished())) {
+						boardTab[i][j].visibility= Visibility.HALFVISIBLE;
 					}
 				}
 			}
@@ -97,11 +99,10 @@ public class Board extends JPanel{
 			for (int j=0; j<SIZE; j++) {
 				if (boardTab[i][j].circle.contains(event.getPoint())) {
 				    if(lastMovedField != null) {
-				    	Stone save = lastMovedField;
-						lastMovedField = boardTab[i][j];
-                        if ((GameClient.gameClient.isYourTurn) && (lastMovedField.visibility == Stone.Visibility.INVISIBLE) && (!GameClient.gameClient.gameIsFinished)) {
-							save.visibility = Stone.Visibility.INVISIBLE;
-							lastMovedField.visibility = Stone.Visibility.HALFVISIBLE;
+						if ((gui.checkIfIsYourTurn()) && (!gui.checkIfGameIsFinished()) && boardTab[i][j].visibility == Visibility.INVISIBLE) {
+							lastMovedField.visibility = Visibility.INVISIBLE;
+							lastMovedField = boardTab[i][j];
+							lastMovedField.visibility = Visibility.HALFVISIBLE;
 						}
                     }
 				}
@@ -114,7 +115,7 @@ public class Board extends JPanel{
     /** Utworzenie kamienia przy puszczeniu myszki */
 	String releasedStone() {
 	    if (lastMovedField != null) {
-            lastMovedField.visibility = Stone.Visibility.INVISIBLE;
+	    	lastMovedField.visibility = Visibility.INVISIBLE;
             String line = lastMovedField.row + " " + lastMovedField.column;
             lastMovedField = null;
             return line;
@@ -170,14 +171,14 @@ public class Board extends JPanel{
 		}
 		for (int i=0; i<SIZE; i++) { //rysowanie kamieni
 			for (int j=0; j<SIZE; j++) {
-				if (boardTab[i][j].visibility == Stone.Visibility.VISIBLE) {
+				if (boardTab[i][j].visibility == Visibility.VISIBLE) {
 					g2d.setPaint(boardTab[i][j].stoneColor());
 					g2d.draw(boardTab[i][j].circle);
 					g2d.fill(boardTab[i][j].circle);
 				}
 
 				//wyświetlanie najchanych pól
-				if (boardTab[i][j].visibility == Stone.Visibility.HALFVISIBLE) {
+				if (boardTab[i][j].visibility == Visibility.HALFVISIBLE) {
 					Ellipse2D circle = new Ellipse2D.Double(boardTab[i][j].x-STONERADIUS, boardTab[i][j].y-STONERADIUS, STONERADIUS*2, STONERADIUS*2);
 					g2d.setPaint(boardTab[i][j].stoneColor());
 					/*float alpha = i * 0.5f; //półprzeźroczyste

@@ -5,13 +5,11 @@ import java.awt.event.ActionListener;
 /** Klasa obslugujaca menu glowne */
 class Menu extends JFrame implements ActionListener {
 
-    GUI frame;
+    private GUI frame;
     /** Guzik rozpoczynajacy gre z botem */
     private JButton botStartButton;
     /** Guzik rozpoczynajacy gre z graczem */
     private JButton playerStartButton;
-
-    private JButton joinGameButton;
     /** Panele do menu */
     private JPanel menuPanel, titlePanel, descPanel, radioPanel, playerPanel, botPanel;
     /** Etykieta z tytulem gry */
@@ -91,25 +89,33 @@ class Menu extends JFrame implements ActionListener {
     /** Metoda actionPerformed */
     public void actionPerformed(ActionEvent actionEvent) {
         Object event = actionEvent.getSource();
-        if(event == playerStartButton) {
-            if (big.isSelected()) {
-                frame = new GUI(19);
-                GameClient.gui = frame;
-                GameClient.gameClient.connectClient();
-                this.dispose();
+        if (event == playerStartButton) { // laczenie z serwerem, tworzenie okna rozgrywki
+            int playerID = GameClient.gameClient.connectClient();
+            int boardSize;
+            if (playerID == 1) {
+                if (big.isSelected()) {
+                    frame = new GUI(19);
+                    GameClient.gui = frame;
+                    GameClient.gameClient.setSettings(19);
+                }
+                else if (normal.isSelected()) {
+                    frame = new GUI(13);
+                    GameClient.gui = frame;
+                    GameClient.gameClient.setSettings(13);
+                }
+                else if (small.isSelected()) {
+                    frame = new GUI(9);
+                    GameClient.gui = frame;
+                    GameClient.gameClient.setSettings(9);
+                }
             }
-            else if (normal.isSelected()) {
-                frame = new GUI(13);
+            else if (playerID == 2) {
+                frame = new GUI(GameClient.gameClient.getBoardSize());
                 GameClient.gui = frame;
-                GameClient.gameClient.connectClient();
-                this.dispose();
+                GameClient.gameClient.setSettings(0);
             }
-            else if (small.isSelected()){
-                frame = new GUI(9);
-                GameClient.gui = frame;
-                GameClient.gameClient.connectClient();
-                this.dispose();
-            }
+            else return;
+            this.dispose();
         }
     }
 }

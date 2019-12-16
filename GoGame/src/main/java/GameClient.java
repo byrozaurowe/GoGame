@@ -15,12 +15,11 @@ public class GameClient implements Runnable {
     /** Wysylanie danych do serwera */
     private PrintWriter dataOut;
     static GameClient gameClient;
-    public boolean isYourTurn;
-    private Board board;
+    boolean isYourTurn;
     static GUI gui;
     private String moveMsg;
-    boolean gameIsFinished = false;
-
+    boolean gameIsFinished = true;
+    private int boardSize;
     /** Konstruktor klienta */
     private GameClient() {
         menu = new Menu();
@@ -28,8 +27,17 @@ public class GameClient implements Runnable {
 
     /** Gra */
     public void run() {
+        gui.setGameStatusLabel("Waiting for opponent to join");
+        try {
+            if(dataIn.readLine().equals("Let's begin")) {
+                gameIsFinished = false;
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         while (!gameIsFinished) {
             String line;
+            gui.setGameStatusLabel(isYourTurn);
             if (isYourTurn) {
                 moveMsg = null;
                 while (moveMsg == null) {
@@ -66,7 +74,7 @@ public class GameClient implements Runnable {
         return 2; // do zmiany
     }
 
-    void sendSummaryResponse(String response) {
+    private void sendSummaryResponse(String response) {
         dataOut.println(response);
     }
     /** Odczytuje informajce z serwera
@@ -92,20 +100,7 @@ public class GameClient implements Runnable {
             gui.nullMsg();
         }
         else isYourTurn = false;
-        for (int i = 0; i < board.getSIZE(); i++) {
-            for (int j = 0; j < board.getSIZE(); j++) {
-                if (Character.getNumericValue(line.charAt((i * board.getSIZE()) + j + 1)) == 0)
-                    board.getBoardTab()[i][j].setVisibility(Stone.Visibility.INVISIBLE);
-                else if (Character.getNumericValue(line.charAt((i * board.getSIZE()) + j + 1)) == 1) {
-                    board.getBoardTab()[i][j].setVisibility(Stone.Visibility.VISIBLE);
-                    board.getBoardTab()[i][j].setPlayer("WHITE");
-                } else if (Character.getNumericValue(line.charAt((i * board.getSIZE()) + j + 1)) == 2) {
-                    board.getBoardTab()[i][j].setVisibility(Stone.Visibility.VISIBLE);
-                    board.getBoardTab()[i][j].setPlayer("BLACK");
-                }
-            }
-        }
-        gui.repaint();
+        gui.setBoard(line);
     }
 
     /** Czekaj na przeciwnika az podejmie decyzje czy chce wznowic gre */
@@ -139,8 +134,12 @@ public class GameClient implements Runnable {
         }
     }
 
+    int getBoardSize() {
+        return boardSize;
+    }
+
     /** Podlacza klienta do serwera */
-    void connectClient() {
+    int connectClient() {
         System.out.println("-----Client----");
         try {
             socket = new Socket("localhost", 4444);
@@ -148,19 +147,25 @@ public class GameClient implements Runnable {
             dataOut = new PrintWriter(socket.getOutputStream(), true);
             playerID = Integer.parseInt(dataIn.readLine());
             System.out.println("Connected as player " + playerID);
-            gui.setTitle("Gracz #" + playerID);
-            gui.setPlayerID(playerID);
-
+            if(playerID == 2) {
+                boardSize = Integer.parseInt(dataIn.readLine());
+            }
         } catch (UnknownHostException e) {
             System.out.println("Unknown host: localhost");
-            System.exit(1);
+            return 0;
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("Server you are trying to connect is disconnected");
+            return 0;
         }
-        board = gui.getBoard();
+        return playerID;
+    }
+
+    void setSettings(int boardSize) {
+        gui.setTitle("Gracz #" + playerID);
+        gui.setPlayerID(playerID);
         if (playerID == 1) {
             isYourTurn = true;
-            dataOut.println(board.getSIZE());
+            dataOut.println(boardSize);
         }
         else {
             isYourTurn = false;
