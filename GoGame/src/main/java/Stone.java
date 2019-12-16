@@ -29,13 +29,9 @@ class Stone {
 		circle = new Ellipse2D.Double(x-Board.STONERADIUS, y-Board.STONERADIUS, Board.STONERADIUS*2, Board.STONERADIUS*2);
 	}
 
-	/** Status kamienia (widocznosc) */
-	public enum Visibility {
-		INVISIBLE, VISIBLE, HALFVISIBLE;
-	}
 
 	/** Przypisuje gracza kamieniowi */
-	void setPlayer(Player player) {
+	private void setPlayer(Player player) {
 		this.player = player;
 		visibility = Visibility.VISIBLE;
     }
