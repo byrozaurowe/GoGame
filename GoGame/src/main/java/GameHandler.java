@@ -30,7 +30,9 @@ public class GameHandler {
                 isPartOfChain(stoneChainList);
                 stoneLogicTable[moveX][moveY] = whoseTurn;
                 System.out.println("Przypisuje graczowi " + whoseTurn);
+                System.out.println("przed zabiciem");
                 removeDead(stoneChainList);
+                System.out.println("po zabiciu");
                 if (whoseTurn == 1) whoseTurn = 2;
                 else whoseTurn = 1;
             }
@@ -122,16 +124,22 @@ public class GameHandler {
                 for(Pair pair: chain.stoneChain) {
                     stoneLogicTable[pair.getKey()][pair.getValue()] = 0;
                 }
-                it.remove();
                 chain.restoreLibertiesToNeighbours();
+                it.remove();
             }
         }
     }
 
     StoneChain findStonesChain(Pair pair) {
+        System.out.println("szukam chaina");
         for (StoneChain chain: stoneChainList) {
-            if (chain.contains(pair)) {
-                return chain;
+            System.out.println("Łańcuch: " );
+            for (Pair stone: chain.stoneChain) {
+                System.out.println("Para: " + stone.getKey() + stone.getValue());
+                if (stone.getKey() == pair.getKey() && stone.getValue() == pair.getValue()) {
+                    System.out.println("znalzłem chaina");
+                    return chain;
+                }
             }
         }
         return null;

@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="23df1589-9a88-484b-b16c-0d131e237639" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GameHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GameHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/StoneChain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/StoneChain.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -288,7 +289,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576511463843</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="przeskakiwanie nad postawionymi kamieniami">
+      <created>1576517639983</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1576517639983</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -324,7 +332,8 @@
     <MESSAGE value="koniec gry po dwoch spasowaniach i jeszcze nie dzialajace pytanie o wzowienie gry, player id jako nazwa okna gry" />
     <MESSAGE value="podwojne pasowanie i zapytanie o wznowienie gry juz dziala!" />
     <MESSAGE value="naprawienie errorow przy koncu gry" />
-    <option name="LAST_COMMIT_MESSAGE" value="naprawienie errorow przy koncu gry" />
+    <MESSAGE value="przeskakiwanie nad postawionymi kamieniami" />
+    <option name="LAST_COMMIT_MESSAGE" value="przeskakiwanie nad postawionymi kamieniami" />
   </component>
   <component name="WindowStateProjectService">
     <state x="517" y="88" key="#GameClient" timestamp="1576479721356">
@@ -368,54 +377,54 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="677" y="132" key="#xdebugger.evaluate/0.0.1600.860@0.0.1600.860" timestamp="1576484977844" />
-    <state x="398" y="59" width="860" height="807" key="CommitChangelistDialog2" timestamp="1576346949533">
+    <state x="398" y="59" width="860" height="807" key="CommitChangelistDialog2" timestamp="1576517639724">
       <screen x="67" y="27" width="1533" height="873" />
     </state>
-    <state x="398" y="59" width="860" height="807" key="CommitChangelistDialog2/67.27.1533.873@67.27.1533.873" timestamp="1576346949533" />
+    <state x="398" y="59" width="860" height="807" key="CommitChangelistDialog2/67.27.1533.873@67.27.1533.873" timestamp="1576517639724" />
     <state x="455" y="206" width="735" height="513" key="FileChooserDialogImpl" timestamp="1576342696829">
       <screen x="67" y="27" width="1533" height="873" />
     </state>
     <state x="455" y="206" width="735" height="513" key="FileChooserDialogImpl/67.27.1533.873@67.27.1533.873" timestamp="1576342696829" />
-    <state width="1487" height="261" key="GridCell.Tab.0.bottom" timestamp="1576517530771">
+    <state width="1487" height="261" key="GridCell.Tab.0.bottom" timestamp="1576518696794">
       <screen x="67" y="27" width="1533" height="873" />
     </state>
     <state width="1557" height="276" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1576485274597" />
-    <state width="1487" height="261" key="GridCell.Tab.0.bottom/67.27.1533.873@67.27.1533.873" timestamp="1576517530771" />
-    <state width="1487" height="261" key="GridCell.Tab.0.center" timestamp="1576517530763">
+    <state width="1487" height="261" key="GridCell.Tab.0.bottom/67.27.1533.873@67.27.1533.873" timestamp="1576518696794" />
+    <state width="1487" height="261" key="GridCell.Tab.0.center" timestamp="1576518696794">
       <screen x="67" y="27" width="1533" height="873" />
     </state>
     <state width="1557" height="276" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1576485274597" />
-    <state width="1487" height="261" key="GridCell.Tab.0.center/67.27.1533.873@67.27.1533.873" timestamp="1576517530763" />
-    <state width="1487" height="261" key="GridCell.Tab.0.left" timestamp="1576517530762">
+    <state width="1487" height="261" key="GridCell.Tab.0.center/67.27.1533.873@67.27.1533.873" timestamp="1576518696794" />
+    <state width="1487" height="261" key="GridCell.Tab.0.left" timestamp="1576518696794">
       <screen x="67" y="27" width="1533" height="873" />
     </state>
     <state width="1557" height="276" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1576485274597" />
-    <state width="1487" height="261" key="GridCell.Tab.0.left/67.27.1533.873@67.27.1533.873" timestamp="1576517530762" />
-    <state width="1487" height="261" key="GridCell.Tab.0.right" timestamp="1576517530763">
+    <state width="1487" height="261" key="GridCell.Tab.0.left/67.27.1533.873@67.27.1533.873" timestamp="1576518696794" />
+    <state width="1487" height="261" key="GridCell.Tab.0.right" timestamp="1576518696794">
       <screen x="67" y="27" width="1533" height="873" />
     </state>
     <state width="1557" height="276" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1576485274597" />
-    <state width="1487" height="261" key="GridCell.Tab.0.right/67.27.1533.873@67.27.1533.873" timestamp="1576517530763" />
-    <state width="1487" height="261" key="GridCell.Tab.1.bottom" timestamp="1576517530481">
+    <state width="1487" height="261" key="GridCell.Tab.0.right/67.27.1533.873@67.27.1533.873" timestamp="1576518696794" />
+    <state width="1487" height="261" key="GridCell.Tab.1.bottom" timestamp="1576518380941">
       <screen x="67" y="27" width="1533" height="873" />
     </state>
     <state width="1557" height="276" key="GridCell.Tab.1.bottom/0.0.1600.860@0.0.1600.860" timestamp="1576485310910" />
-    <state width="1487" height="261" key="GridCell.Tab.1.bottom/67.27.1533.873@67.27.1533.873" timestamp="1576517530481" />
-    <state width="1487" height="261" key="GridCell.Tab.1.center" timestamp="1576517530480">
+    <state width="1487" height="261" key="GridCell.Tab.1.bottom/67.27.1533.873@67.27.1533.873" timestamp="1576518380941" />
+    <state width="1487" height="261" key="GridCell.Tab.1.center" timestamp="1576518380941">
       <screen x="67" y="27" width="1533" height="873" />
     </state>
     <state width="1557" height="276" key="GridCell.Tab.1.center/0.0.1600.860@0.0.1600.860" timestamp="1576485310910" />
-    <state width="1487" height="261" key="GridCell.Tab.1.center/67.27.1533.873@67.27.1533.873" timestamp="1576517530480" />
-    <state width="1487" height="261" key="GridCell.Tab.1.left" timestamp="1576517530480">
+    <state width="1487" height="261" key="GridCell.Tab.1.center/67.27.1533.873@67.27.1533.873" timestamp="1576518380941" />
+    <state width="1487" height="261" key="GridCell.Tab.1.left" timestamp="1576518380941">
       <screen x="67" y="27" width="1533" height="873" />
     </state>
     <state width="1557" height="276" key="GridCell.Tab.1.left/0.0.1600.860@0.0.1600.860" timestamp="1576485310910" />
-    <state width="1487" height="261" key="GridCell.Tab.1.left/67.27.1533.873@67.27.1533.873" timestamp="1576517530480" />
-    <state width="1487" height="261" key="GridCell.Tab.1.right" timestamp="1576517530480">
+    <state width="1487" height="261" key="GridCell.Tab.1.left/67.27.1533.873@67.27.1533.873" timestamp="1576518380941" />
+    <state width="1487" height="261" key="GridCell.Tab.1.right" timestamp="1576518380941">
       <screen x="67" y="27" width="1533" height="873" />
     </state>
     <state width="1557" height="276" key="GridCell.Tab.1.right/0.0.1600.860@0.0.1600.860" timestamp="1576485310910" />
-    <state width="1487" height="261" key="GridCell.Tab.1.right/67.27.1533.873@67.27.1533.873" timestamp="1576517530480" />
+    <state width="1487" height="261" key="GridCell.Tab.1.right/67.27.1533.873@67.27.1533.873" timestamp="1576518380941" />
     <state x="366" y="120" width="924" height="684" key="Maven.ArtifactSearchDialog" timestamp="1576342588084">
       <screen x="67" y="27" width="1533" height="873" />
     </state>
@@ -442,14 +451,25 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/StoneChain.java</url>
-          <line>82</line>
-          <option name="timeStamp" value="34" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/GameHandler.java</url>
-          <line>133</line>
-          <option name="timeStamp" value="35" />
+          <line>28</line>
+          <option name="timeStamp" value="36" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/GameHandler.java</url>
+          <line>101</line>
+          <properties class="GameHandler" method="doesItKill">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="37" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/GameHandler.java</url>
+          <line>94</line>
+          <properties class="GameHandler" method="isLibertyLeft">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="38" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
