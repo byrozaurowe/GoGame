@@ -85,6 +85,7 @@ public class GameClient implements Runnable {
                     e.printStackTrace();
                 }
             }
+            else return;
         }
         if (line.charAt(0)- 48 == playerID ) {
             isYourTurn = true;

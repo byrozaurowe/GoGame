@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="23df1589-9a88-484b-b16c-0d131e237639" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/GameClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GameClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GameServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GameServer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -275,7 +272,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576508902072</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="podwojne pasowanie i zapytanie o wznowienie gry juz dziala!">
+      <created>1576511030612</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1576511030612</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -309,7 +313,8 @@
     <MESSAGE value="przesylanie wspolrzednych dziala" />
     <MESSAGE value="komentarze i zmiana marginesu" />
     <MESSAGE value="koniec gry po dwoch spasowaniach i jeszcze nie dzialajace pytanie o wzowienie gry, player id jako nazwa okna gry" />
-    <option name="LAST_COMMIT_MESSAGE" value="koniec gry po dwoch spasowaniach i jeszcze nie dzialajace pytanie o wzowienie gry, player id jako nazwa okna gry" />
+    <MESSAGE value="podwojne pasowanie i zapytanie o wznowienie gry juz dziala!" />
+    <option name="LAST_COMMIT_MESSAGE" value="podwojne pasowanie i zapytanie o wznowienie gry juz dziala!" />
   </component>
   <component name="WindowStateProjectService">
     <state x="517" y="88" key="#GameClient" timestamp="1576479721356">
@@ -438,7 +443,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/GameClient.java</url>
-          <line>95</line>
+          <line>96</line>
           <option name="timeStamp" value="41" />
         </line-breakpoint>
       </breakpoints>
