@@ -1,16 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="23df1589-9a88-484b-b16c-0d131e237639" name="Default Changelist" comment="komentarze i zmiana marginesu">
+    <list default="true" id="23df1589-9a88-484b-b16c-0d131e237639" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Board.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/GameClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GameClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GameServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GameServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Pair.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pair.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Stone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Stone.java" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -73,7 +69,7 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="project.structure.last.edited" value="Global Libraries" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.20483871" />
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
@@ -85,18 +81,6 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\wojte\git\IntelliJ_TP\GoGame\src\main\resources" />
     </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="RunManager" selected="Application.GameClient">
     <configuration name="GUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -116,7 +100,7 @@
     </configuration>
     <configuration name="GameClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="GameClient" />
-      <module name="go" />
+      <module name="GoGame" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value=".*" />
@@ -129,7 +113,7 @@
     </configuration>
     <configuration name="GameServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="GameServer" />
-      <module name="go" />
+      <module name="GoGame" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value=".*" />
@@ -160,6 +144,18 @@
         <item itemvalue="Application.GUI" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -308,17 +304,22 @@
     <option name="LAST_COMMIT_MESSAGE" value="komentarze i zmiana marginesu" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="517" y="88" key="#GameServer" timestamp="1576417506674">
+    <state x="517" y="88" key="#GameClient" timestamp="1576479721356">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="517" y="88" key="#GameServer/0.0.1600.860@0.0.1600.860" timestamp="1576417506674" />
+    <state x="517" y="88" key="#GameClient/0.0.1600.860@0.0.1600.860" timestamp="1576479721356" />
+    <state x="517" y="88" key="#GameServer" timestamp="1576479743889">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="517" y="88" key="#GameServer/0.0.1600.860@0.0.1600.860" timestamp="1576479743889" />
     <state x="493" y="104" width="671" height="717" key="#Main" timestamp="1575055351978">
       <screen x="67" y="27" width="1533" height="873" />
     </state>
     <state x="493" y="104" width="671" height="717" key="#Main/67.27.1533.873@67.27.1533.873" timestamp="1575055351978" />
-    <state x="428" y="124" width="800" height="677" key="#Project_Structure" timestamp="1575055282711">
-      <screen x="67" y="27" width="1533" height="873" />
+    <state x="377" y="96" width="800" height="677" key="#Project_Structure" timestamp="1576479576350">
+      <screen x="0" y="0" width="1600" height="860" />
     </state>
+    <state x="377" y="96" key="#Project_Structure/0.0.1600.860@0.0.1600.860" timestamp="1576479576350" />
     <state x="428" y="124" width="800" height="677" key="#Project_Structure/67.27.1533.873@67.27.1533.873" timestamp="1575055282711" />
     <state x="291" y="120" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1575214646217">
       <screen x="67" y="27" width="1533" height="873" />
@@ -332,10 +333,18 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="530" y="210" key="#com.intellij.ide.util.PackageChooserDialog/0.0.1600.860@0.0.1600.860" timestamp="1576418440000" />
+    <state x="648" y="318" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1576479610328">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="648" y="318" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1600.860@0.0.1600.860" timestamp="1576479610328" />
     <state x="596" y="314" width="407" height="240" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1576418443062">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="596" y="314" width="407" height="240" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1600.860@0.0.1600.860" timestamp="1576418443062" />
+    <state x="677" y="132" key="#xdebugger.evaluate" timestamp="1576484977844">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="677" y="132" key="#xdebugger.evaluate/0.0.1600.860@0.0.1600.860" timestamp="1576484977844" />
     <state x="398" y="59" width="860" height="807" key="CommitChangelistDialog2" timestamp="1576346949533">
       <screen x="67" y="27" width="1533" height="873" />
     </state>
@@ -344,41 +353,45 @@
       <screen x="67" y="27" width="1533" height="873" />
     </state>
     <state x="455" y="206" width="735" height="513" key="FileChooserDialogImpl/67.27.1533.873@67.27.1533.873" timestamp="1576342696829" />
-    <state width="1557" height="250" key="GridCell.Tab.0.bottom" timestamp="1576418572852">
+    <state width="1557" height="276" key="GridCell.Tab.0.bottom" timestamp="1576485274597">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="250" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1576418572852" />
+    <state width="1557" height="276" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1576485274597" />
     <state width="1533" height="64" key="GridCell.Tab.0.bottom/67.27.1533.873@67.27.1533.873" timestamp="1575219571689" />
-    <state width="1557" height="250" key="GridCell.Tab.0.center" timestamp="1576418572852">
+    <state width="1557" height="276" key="GridCell.Tab.0.center" timestamp="1576485274597">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="250" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1576418572852" />
+    <state width="1557" height="276" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1576485274597" />
     <state width="1533" height="64" key="GridCell.Tab.0.center/67.27.1533.873@67.27.1533.873" timestamp="1575219571688" />
-    <state width="1557" height="250" key="GridCell.Tab.0.left" timestamp="1576418572852">
+    <state width="1557" height="276" key="GridCell.Tab.0.left" timestamp="1576485274597">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="250" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1576418572852" />
+    <state width="1557" height="276" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1576485274597" />
     <state width="1533" height="64" key="GridCell.Tab.0.left/67.27.1533.873@67.27.1533.873" timestamp="1575219571688" />
-    <state width="1557" height="250" key="GridCell.Tab.0.right" timestamp="1576418572852">
+    <state width="1557" height="276" key="GridCell.Tab.0.right" timestamp="1576485274597">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="250" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1576418572852" />
+    <state width="1557" height="276" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1576485274597" />
     <state width="1533" height="64" key="GridCell.Tab.0.right/67.27.1533.873@67.27.1533.873" timestamp="1575219571688" />
-    <state width="1533" height="271" key="GridCell.Tab.1.bottom" timestamp="1575113983209">
-      <screen x="67" y="27" width="1533" height="873" />
+    <state width="1557" height="276" key="GridCell.Tab.1.bottom" timestamp="1576485310910">
+      <screen x="0" y="0" width="1600" height="860" />
     </state>
+    <state width="1557" height="276" key="GridCell.Tab.1.bottom/0.0.1600.860@0.0.1600.860" timestamp="1576485310910" />
     <state width="1533" height="271" key="GridCell.Tab.1.bottom/67.27.1533.873@67.27.1533.873" timestamp="1575113983209" />
-    <state width="1533" height="271" key="GridCell.Tab.1.center" timestamp="1575113983208">
-      <screen x="67" y="27" width="1533" height="873" />
+    <state width="1557" height="276" key="GridCell.Tab.1.center" timestamp="1576485310910">
+      <screen x="0" y="0" width="1600" height="860" />
     </state>
+    <state width="1557" height="276" key="GridCell.Tab.1.center/0.0.1600.860@0.0.1600.860" timestamp="1576485310910" />
     <state width="1533" height="271" key="GridCell.Tab.1.center/67.27.1533.873@67.27.1533.873" timestamp="1575113983208" />
-    <state width="1533" height="271" key="GridCell.Tab.1.left" timestamp="1575113983208">
-      <screen x="67" y="27" width="1533" height="873" />
+    <state width="1557" height="276" key="GridCell.Tab.1.left" timestamp="1576485310910">
+      <screen x="0" y="0" width="1600" height="860" />
     </state>
+    <state width="1557" height="276" key="GridCell.Tab.1.left/0.0.1600.860@0.0.1600.860" timestamp="1576485310910" />
     <state width="1533" height="271" key="GridCell.Tab.1.left/67.27.1533.873@67.27.1533.873" timestamp="1575113983208" />
-    <state width="1533" height="271" key="GridCell.Tab.1.right" timestamp="1575113983208">
-      <screen x="67" y="27" width="1533" height="873" />
+    <state width="1557" height="276" key="GridCell.Tab.1.right" timestamp="1576485310910">
+      <screen x="0" y="0" width="1600" height="860" />
     </state>
+    <state width="1557" height="276" key="GridCell.Tab.1.right/0.0.1600.860@0.0.1600.860" timestamp="1576485310910" />
     <state width="1533" height="271" key="GridCell.Tab.1.right/67.27.1533.873@67.27.1533.873" timestamp="1575113983208" />
     <state x="366" y="120" width="924" height="684" key="Maven.ArtifactSearchDialog" timestamp="1576342588084">
       <screen x="67" y="27" width="1533" height="873" />
@@ -414,6 +427,16 @@
           <url>file://$PROJECT_DIR$/src/main/java/GameHandler.java</url>
           <line>133</line>
           <option name="timeStamp" value="35" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/GameClient.java</url>
+          <line>37</line>
+          <option name="timeStamp" value="36" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/GUI.java</url>
+          <line>121</line>
+          <option name="timeStamp" value="37" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

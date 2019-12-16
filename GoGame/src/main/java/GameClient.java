@@ -15,7 +15,7 @@ public class GameClient implements Runnable {
     /** Wysylanie danych do serwera */
     private PrintWriter dataOut;
     static GameClient gameClient;
-    private boolean isYourTurn;
+    public boolean isYourTurn;
     private Board board;
     static GUI gui;
     private String moveMsg;
@@ -33,7 +33,7 @@ public class GameClient implements Runnable {
             if (isYourTurn) {
                 moveMsg = null;
                 while (moveMsg == null) {
-                    moveMsg = gui.getMsg();
+                    moveMsg = gui.getMsg(); // Oczekiwanie, aż gracz zrobi jakiś ruch
                 }
                 System.out.println(moveMsg);
                 dataOut.println(moveMsg);

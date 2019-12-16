@@ -60,7 +60,7 @@ public class Board extends JPanel{
      * @param x wspolrzedna x w kliknietym miejsu
      * @param y wspolrzedna y w kliknietym miejscu
      * */
-	public void clickedOnStone(double x, double y) {
+	/* public void clickedOnStone(double x, double y) {
 		for (int i=0; i<SIZE; i++) {
 			for (int j=0; j<SIZE; j++) {
 				if (boardTab[i][j].isInsideStone(x,y)) {
@@ -69,7 +69,7 @@ public class Board extends JPanel{
 			}
 		}
 		repaint();
-	}
+	} */
 
 	/** Podświetlanie najechanych pól
      * @param event ruch myszki
@@ -77,9 +77,11 @@ public class Board extends JPanel{
 	void enteredStone(MouseEvent event) {
 		for (int i=0; i<SIZE; i++) {
 			for (int j=0; j<SIZE; j++) {
-				if (boardTab[i][j].circle.contains(event.getPoint())) {//&& boardTab[i][j].visibility == Stone.Visibility.INVISIBLE) {
+				if (boardTab[i][j].circle.contains(event.getPoint())) {
 					lastMovedField = boardTab[i][j];
-					//boardTab[i][j].visibility= Stone.Visibility.HALFVISIBLE;
+					if ((GameClient.gameClient.isYourTurn) && (boardTab[i][j].visibility == Stone.Visibility.INVISIBLE)) {
+						boardTab[i][j].visibility= Stone.Visibility.HALFVISIBLE;
+					}
 				}
 			}
 		}
@@ -93,11 +95,14 @@ public class Board extends JPanel{
 	void draggedStone(MouseEvent event) {
 		for (int i=0; i<SIZE; i++) {
 			for (int j=0; j<SIZE; j++) {
-				if (boardTab[i][j].circle.contains(event.getPoint())) {// && boardTab[i][j].visibility == Stone.Visibility.INVISIBLE) {
+				if (boardTab[i][j].circle.contains(event.getPoint())) {
 				    if(lastMovedField != null) {
-                        //lastMovedField.visibility = Stone.Visibility.INVISIBLE;
-                        lastMovedField = boardTab[i][j];
-                        //boardTab[i][j].visibility = Stone.Visibility.HALFVISIBLE;
+				    	Stone save = lastMovedField;
+						lastMovedField = boardTab[i][j];
+                        if ((GameClient.gameClient.isYourTurn) && (lastMovedField.visibility == Stone.Visibility.INVISIBLE)) {
+							save.visibility = Stone.Visibility.INVISIBLE;
+							lastMovedField.visibility = Stone.Visibility.HALFVISIBLE;
+						}
                     }
 				}
 
@@ -108,6 +113,7 @@ public class Board extends JPanel{
 
     /** Utworzenie kamienia przy puszczeniu myszki */
 	String releasedStone() {
+		lastMovedField.visibility = Stone.Visibility.INVISIBLE;
 	    String line = lastMovedField.row + " " + lastMovedField.column;
 		lastMovedField = null;
 		return line;
