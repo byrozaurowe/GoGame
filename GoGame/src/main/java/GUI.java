@@ -121,10 +121,6 @@ public class GUI extends JFrame implements ActionListener, MouseListener, MouseM
                 "You have " + GameClient.gameClient.getCaptives() + " captives \n"
                         + "Do you want to resume the game?", "Is this the end?",
                 JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
-        if (input == -1) {
-            doYouWantToEnd();
-            return -1;
-        }
         return input;
     }
 

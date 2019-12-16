@@ -129,6 +129,7 @@ public class GameClient implements Runnable {
                 sendSummaryResponse("N");
                 break;
             case -1:
+                doWeEnd();
                 return;
         }
         try {
