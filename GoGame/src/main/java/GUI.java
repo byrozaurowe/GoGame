@@ -26,6 +26,10 @@ public class GUI extends JFrame implements ActionListener, MouseListener, MouseM
     private String msg = null;
     /** Id gracza */
     private int playerID;
+    /** Etykieta wyswietlajaca stan gry */
+    private JLabel gameStatusLabel;
+    /** Etykieta wyswietlajaca eventy */
+    private JLabel gameEventLabel;
 
     /** Konstruktor maina
      * @param boardSize rozmiar planszy
@@ -90,6 +94,12 @@ public class GUI extends JFrame implements ActionListener, MouseListener, MouseM
         board = new Board(boardSize);
         add(board, BorderLayout.CENTER);
 
+
+        gameStatusLabel = new JLabel("Test");
+        gameStatusLabel.setFont(new Font("Segoe UI", Font.BOLD, 20));
+        board.add(gameStatusLabel, BorderLayout.SOUTH);
+
+
         // action Listenery
         passItem.addActionListener(this);
         newGameItem.addActionListener(this);
@@ -135,6 +145,23 @@ public class GUI extends JFrame implements ActionListener, MouseListener, MouseM
      * */
     Board getBoard () {
         return board;
+    }
+
+    /** Ustaw tabele statusu gry
+     * @param isYourTurn czy jest twoja tura
+     */
+    void setGameStatusLabel(boolean isYourTurn) {
+        if(isYourTurn) {
+            gameStatusLabel.setText("It's your turn");
+        }
+        else gameStatusLabel.setText("It's your opponent's turn");
+    }
+
+    /** Ustaw Stringa statusu gry
+     * @param text tekst do labela
+     */
+    void setGameStatusLabel(String text) {
+        gameStatusLabel.setText(text);
     }
 
     /** Implementowana funkcja mouse listenera */

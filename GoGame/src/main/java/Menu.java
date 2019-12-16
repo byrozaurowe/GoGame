@@ -91,25 +91,26 @@ class Menu extends JFrame implements ActionListener {
     /** Metoda actionPerformed */
     public void actionPerformed(ActionEvent actionEvent) {
         Object event = actionEvent.getSource();
-        if(event == playerStartButton) {
-            if (big.isSelected()) {
-                frame = new GUI(19);
-                GameClient.gui = frame;
-                GameClient.gameClient.connectClient();
-                this.dispose();
+        if (event == playerStartButton) { // laczenie z serwerem, tworzenie okna rozgrywki
+            int playerID = GameClient.gameClient.connectClient();
+            if (playerID == 1) {
+                if (big.isSelected()) {
+                    frame = new GUI(19);
+                }
+                else if (normal.isSelected()) {
+                    frame = new GUI(13);
+                }
+                else if (small.isSelected()) {
+                    frame = new GUI(9);
+                }
             }
-            else if (normal.isSelected()) {
-                frame = new GUI(13);
-                GameClient.gui = frame;
-                GameClient.gameClient.connectClient();
-                this.dispose();
+            else if (playerID == 2) {
+                frame = new GUI(GameClient.gameClient.getBoardSize());
             }
-            else if (small.isSelected()){
-                frame = new GUI(9);
-                GameClient.gui = frame;
-                GameClient.gameClient.connectClient();
-                this.dispose();
-            }
+            else return;
+            GameClient.gui = frame;
+            GameClient.gameClient.setSettings();
+            this.dispose();
         }
     }
 }

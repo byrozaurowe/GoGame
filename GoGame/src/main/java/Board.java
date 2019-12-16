@@ -29,6 +29,7 @@ public class Board extends JPanel{
 
 	/** Konstruktor planszy */
 	Board(int size) {
+		MARGIN = 3*STONERADIUS;
 	    switch (size) {
             case 9:
                 STONERADIUS = 25;
@@ -40,7 +41,6 @@ public class Board extends JPanel{
                 STONERADIUS = 15;
                 break;
         }
-        MARGIN = 2*STONERADIUS;
 		SIZE = size;
 		setBackground(new Color(193,154,107));
 		this.setPreferredSize(new Dimension((int)DIMX+2*MARGIN, (int)DIMY+2*MARGIN));

@@ -46,7 +46,7 @@ public class GameServer {
 
     /** Wyslij wiadomosc do obu graczy */
     private void sendToPlayers () {
-        System.out.println("czyja tura po ruchu" + whoseTurn);
+        System.out.println("czyja tura po ruchu " + whoseTurn);
         String msg = Integer.toString(whoseTurn);
         for (int i=0; i<boardSize; i++) {
             for (int j=0; j<boardSize; j++) {
@@ -139,15 +139,19 @@ public class GameServer {
             dataOutPlayer2 = new PrintWriter(socket.getOutputStream(), true);
             dataOutPlayer2.println(numPlayers);
             System.out.println("Player " + numPlayers + " has connected");
+            dataOutPlayer2.println(boardSize);
         }
-        if (numPlayers == 2) System.out.println("Now we have two players");
+        if (numPlayers == 2) {
+            System.out.println("Now we have two players");
+            dataOutPlayer1.println("Let's begin");
+            dataOutPlayer2.println("Let's begin");
+        }
     }
 
     /** Metoda trwajaca cala gre, ustawia kiedy nasluchiwac, a kiedy wysylac*/
     private void play() {
         gameHandler = new GameHandler(boardSize);
         gameIsFinished = false;
-        System.out.println("Board Size" + boardSize);
         while (!gameIsFinished) {
             if(whoseTurn == 1)
                 listenPlayer(dataInPlayer1);

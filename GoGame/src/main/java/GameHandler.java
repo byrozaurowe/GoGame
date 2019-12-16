@@ -133,11 +133,11 @@ public class GameHandler {
     StoneChain findStonesChain(Pair pair) {
         System.out.println("szukam chaina");
         for (StoneChain chain: stoneChainList) {
-            System.out.println("Łańcuch: " );
+            System.out.println("Lancuch: " );
             for (Pair stone: chain.stoneChain) {
                 System.out.println("Para: " + stone.getKey() + stone.getValue());
                 if (stone.getKey() == pair.getKey() && stone.getValue() == pair.getValue()) {
-                    System.out.println("znalzłem chaina");
+                    System.out.println("znalazlem chaina");
                     return chain;
                 }
             }

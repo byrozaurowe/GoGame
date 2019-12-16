@@ -3,142 +3,20 @@
   <ID>JAVA</ID>
   <OriginalElement />
   <nodes>
-    <node x="312.1215066447586" y="76.0">StoneChain</node>
-    <node x="152.37150664475863" y="238.0">Player</node>
-    <node x="16.388887597139558" y="238.0">Board</node>
-    <node x="60.54047489872687" y="162.0">GameClient</node>
-    <node x="286.3715066447586" y="152.0">GameHandler</node>
-    <node x="47.486586009837964" y="0.0">GUI</node>
-    <node x="60.42888759713955" y="86.0">Menu</node>
-    <node x="310.503451089203" y="228.0">GameServer</node>
-    <node x="35.356506644758596" y="334.0">Stone</node>
-    <node x="319.3715066447586" y="0.0">Pair</node>
+    <node x="163.0" y="71.0">StoneChain</node>
+    <node x="163.0" y="142.0">Player</node>
+    <node x="127.0" y="213.0">Board</node>
+    <node x="0.0" y="142.0">GameClient</node>
+    <node x="0.0" y="0.0">GameHandler</node>
+    <node x="119.0" y="284.0">GUI</node>
+    <node x="0.0" y="71.0">GameServer</node>
+    <node x="0.0" y="213.0">Stone</node>
+    <node x="0.0" y="284.0">Pair</node>
   </nodes>
   <notes />
-  <edges>
-    <edge source="Stone" target="Player">
-      <point x="25.625" y="-13.0" />
-      <point x="101.9815066447586" y="304.0" />
-      <point x="174.62150664475863" y="304.0" />
-      <point x="-22.25" y="13.0" />
-    </edge>
-    <edge source="GameHandler" target="StoneChain">
-      <point x="0.0" y="-13.0" />
-      <point x="348.8715066447586" y="127.0" />
-      <point x="347.5215066447586" y="127.0" />
-      <point x="-23.600000000000023" y="13.0" />
-    </edge>
-    <edge source="GameClient" target="Menu">
-      <point x="-47.19999999999999" y="-13.0" />
-      <point x="-24.666666666666657" y="13.0" />
-    </edge>
-    <edge source="GameHandler" target="GameServer">
-      <point x="41.66666666666663" y="13.0" />
-      <point x="390.5381733114252" y="203.0" />
-      <point x="384.253451089203" y="203.0" />
-      <point x="14.75" y="-13.0" />
-    </edge>
-    <edge source="StoneChain" target="GameServer">
-      <point x="47.19999999999999" y="13.0" />
-      <point x="418.3215066447586" y="127.0" />
-      <point x="421.8715066447586" y="127.0" />
-      <point x="421.8715066447586" y="203.0" />
-      <point x="413.753451089203" y="203.0" />
-      <point x="44.25" y="-13.0" />
-    </edge>
-    <edge source="Board" target="Stone">
-      <point x="32.8" y="13.0" />
-      <point x="90.18888759713955" y="284.0" />
-      <point x="81.4815066447586" y="284.0" />
-      <point x="5.125" y="-13.0" />
-    </edge>
-    <edge source="StoneChain" target="Pair">
-      <point x="-44.25" y="-13.0" />
-      <point x="326.8715066447586" y="56.0" />
-      <point x="341.5715066447586" y="56.0" />
-      <point x="-14.800000000000011" y="13.0" />
-    </edge>
-    <edge source="GameClient" target="Stone">
-      <point x="39.33333333333334" y="13.0" />
-      <point x="158.8738082320602" y="213.0" />
-      <point x="141.87150664475863" y="213.0" />
-      <point x="141.87150664475863" y="294.0" />
-      <point x="91.7315066447586" y="294.0" />
-      <point x="15.375" y="-13.0" />
-    </edge>
-    <edge source="Stone" target="Board">
-      <point x="-35.875" y="-13.0" />
-      <point x="40.481506644758596" y="314.0" />
-      <point x="24.58888759713956" y="314.0" />
-      <point x="-32.8" y="13.0" />
-    </edge>
-    <edge source="Menu" target="GUI">
-      <point x="-18.5" y="-13.0" />
-      <point x="78.92888759713955" y="66.0" />
-      <point x="80.98658600983796" y="66.0" />
-      <point x="0.0" y="13.0" />
-    </edge>
-    <edge source="GameHandler" target="Pair">
-      <point x="-50.0" y="-13.0" />
-      <point x="298.8715066447586" y="127.0" />
-      <point x="301.6215066447586" y="127.0" />
-      <point x="301.6215066447586" y="46.0" />
-      <point x="326.7715066447586" y="46.0" />
-      <point x="-29.600000000000023" y="13.0" />
-    </edge>
-    <edge source="Board" target="GameClient">
-      <point x="16.400000000000006" y="-13.0" />
-      <point x="73.78888759713956" y="213.0" />
-      <point x="80.20714156539353" y="213.0" />
-      <point x="-39.33333333333334" y="13.0" />
-    </edge>
-    <edge source="GameServer" target="GameHandler">
-      <point x="-14.75" y="-13.0" />
-      <point x="354.753451089203" y="203.0" />
-      <point x="348.8715066447586" y="203.0" />
-      <point x="0.0" y="13.0" />
-    </edge>
-    <edge source="Menu" target="GameClient">
-      <point x="24.666666666666686" y="13.0" />
-      <point x="122.09555426380624" y="137.0" />
-      <point x="119.54047489872687" y="137.0" />
-      <point x="0.0" y="-13.0" />
-    </edge>
-    <edge source="GUI" target="GameClient">
-      <point x="28.714285714285722" y="13.0" />
-      <point x="109.70087172412369" y="46.0" />
-      <point x="155.92888759713955" y="46.0" />
-      <point x="155.92888759713955" y="137.0" />
-      <point x="166.74047489872686" y="137.0" />
-      <point x="47.19999999999999" y="-13.0" />
-    </edge>
-    <edge source="GameClient" target="Board">
-      <point x="0.0" y="13.0" />
-      <point x="119.54047489872687" y="213.0" />
-      <point x="90.18888759713955" y="213.0" />
-      <point x="32.8" y="-13.0" />
-    </edge>
-    <edge source="GUI" target="Board">
-      <point x="-19.14285714285714" y="13.0" />
-      <point x="61.843728866980825" y="56.0" />
-      <point x="36.373808232060185" y="56.0" />
-      <point x="36.373808232060185" y="213.0" />
-      <point x="40.98888759713955" y="213.0" />
-      <point x="-16.400000000000006" y="-13.0" />
-    </edge>
-    <edge source="GameClient" target="GUI">
-      <point x="23.599999999999994" y="-13.0" />
-      <point x="143.14047489872686" y="137.0" />
-      <point x="144.92888759713955" y="137.0" />
-      <point x="144.92888759713955" y="56.0" />
-      <point x="100.1294431526951" y="56.0" />
-      <point x="19.14285714285714" y="13.0" />
-    </edge>
-  </edges>
-  <settings layout="Hierarchic Group" zoom="1.0" x="606.0" y="224.0" />
-  <SelectedNodes>
-    <node>StoneChain</node>
-  </SelectedNodes>
+  <edges />
+  <settings layout="Hierarchic Group" zoom="1.0" x="209.5" y="180.0" />
+  <SelectedNodes />
   <Categories />
   <SCOPE>All</SCOPE>
   <VISIBILITY>private</VISIBILITY>

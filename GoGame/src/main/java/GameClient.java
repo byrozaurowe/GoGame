@@ -19,8 +19,8 @@ public class GameClient implements Runnable {
     private Board board;
     static GUI gui;
     private String moveMsg;
-    boolean gameIsFinished = false;
-
+    boolean gameIsFinished = true;
+    private int boardSize;
     /** Konstruktor klienta */
     private GameClient() {
         menu = new Menu();
@@ -28,8 +28,17 @@ public class GameClient implements Runnable {
 
     /** Gra */
     public void run() {
+        gui.setGameStatusLabel("Waiting for opponent to join");
+        try {
+            if(dataIn.readLine().equals("Let's begin")) {
+                gameIsFinished = false;
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         while (!gameIsFinished) {
             String line;
+            gui.setGameStatusLabel(isYourTurn);
             if (isYourTurn) {
                 moveMsg = null;
                 while (moveMsg == null) {
@@ -98,10 +107,10 @@ public class GameClient implements Runnable {
                     board.getBoardTab()[i][j].setVisibility(Stone.Visibility.INVISIBLE);
                 else if (Character.getNumericValue(line.charAt((i * board.getSIZE()) + j + 1)) == 1) {
                     board.getBoardTab()[i][j].setVisibility(Stone.Visibility.VISIBLE);
-                    board.getBoardTab()[i][j].setPlayer("WHITE");
+                    board.getBoardTab()[i][j].setPlayer("BLACK");
                 } else if (Character.getNumericValue(line.charAt((i * board.getSIZE()) + j + 1)) == 2) {
                     board.getBoardTab()[i][j].setVisibility(Stone.Visibility.VISIBLE);
-                    board.getBoardTab()[i][j].setPlayer("BLACK");
+                    board.getBoardTab()[i][j].setPlayer("WHITE");
                 }
             }
         }
@@ -139,8 +148,12 @@ public class GameClient implements Runnable {
         }
     }
 
+    public int getBoardSize() {
+        return boardSize;
+    }
+
     /** Podlacza klienta do serwera */
-    void connectClient() {
+    int connectClient() {
         System.out.println("-----Client----");
         try {
             socket = new Socket("localhost", 4444);
@@ -148,15 +161,22 @@ public class GameClient implements Runnable {
             dataOut = new PrintWriter(socket.getOutputStream(), true);
             playerID = Integer.parseInt(dataIn.readLine());
             System.out.println("Connected as player " + playerID);
-            gui.setTitle("Gracz #" + playerID);
-            gui.setPlayerID(playerID);
-
+            if(playerID == 2) {
+                boardSize = Integer.parseInt(dataIn.readLine());
+            }
         } catch (UnknownHostException e) {
             System.out.println("Unknown host: localhost");
-            System.exit(1);
+            return 0;
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("Server you are trying to connect is disconnected");
+            return 0;
         }
+        return playerID;
+    }
+
+    void setSettings() {
+        gui.setTitle("Gracz #" + playerID);
+        gui.setPlayerID(playerID);
         board = gui.getBoard();
         if (playerID == 1) {
             isYourTurn = true;
