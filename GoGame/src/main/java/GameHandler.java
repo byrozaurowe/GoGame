@@ -9,7 +9,7 @@ public class GameHandler {
     boolean isMoveAllowed;
 
     ArrayList<StoneChain> stoneChainList = new ArrayList<StoneChain>();
-    ArrayList<StoneChain> fakeStoneChainList = new ArrayList<StoneChain>();
+    ArrayList<StoneChain> fakeStoneChainList;
 
     public GameHandler(int boardSize) {
         this.boardSize = boardSize;
@@ -25,16 +25,30 @@ public class GameHandler {
         isFieldEmpty();
 
         if(isMoveAllowed == true) {
-            fakeStoneChainList = stoneChainList;
+            fakeStoneChainList = new ArrayList<StoneChain>();
+            for (StoneChain chain: stoneChainList) {
+                fakeStoneChainList.add(chain);
+            }
             if (isLibertyLeft(isPartOfChain(fakeStoneChainList)) || doesItKill(fakeStoneChainList)) {
                 isPartOfChain(stoneChainList);
                 stoneLogicTable[moveX][moveY] = whoseTurn;
-                System.out.println("Przypisuje graczowi " + whoseTurn);
-                System.out.println("przed zabiciem");
+                /* System.out.println("Przypisuje graczowi " + whoseTurn);
+                System.out.println("przed zabiciem"); */
                 removeDead(stoneChainList);
                 System.out.println("po zabiciu");
                 if (whoseTurn == 1) whoseTurn = 2;
                 else whoseTurn = 1;
+                System.out.println("Stan listy łańcuchów:");
+                 for (StoneChain chain: stoneChainList) {
+                    System.out.println("Lista: ");
+                    for (Pair pair: chain.stoneChain) {
+                        System.out.println("Para: " + pair.getKey() + pair.getValue());
+                    }
+                    System.out.println("Lista oddechów: ");
+                    for (Pair pair: chain.liberties) {
+                        System.out.println("Oddech: " +  pair.getKey() + pair.getValue());
+                    }
+                }
             }
         }
 
@@ -71,14 +85,13 @@ public class GameHandler {
             StoneChain stoneChain = it.next();
             if (stoneChain.owner == whoseTurn) {
                 if (stoneChain.isPartOfThisChain(moveX, moveY)) {
-                    if (lastFoundIn == null) {
-                        lastFoundIn = stoneChain;
-                    }
-                    else {
-                        stoneChain.mergeChains(lastFoundIn);
+                    if (lastFoundIn != null) {
+                        System.out.println("Łączę łańcuchy");
+                        lastFoundIn.mergeChains(stoneChain);
+                        System.out.println("połączyłem łańcuchy");
                         it.remove();
-                        lastFoundIn = stoneChain;
                     }
+                    lastFoundIn = stoneChain;
                 }
             }
             if (stoneChain.owner != whoseTurn) {
@@ -86,6 +99,7 @@ public class GameHandler {
             }
         }
         if (lastFoundIn == null) {
+            System.out.println("Nie znalazłem łańcucha dla:" + moveX + moveY + "tworzę nowy");
             lastFoundIn = new StoneChain(whoseTurn, moveX, moveY);
             list.add(lastFoundIn);
         }
@@ -124,8 +138,9 @@ public class GameHandler {
                 for(Pair pair: chain.stoneChain) {
                     stoneLogicTable[pair.getKey()][pair.getValue()] = 0;
                 }
-                chain.restoreLibertiesToNeighbours();
+                StoneChain temp = chain;
                 it.remove();
+                temp.restoreLibertiesToNeighbours();
             }
         }
     }
