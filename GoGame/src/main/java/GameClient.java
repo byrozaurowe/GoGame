@@ -15,8 +15,7 @@ public class GameClient implements Runnable {
     /** Wysylanie danych do serwera */
     private PrintWriter dataOut;
     static GameClient gameClient;
-    public boolean isYourTurn;
-    private Board board;
+    boolean isYourTurn;
     static GUI gui;
     private String moveMsg;
     boolean gameIsFinished = true;
@@ -75,7 +74,7 @@ public class GameClient implements Runnable {
         return 2; // do zmiany
     }
 
-    void sendSummaryResponse(String response) {
+    private void sendSummaryResponse(String response) {
         dataOut.println(response);
     }
     /** Odczytuje informajce z serwera
@@ -101,20 +100,7 @@ public class GameClient implements Runnable {
             gui.nullMsg();
         }
         else isYourTurn = false;
-        for (int i = 0; i < board.getSIZE(); i++) {
-            for (int j = 0; j < board.getSIZE(); j++) {
-                if (Character.getNumericValue(line.charAt((i * board.getSIZE()) + j + 1)) == 0)
-                    board.getBoardTab()[i][j].setVisibility(Stone.Visibility.INVISIBLE);
-                else if (Character.getNumericValue(line.charAt((i * board.getSIZE()) + j + 1)) == 1) {
-                    board.getBoardTab()[i][j].setVisibility(Stone.Visibility.VISIBLE);
-                    board.getBoardTab()[i][j].setPlayer("BLACK");
-                } else if (Character.getNumericValue(line.charAt((i * board.getSIZE()) + j + 1)) == 2) {
-                    board.getBoardTab()[i][j].setVisibility(Stone.Visibility.VISIBLE);
-                    board.getBoardTab()[i][j].setPlayer("WHITE");
-                }
-            }
-        }
-        gui.repaint();
+        gui.setBoard(line);
     }
 
     /** Czekaj na przeciwnika az podejmie decyzje czy chce wznowic gre */
@@ -148,7 +134,7 @@ public class GameClient implements Runnable {
         }
     }
 
-    public int getBoardSize() {
+    int getBoardSize() {
         return boardSize;
     }
 
@@ -174,13 +160,12 @@ public class GameClient implements Runnable {
         return playerID;
     }
 
-    void setSettings() {
+    void setSettings(int boardSize) {
         gui.setTitle("Gracz #" + playerID);
         gui.setPlayerID(playerID);
-        board = gui.getBoard();
         if (playerID == 1) {
             isYourTurn = true;
-            dataOut.println(board.getSIZE());
+            dataOut.println(boardSize);
         }
         else {
             isYourTurn = false;

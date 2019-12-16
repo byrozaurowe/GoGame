@@ -28,8 +28,6 @@ public class GUI extends JFrame implements ActionListener, MouseListener, MouseM
     private int playerID;
     /** Etykieta wyswietlajaca stan gry */
     private JLabel gameStatusLabel;
-    /** Etykieta wyswietlajaca eventy */
-    private JLabel gameEventLabel;
 
     /** Konstruktor maina
      * @param boardSize rozmiar planszy
@@ -59,14 +57,12 @@ public class GUI extends JFrame implements ActionListener, MouseListener, MouseM
     public void actionPerformed(ActionEvent actionEvent) {
         Object event = actionEvent.getSource();
         if (event == exitItem) {
-            //doYouWantToEnd();
             System.exit(0);
         } else if (event == authorsItem) {
             JOptionPane.showMessageDialog(null, "Authors: Wiktoria Byra, Wojciech Pakulski", "Authors", JOptionPane.INFORMATION_MESSAGE);
         }
         else if(event == passItem) {
             msg = "pass";
-            //GameClient.gameClient.setMoveMsg("pass");
         }
     }
 
@@ -91,7 +87,7 @@ public class GUI extends JFrame implements ActionListener, MouseListener, MouseM
         infoMenu.add(rulesItem);
         infoMenu.add(authorsItem);
         menuBar.add(infoMenu);
-        board = new Board(boardSize);
+        board = new Board(this, boardSize);
         add(board, BorderLayout.CENTER);
 
 
@@ -127,11 +123,27 @@ public class GUI extends JFrame implements ActionListener, MouseListener, MouseM
      * @return tak lub nie
      * */
     int doYouWantToEnd() {
-        int input = JOptionPane.showConfirmDialog(this,
+        return JOptionPane.showConfirmDialog(this,
                 "You have " + GameClient.gameClient.getCaptives() + " captives \n"
                         + "Do you want to resume the game?", "Is this the end?",
                 JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
-        return input;
+    }
+
+    void setBoard(String line) {
+        for (int i = 0; i < board.getSIZE(); i++) {
+            for (int j = 0; j < board.getSIZE(); j++) {
+                if (Character.getNumericValue(line.charAt((i * board.getSIZE()) + j + 1)) == 0)
+                    board.getBoardTab()[i][j].setVisibility(Visibility.INVISIBLE);
+                else if (Character.getNumericValue(line.charAt((i * board.getSIZE()) + j + 1)) == 1) {
+                    board.getBoardTab()[i][j].setVisibility(Visibility.VISIBLE);
+                    board.getBoardTab()[i][j].setPlayer("BLACK");
+                } else if (Character.getNumericValue(line.charAt((i * board.getSIZE()) + j + 1)) == 2) {
+                    board.getBoardTab()[i][j].setVisibility(Visibility.VISIBLE);
+                    board.getBoardTab()[i][j].setPlayer("WHITE");
+                }
+            }
+        }
+        repaint();
     }
 
     /** Okno mowiace ze przeciwnik podejmuje decyzje */
@@ -162,6 +174,14 @@ public class GUI extends JFrame implements ActionListener, MouseListener, MouseM
      */
     void setGameStatusLabel(String text) {
         gameStatusLabel.setText(text);
+    }
+
+    boolean checkIfIsYourTurn() {
+        return GameClient.gameClient.isYourTurn;
+    }
+
+    boolean checkIfGameIsFinished() {
+        return GameClient.gameClient.gameIsFinished;
     }
 
     /** Implementowana funkcja mouse listenera */

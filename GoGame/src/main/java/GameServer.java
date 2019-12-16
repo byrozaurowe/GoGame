@@ -167,6 +167,7 @@ public class GameServer {
     void finishGame() {
         String input1;
         String input2;
+        passCounter = 0;
         dataOutPlayer1.println("#");
         dataOutPlayer2.println("#");
         try {
@@ -179,9 +180,11 @@ public class GameServer {
             input2 = dataInPlayer2.readLine();
             if(input2.equals("Y")) {
                 whoseTurn = 1;
+                gameIsFinished = false;
             }
             if(input2.equals("Y") && input1.equals("Y")) {
                 whoseTurn = (int) Math.floor(Math.random()+1);
+                gameIsFinished = false;
             }
         } catch (IOException e) {
             e.printStackTrace();
