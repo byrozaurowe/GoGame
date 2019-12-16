@@ -24,6 +24,8 @@ public class GUI extends JFrame implements ActionListener, MouseListener, MouseM
     private static Board board;
     /** Wiadomosc do serwera */
     private String msg = null;
+    /** Id gracza */
+    private int playerID;
 
     /** Konstruktor maina
      * @param boardSize rozmiar planszy
@@ -44,10 +46,15 @@ public class GUI extends JFrame implements ActionListener, MouseListener, MouseM
         msg = null;
     }
 
+    void setPlayerID(int playerID) {
+        this.playerID = playerID;
+    }
+
     /** Metoda actionPerformed */
     public void actionPerformed(ActionEvent actionEvent) {
         Object event = actionEvent.getSource();
         if (event == exitItem) {
+            //doYouWantToEnd();
             System.exit(0);
         } else if (event == authorsItem) {
             JOptionPane.showMessageDialog(null, "Authors: Wiktoria Byra, Wojciech Pakulski", "Authors", JOptionPane.INFORMATION_MESSAGE);
@@ -60,7 +67,6 @@ public class GUI extends JFrame implements ActionListener, MouseListener, MouseM
 
     /** Tworzy okno gry */
     private void gameInitialize(int boardSize) {
-
         // tworzenie menu
         menuBar = new JMenuBar();
         optionsMenu = new JMenu("Options");
@@ -99,6 +105,24 @@ public class GUI extends JFrame implements ActionListener, MouseListener, MouseM
 
         pack();
     }
+
+    int doYouWantToEnd() {
+        int input = JOptionPane.showConfirmDialog(this,
+                "You have " + GameClient.gameClient.getCaptives() + " captives \n"
+                        + "Do you want to resume the game?", "Summary",
+                JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        if (input == -1) {
+            doYouWantToEnd();
+            return -1;
+        }
+        return input;
+    }
+
+    void waitForOpponent() {
+        JOptionPane.showMessageDialog(this, "You have " + GameClient.gameClient.getCaptives() + " captives \n" +
+                "Waiting for opponent", "Results - waiting...", JOptionPane.INFORMATION_MESSAGE);
+    }
+
     /** Zwroc obiekt plansza
      * @return plansza
      * */

@@ -99,7 +99,7 @@ public class Board extends JPanel{
 				    if(lastMovedField != null) {
 				    	Stone save = lastMovedField;
 						lastMovedField = boardTab[i][j];
-                        if ((GameClient.gameClient.isYourTurn) && (lastMovedField.visibility == Stone.Visibility.INVISIBLE)) {
+                        if ((GameClient.gameClient.isYourTurn) && (lastMovedField.visibility == Stone.Visibility.INVISIBLE) && (!GameClient.gameClient.gameIsFinished)) {
 							save.visibility = Stone.Visibility.INVISIBLE;
 							lastMovedField.visibility = Stone.Visibility.HALFVISIBLE;
 						}
@@ -113,10 +113,13 @@ public class Board extends JPanel{
 
     /** Utworzenie kamienia przy puszczeniu myszki */
 	String releasedStone() {
-		lastMovedField.visibility = Stone.Visibility.INVISIBLE;
-	    String line = lastMovedField.row + " " + lastMovedField.column;
-		lastMovedField = null;
-		return line;
+	    if (lastMovedField != null) {
+            lastMovedField.visibility = Stone.Visibility.INVISIBLE;
+            String line = lastMovedField.row + " " + lastMovedField.column;
+            lastMovedField = null;
+            return line;
+        }
+	    return null;
 	}
 
 	/** Rysowanie */

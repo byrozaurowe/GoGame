@@ -30,7 +30,6 @@ class Menu extends JFrame implements ActionListener {
     /** Konstruktor menu */
     Menu(){
         super("Go Menu");
-
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
         setResizable(false);

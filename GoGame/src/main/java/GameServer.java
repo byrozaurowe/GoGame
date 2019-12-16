@@ -30,6 +30,8 @@ public class GameServer {
     /** Czy gra jest skończona */
     private boolean gameIsFinished = true;
 
+    private int passCounter = 0;
+
     /** Konstruktor serwera */
     private GameServer() {
         System.out.println("----Game Server----");
@@ -71,6 +73,7 @@ public class GameServer {
             }
         } catch (IOException e) {
             System.out.println("Player left the game");
+
         }
     }
 
@@ -90,6 +93,7 @@ public class GameServer {
     private void passTurn() {
         if (whoseTurn == 1) whoseTurn = 2;
         else whoseTurn = 1;
+        passCounter+=2;
     }
 
     /** Ustawia roziar planszy i inicjalizuje tablice ze stanem planszy */
@@ -113,7 +117,6 @@ public class GameServer {
             System.out.println("Waiting for connections...");
             connectClient();
             connectClient();
-            //sendToPlayers("mam info");
         }
         catch (IOException ex) {
             ex.printStackTrace();
@@ -153,6 +156,38 @@ public class GameServer {
             }
 
             sendToPlayers();
+            if(passCounter > 0) passCounter--;
+            if(passCounter == 2) gameIsFinished = true;
+            if(gameIsFinished) finishGame();
+        }
+    }
+    void finishGame() {
+        dataOutPlayer1.println("#");
+        dataOutPlayer2.println("#");
+        try {
+            String input = dataInPlayer1.readLine();
+            if(input.equals("Y")) {
+                gameIsFinished = false;
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        dataOutPlayer2.println("Do you want to resume?");
+        try {
+            String input = dataInPlayer2.readLine();
+            if(input.equals("Y")) {
+                gameIsFinished = true;
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        if(gameIsFinished) {
+            dataOutPlayer1.println("Game is continuing");
+            dataOutPlayer2.println("Game is continuing");
+        }
+        else {
+            dataOutPlayer1.println(":(");
+            dataOutPlayer2.println(":(");
         }
     }
     /** Main

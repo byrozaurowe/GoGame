@@ -19,7 +19,7 @@ public class GameClient implements Runnable {
     private Board board;
     static GUI gui;
     private String moveMsg;
-
+    boolean gameIsFinished = false;
 
     /** Konstruktor klienta */
     private GameClient() {
@@ -28,7 +28,7 @@ public class GameClient implements Runnable {
 
     /** Gra */
     public void run() {
-        while (true) {
+        while (!gameIsFinished) {
             String line;
             if (isYourTurn) {
                 moveMsg = null;
@@ -54,12 +54,27 @@ public class GameClient implements Runnable {
 
             }
         }
+        close();
     }
 
+    int getCaptives() {
+        return 2; // do zmiany
+    }
+
+    void sendSummaryResponse(String response) {
+        dataOut.println(response);
+    }
     /** Odczytuje informajce z serwera
      * @param line informacja z serwera
      * */
     private void readServerMsg (String line) {
+        if((Character.toString(line.charAt(0)).equals("#"))) {
+            if(playerID == 1)
+                doWeEnd();
+            if(playerID == 2)
+                waitForOpponent();
+            return;
+        }
         if (line.charAt(0)- 48 == playerID ) {
             isYourTurn = true;
             gui.nullMsg();
@@ -80,6 +95,33 @@ public class GameClient implements Runnable {
         }
         gui.repaint();
     }
+    private void waitForOpponent() {
+        gui.waitForOpponent();
+        try {
+            if(dataIn.readLine().equals("Do you want to resume?")) doWeEnd();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void doWeEnd() {
+        gameIsFinished = true;
+        switch (gui.doYouWantToEnd()) {
+            case 0:
+                sendSummaryResponse("Y");
+                break;
+            case 1:
+                sendSummaryResponse("N");
+                break;
+            case -1:
+                return;
+        }
+        try {
+            if(dataIn.readLine().equals("Game is continuing")) gameIsFinished = false;
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
     /** Podlacza klienta do serwera */
     void connectClient() {
@@ -90,6 +132,8 @@ public class GameClient implements Runnable {
             dataOut = new PrintWriter(socket.getOutputStream(), true);
             playerID = Integer.parseInt(dataIn.readLine());
             System.out.println("Connected as player " + playerID);
+            gui.setTitle("Gracz #" + playerID);
+            gui.setPlayerID(playerID);
 
         } catch (UnknownHostException e) {
             System.out.println("Unknown host: localhost");
@@ -107,14 +151,6 @@ public class GameClient implements Runnable {
         }
         Thread thread = new Thread(gameClient);
         thread.start();
-    }
-
-    void sendPass() {
-        if(isYourTurn) {
-            dataOut.println("pass");
-            System.out.println("Gracz #" + playerID + " spasowal");
-        }
-        else System.out.println("Nie twoja tura");
     }
 
     /** Main
