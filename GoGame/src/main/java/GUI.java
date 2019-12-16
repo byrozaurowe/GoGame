@@ -46,6 +46,7 @@ public class GUI extends JFrame implements ActionListener, MouseListener, MouseM
         msg = null;
     }
 
+    /** Ustaw id gracza */
     void setPlayerID(int playerID) {
         this.playerID = playerID;
     }
@@ -106,10 +107,19 @@ public class GUI extends JFrame implements ActionListener, MouseListener, MouseM
         pack();
     }
 
+    /** Pokaz podsumowanie jencow na koncu gry */
+    void showSummary() {
+        JOptionPane.showMessageDialog(this, "You have " + GameClient.gameClient.getCaptives() + " captives \n",
+                "Results", JOptionPane.INFORMATION_MESSAGE);
+    }
+
+    /** Zapytanie czy gracz chce wznowic gre
+     * @return tak lub nie
+     * */
     int doYouWantToEnd() {
         int input = JOptionPane.showConfirmDialog(this,
                 "You have " + GameClient.gameClient.getCaptives() + " captives \n"
-                        + "Do you want to resume the game?", "Summary",
+                        + "Do you want to resume the game?", "Is this the end?",
                 JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
         if (input == -1) {
             doYouWantToEnd();
@@ -118,6 +128,7 @@ public class GUI extends JFrame implements ActionListener, MouseListener, MouseM
         return input;
     }
 
+    /** Okno mowiace ze przeciwnik podejmuje decyzje */
     void waitForOpponent() {
         JOptionPane.showMessageDialog(this, "You have " + GameClient.gameClient.getCaptives() + " captives \n" +
                 "Waiting for opponent", "Results - waiting...", JOptionPane.INFORMATION_MESSAGE);

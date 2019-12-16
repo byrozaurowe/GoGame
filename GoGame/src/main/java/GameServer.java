@@ -154,34 +154,35 @@ public class GameServer {
             else if(whoseTurn == 2) {
                 listenPlayer(dataInPlayer2);
             }
-
-            sendToPlayers();
             if(passCounter > 0) passCounter--;
             if(passCounter == 2) gameIsFinished = true;
             if(gameIsFinished) finishGame();
+            sendToPlayers();
         }
     }
     void finishGame() {
+        String input1;
+        String input2;
         dataOutPlayer1.println("#");
         dataOutPlayer2.println("#");
         try {
-            String input = dataInPlayer1.readLine();
-            if(input.equals("Y")) {
+            input1 = dataInPlayer1.readLine();
+            if(input1.equals("Y")) {
+                whoseTurn = 2;
                 gameIsFinished = false;
             }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        dataOutPlayer2.println("Do you want to resume?");
-        try {
-            String input = dataInPlayer2.readLine();
-            if(input.equals("Y")) {
-                gameIsFinished = true;
+            dataOutPlayer2.println("Do you want to resume?");
+            input2 = dataInPlayer2.readLine();
+            if(input2.equals("Y")) {
+                whoseTurn = 1;
+            }
+            if(input2.equals("Y") && input1.equals("Y")) {
+                whoseTurn = (int) Math.floor(Math.random()+1);
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
-        if(gameIsFinished) {
+        if(!gameIsFinished) {
             dataOutPlayer1.println("Game is continuing");
             dataOutPlayer2.println("Game is continuing");
         }

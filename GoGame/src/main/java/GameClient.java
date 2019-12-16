@@ -33,7 +33,9 @@ public class GameClient implements Runnable {
             if (isYourTurn) {
                 moveMsg = null;
                 while (moveMsg == null) {
-                    moveMsg = gui.getMsg(); // Oczekiwanie, aż gracz zrobi jakiś ruch
+                    if(isYourTurn)
+                        moveMsg = gui.getMsg(); // Oczekiwanie, aż gracz zrobi jakiś ruch
+
                 }
                 System.out.println(moveMsg);
                 dataOut.println(moveMsg);
@@ -54,9 +56,12 @@ public class GameClient implements Runnable {
 
             }
         }
-        close();
+        gui.showSummary();
     }
 
+    /**
+     * @return liczba jencow gracza
+     */
     int getCaptives() {
         return 2; // do zmiany
     }
@@ -73,7 +78,13 @@ public class GameClient implements Runnable {
                 doWeEnd();
             if(playerID == 2)
                 waitForOpponent();
-            return;
+            if(!gameIsFinished) {
+                try {
+                    line = dataIn.readLine();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
         }
         if (line.charAt(0)- 48 == playerID ) {
             isYourTurn = true;
@@ -95,6 +106,8 @@ public class GameClient implements Runnable {
         }
         gui.repaint();
     }
+
+    /** Czekaj na przeciwnika az podejmie decyzje czy chce wznowic gre */
     private void waitForOpponent() {
         gui.waitForOpponent();
         try {
@@ -104,6 +117,7 @@ public class GameClient implements Runnable {
         }
     }
 
+    /** Sprawdzamy czy gracz chce skonczyc gre */
     private void doWeEnd() {
         gameIsFinished = true;
         switch (gui.doYouWantToEnd()) {
