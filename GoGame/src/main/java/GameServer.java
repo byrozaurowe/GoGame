@@ -32,7 +32,7 @@ public class GameServer implements Runnable {
     /** Czy jakis gracz opuscil gre? */
     private boolean playerLeft = false;
     /** Liczba jencow gracza nr 1 i 2 */
-    public int captives[];
+    public int[] captives = new int[]{0, 0};
     /** Licznik spasowan */
     private int passCounter = 0;
     /** Czy z botem? */
