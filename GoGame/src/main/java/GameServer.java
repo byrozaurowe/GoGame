@@ -3,7 +3,7 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 /** Serwer gry */
-public class GameServer {
+public class GameServer implements Runnable {
     static GameServer gameServer;
     /** Socket serwera */
     private ServerSocket serverSocket;
@@ -37,6 +37,8 @@ public class GameServer {
     private int captives2 = 0;
     /** Licznik spasowan */
     private int passCounter = 0;
+    /** Czy z botem? */
+    private boolean bot = false;
 
     /** Konstruktor serwera */
     private GameServer() {
@@ -130,6 +132,9 @@ public class GameServer {
         try {
             System.out.println("Waiting for connections...");
             connectClient();
+            if(bot) {
+                Bot bot = new Bot();
+            }
             connectClient();
         }
         catch (IOException ex) {
@@ -145,8 +150,9 @@ public class GameServer {
             dataOutPlayer1 = new PrintWriter(socket.getOutputStream(), true);
             dataOutPlayer1.println(numPlayers);
             System.out.println("Player " + numPlayers + " has connected");
-
+            if(dataInPlayer1.readLine().equals("BOT")) bot = true;
             setBoardSize();
+
         }
         else {
             dataInPlayer2 = new BufferedReader(new InputStreamReader(socket.getInputStream()));
@@ -234,5 +240,11 @@ public class GameServer {
         gameServer = new GameServer();
         gameServer.acceptConnections();
         gameServer.play();
+    }
+
+    @Override
+    public void run() {
+        acceptConnections();
+        play();
     }
 }

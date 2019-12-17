@@ -3,21 +3,103 @@
   <ID>JAVA</ID>
   <OriginalElement />
   <nodes>
-    <node x="163.0" y="71.0">StoneChain</node>
-    <node x="163.0" y="142.0">Player</node>
-    <node x="127.0" y="213.0">Board</node>
-    <node x="0.0" y="142.0">GameClient</node>
-    <node x="0.0" y="0.0">GameHandler</node>
-    <node x="119.0" y="284.0">GUI</node>
-    <node x="0.0" y="71.0">GameServer</node>
-    <node x="0.0" y="213.0">Stone</node>
-    <node x="0.0" y="284.0">Pair</node>
+    <node x="66.8004712301587" y="248.0">StoneChain</node>
+    <node x="291.3197172619048" y="0.0">Player</node>
+    <node x="327.61971726190484" y="172.0">Board</node>
+    <node x="400.31971726190477" y="0.0">GameClient</node>
+    <node x="-49.0" y="292.0">Bot</node>
+    <node x="120.01971726190474" y="76.0">GameHandler</node>
+    <node x="419.0033283730159" y="76.0">GUI</node>
+    <node x="68.5" y="152.0">GameServer</node>
+    <node x="294.81971726190477" y="76.0">Stone</node>
+    <node x="20.586805555555543" y="0.0">Pair</node>
   </nodes>
   <notes />
-  <edges />
-  <settings layout="Hierarchic Group" zoom="1.0" x="198.0" y="118.5" />
+  <edges>
+    <edge source="Stone" target="Player">
+      <point x="-20.5" y="-13.0" />
+      <point x="315.31971726190477" y="51.0" />
+      <point x="313.5697172619048" y="51.0" />
+      <point x="-22.25" y="13.0" />
+    </edge>
+    <edge source="GameHandler" target="StoneChain">
+      <point x="17.85714285714286" y="13.0" />
+      <point x="200.3768601190476" y="122.0" />
+      <point x="208.0" y="122.0" />
+      <point x="208.0" y="208.0" />
+      <point x="152.02269345238093" y="208.0" />
+      <point x="26.22222222222223" y="-13.0" />
+    </edge>
+    <edge source="GameHandler" target="GameServer">
+      <point x="-17.857142857142854" y="13.0" />
+      <point x="164.6625744047619" y="132.0" />
+      <point x="166.83333333333334" y="132.0" />
+      <point x="39.33333333333334" y="-13.0" />
+    </edge>
+    <edge source="StoneChain" target="GameServer">
+      <point x="0.0" y="-13.0" />
+      <point x="125.8004712301587" y="228.0" />
+      <point x="127.5" y="228.0" />
+      <point x="0.0" y="13.0" />
+    </edge>
+    <edge source="Board" target="Stone">
+      <point x="-27.33333333333337" y="-13.0" />
+      <point x="341.28638392857147" y="142.0" />
+      <point x="319.4197172619048" y="142.0" />
+      <point x="-16.399999999999977" y="13.0" />
+    </edge>
+    <edge source="StoneChain" target="Pair">
+      <point x="-52.44444444444446" y="-13.0" />
+      <point x="73.35602678571425" y="228.0" />
+      <point x="25.0" y="228.0" />
+      <point x="25.0" y="56.0" />
+      <point x="26.753472222222214" y="56.0" />
+      <point x="-30.83333333333333" y="13.0" />
+    </edge>
+    <edge source="Stone" target="Board">
+      <point x="32.80000000000001" y="13.0" />
+      <point x="0.0" y="-13.0" />
+    </edge>
+    <edge source="GameHandler" target="Pair">
+      <point x="-31.25" y="-13.0" />
+      <point x="151.26971726190476" y="56.0" />
+      <point x="76.08680555555554" y="56.0" />
+      <point x="18.5" y="13.0" />
+    </edge>
+    <edge source="GameServer" target="GameHandler">
+      <point x="-39.33333333333334" y="-13.0" />
+      <point x="88.16666666666666" y="122.0" />
+      <point x="128.94828869047618" y="122.0" />
+      <point x="-53.57142857142857" y="13.0" />
+    </edge>
+    <edge source="GUI" target="GameClient">
+      <point x="-16.75" y="-13.0" />
+      <point x="435.7533283730159" y="51.0" />
+      <point x="429.81971726190477" y="51.0" />
+      <point x="-29.5" y="13.0" />
+    </edge>
+    <edge source="GUI" target="Board">
+      <point x="25.125" y="13.0" />
+      <point x="477.6283283730159" y="152.0" />
+      <point x="405.0641617063493" y="152.0" />
+      <point x="36.44444444444446" y="-13.0" />
+    </edge>
+    <edge source="GameClient" target="GUI">
+      <point x="29.5" y="13.0" />
+      <point x="488.81971726190477" y="51.0" />
+      <point x="469.2533283730159" y="51.0" />
+      <point x="16.75" y="-13.0" />
+    </edge>
+    <edge source="Board" target="GUI">
+      <point x="18.22222222222223" y="-13.0" />
+      <point x="386.841939484127" y="132.0" />
+      <point x="444.1283283730159" y="132.0" />
+      <point x="-8.375" y="13.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="209.0" y="132.0" />
   <SelectedNodes>
-    <node>Pair</node>
+    <node>Bot</node>
   </SelectedNodes>
   <Categories />
   <SCOPE>All</SCOPE>

@@ -116,5 +116,27 @@ class Menu extends JFrame implements ActionListener {
             else return;
             this.dispose();
         }
+        if(event == botStartButton) {
+            GameClient.gameClient.startGameWithBot();
+            int playerID = GameClient.gameClient.connectClient();
+            if (playerID == 1) {
+                if (big.isSelected()) {
+                    frame = new GUI(19);
+                    GameClient.gui = frame;
+                    GameClient.gameClient.setSettings(19);
+                }
+                else if (normal.isSelected()) {
+                    frame = new GUI(13);
+                    GameClient.gui = frame;
+                    GameClient.gameClient.setSettings(13);
+                }
+                else if (small.isSelected()) {
+                    frame = new GUI(9);
+                    GameClient.gui = frame;
+                    GameClient.gameClient.setSettings(9);
+                }
+            }
+            this.dispose();
+        }
     }
 }

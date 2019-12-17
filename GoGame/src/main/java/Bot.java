@@ -1,42 +1,37 @@
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
 import java.net.Socket;
 import java.net.UnknownHostException;
+import java.util.ArrayList;
 
-/** Klient gry */
-public class GameClient implements Runnable {
+class Bot implements Runnable {
 
-    private Menu menu;
     /** Id gracza */
     private int playerID;
-    /** Socket klienta */
+    /** Socket bota */
     private Socket socket;
     /** Czytanie danych z serwera */
     private BufferedReader dataIn;
     /** Wysylanie danych do serwera */
     private PrintWriter dataOut;
-    /** Klient gracza */
-    static GameClient gameClient;
     /** Czy jest twoja tura */
     boolean isYourTurn = false;
-    /** Gui gracza */
-    static GUI gui;
-    /** Wiadomosc o ruchu */
-    private String moveMsg;
     /** Czy gra jest skonczona */
     boolean gameIsFinished = true;
-    /** Rozmiar planszy */
-    private int boardSize;
-    /** Czy z botem? */
-    private boolean bot = false;
+    /** Bot */
+    int boardSize;
 
     /** Konstruktor klienta */
-    GameClient() {
-        menu = new Menu();
+    Bot() {
+        Thread thread = new Thread(this);
+        thread.start();
     }
 
     /** Gra */
     public void run() {
-        gui.setGameStatusLabel("Waiting for opponent to join");
+        connectBot();
         try {
             if(dataIn.readLine().equals("Let's begin")) {
                 gameIsFinished = false;
@@ -45,16 +40,10 @@ public class GameClient implements Runnable {
             e.printStackTrace();
         }
         while (!gameIsFinished) {
-            String line;
-            gui.setGameStatusLabel(isYourTurn);
+            String line = "";
+
             if (isYourTurn) {
-                moveMsg = null;
-                while (moveMsg == null) {
-                    if(isYourTurn)
-                        moveMsg = gui.getMsg(); // Oczekiwanie, aż gracz zrobi jakiś ruch
-                }
-                System.out.println(moveMsg);
-                dataOut.println(moveMsg);
+                doMove();
                 if(gameIsFinished) break;
                 try {
                     line = dataIn.readLine();
@@ -73,8 +62,6 @@ public class GameClient implements Runnable {
 
             }
         }
-        gui.setGameStatusLabel("Game has ended");
-        gui.showSummary();
     }
 
     /** Wyslij odpowiedz do serwera
@@ -102,21 +89,17 @@ public class GameClient implements Runnable {
             else return;
         }
         if(line.equals("Opponent left")) {
-            gui.opponentLeft();
             gameIsFinished = true;
             return;
         }
-        if (line.charAt(0)- 48 == playerID ) {
+        if (line.charAt(0) - 48 == playerID ) {
             isYourTurn = true;
-            gui.nullMsg();
         }
         else isYourTurn = false;
-        gui.setBoard(line);
     }
 
     /** Czekaj na przeciwnika az podejmie decyzje czy chce wznowic gre */
     private void waitForOpponent() {
-        gui.waitForOpponent();
         try {
             if(dataIn.readLine().equals("Do you want to resume?")) doWeEnd();
         } catch (IOException e) {
@@ -127,17 +110,7 @@ public class GameClient implements Runnable {
     /** Sprawdzamy czy gracz chce skonczyc gre */
     private void doWeEnd() {
         gameIsFinished = true;
-        switch (gui.doYouWantToEnd()) {
-            case 0:
-                sendSummaryResponse("Y");
-                break;
-            case 1:
-                sendSummaryResponse("N");
-                break;
-            case -1:
-                doWeEnd();
-                return;
-        }
+        sendSummaryResponse("N");
         try {
             if(dataIn.readLine().equals("Game is continuing")) gameIsFinished = false;
         } catch (IOException e) {
@@ -145,12 +118,8 @@ public class GameClient implements Runnable {
         }
     }
 
-    int getBoardSize() {
-        return boardSize;
-    }
-
     /** Podlacza klienta do serwera */
-    int connectClient() {
+    int connectBot() {
         System.out.println("-----Client----");
         try {
             socket = new Socket("localhost", 4444);
@@ -158,10 +127,6 @@ public class GameClient implements Runnable {
             dataOut = new PrintWriter(socket.getOutputStream(), true);
             playerID = Integer.parseInt(dataIn.readLine());
             System.out.println("Connected as player " + playerID);
-            if(playerID == 1) {
-                if (bot) dataOut.println("BOT");
-                else dataOut.println("NIEBOT");
-            }
             if(playerID == 2) {
                 boardSize = Integer.parseInt(dataIn.readLine());
             }
@@ -172,13 +137,12 @@ public class GameClient implements Runnable {
             System.out.println("Server you are trying to connect is disconnected");
             return 0;
         }
+        setSettings(boardSize);
         return playerID;
     }
 
     /** Ustawienia poczatkowe */
     void setSettings(int boardSize) {
-        gui.setTitle("Gracz #" + playerID);
-        gui.setPlayerID(playerID);
         if (playerID == 1) {
             isYourTurn = true;
             dataOut.println(boardSize);
@@ -186,19 +150,11 @@ public class GameClient implements Runnable {
         else {
             isYourTurn = false;
         }
-        Thread thread = new Thread(gameClient);
-        thread.start();
+
     }
 
-    void startGameWithBot() {
-        bot = true;
+    void doMove() {
+        String move = (int) Math.floor(Math.random()*boardSize) + " " + (int) Math.floor(Math.random()*boardSize);
+        dataOut.println(move);
     }
-
-    /** Main
-     * @param args puste
-     */
-    public static void main(String[] args) {
-        gameClient = new GameClient();
-    }
-
 }
