@@ -3,7 +3,7 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 /** Serwer gry */
-public class GameServer implements Runnable {
+public class GameServer {
     static GameServer gameServer;
     /** Socket serwera */
     private ServerSocket serverSocket;
@@ -32,7 +32,7 @@ public class GameServer implements Runnable {
     /** Czy jakis gracz opuscil gre? */
     private boolean playerLeft = false;
     /** Liczba jencow gracza nr 1 i 2 */
-    public int[] captives = new int[]{0, 0};
+    int[] captives = new int[]{0, 0};
     /** Licznik spasowan */
     private int passCounter = 0;
     /** Czy z botem? */
@@ -131,7 +131,7 @@ public class GameServer implements Runnable {
             System.out.println("Waiting for connections...");
             connectClient();
             if(bot) {
-                Bot bot = new Bot();
+                new Bot();
             }
             connectClient();
         }
@@ -240,9 +240,4 @@ public class GameServer implements Runnable {
         gameServer.play();
     }
 
-    @Override
-    public void run() {
-        acceptConnections();
-        play();
-    }
 }

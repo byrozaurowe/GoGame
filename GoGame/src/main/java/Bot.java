@@ -17,11 +17,11 @@ class Bot implements Runnable {
     /** Wysylanie danych do serwera */
     private PrintWriter dataOut;
     /** Czy jest twoja tura */
-    boolean isYourTurn = false;
+    private boolean isYourTurn = false;
     /** Czy gra jest skonczona */
-    boolean gameIsFinished = true;
+    private boolean gameIsFinished = true;
     /** Bot */
-    int boardSize;
+    private int boardSize;
 
     /** Konstruktor klienta */
     Bot() {
@@ -119,7 +119,7 @@ class Bot implements Runnable {
     }
 
     /** Podlacza klienta do serwera */
-    int connectBot() {
+    private int connectBot() {
         System.out.println("-----Client----");
         try {
             socket = new Socket("localhost", 4444);
@@ -142,7 +142,7 @@ class Bot implements Runnable {
     }
 
     /** Ustawienia poczatkowe */
-    void setSettings(int boardSize) {
+    private void setSettings(int boardSize) {
         if (playerID == 1) {
             isYourTurn = true;
             dataOut.println(boardSize);
@@ -153,7 +153,7 @@ class Bot implements Runnable {
 
     }
 
-    void doMove() {
+    private void doMove() {
         String move = (int) Math.floor(Math.random()*boardSize) + " " + (int) Math.floor(Math.random()*boardSize);
         dataOut.println(move);
     }
