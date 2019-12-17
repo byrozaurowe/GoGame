@@ -80,8 +80,8 @@ public class Board extends JPanel{
 		for (int i=0; i<SIZE; i++) {
 			for (int j=0; j<SIZE; j++) {
 				if (boardTab[i][j].circle.contains(event.getPoint())) {
-					lastMovedField = boardTab[i][j];
 					if ((gui.checkIfIsYourTurn()) && (boardTab[i][j].visibility == Visibility.INVISIBLE) && (!gui.checkIfGameIsFinished())) {
+						lastMovedField = boardTab[i][j];
 						boardTab[i][j].visibility= Visibility.HALFVISIBLE;
 					}
 				}
