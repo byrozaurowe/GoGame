@@ -4,7 +4,7 @@ import java.util.Iterator;
 /** Glowna klasa obslugujaca sie logike */
 class GameHandler {
     /** Id gracza czyja tura */
-    private int whoseTurn;
+    protected int whoseTurn;
     /** Logiczna tablica zawierajaca stan planszy */
     int[][] stoneLogicTable;
     /** Rozmiar planszy */
@@ -110,7 +110,7 @@ class GameHandler {
         }
     }
 
-    /** Sprawdza czy jest */
+    /** Sprawdza do jakiego łańcucha będzie należał nowy kamięń */
     private StoneChain isPartOfChain(ArrayList<StoneChain> list, int moveX, int moveY) {
         StoneChain lastFoundIn = null;
         for (Iterator<StoneChain> it = list.iterator(); it.hasNext();) {
@@ -168,14 +168,14 @@ class GameHandler {
      * @param chain lancuch w ktorym sprawdzamy oddechy
      * @return tak lub nie
      */
-    private boolean isLibertyLeft (StoneChain chain) {
+    protected boolean isLibertyLeft(StoneChain chain) {
         return chain.liberties.size() > 0;
     }
 
-    /** Sprawdza czy ginie
+    /** Sprawdza czy ruch udusi jakieś kamienie
      * @return tak lub nie
      * */
-    private boolean doesItKill(ArrayList<StoneChain> fakeList) {
+    protected boolean doesItKill(ArrayList<StoneChain> fakeList) {
         for (StoneChain chain: fakeList) {
             if (chain.owner != whoseTurn && chain.liberties.isEmpty()) {
                 toKill = chain.stoneChain.get(0);
@@ -225,6 +225,8 @@ class GameHandler {
         }
         return null;
     }
+
+    /** Sprawdza czy bot ma jeszcze hjakiś możliwy ruch */
     private boolean isAnyMoveLeft() {
         for (int i=0; i<boardSize; i++) {
             for (int j=0; j<boardSize; j++) {
