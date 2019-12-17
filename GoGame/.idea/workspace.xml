@@ -1,20 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="23df1589-9a88-484b-b16c-0d131e237639" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/BoardTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/GUITest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/GameClientTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/PairTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/StoneTest.java" afterDir="false" />
+    <list default="true" id="23df1589-9a88-484b-b16c-0d131e237639" name="Default Changelist" comment="Zakonczenie gry bez bledu jak gracz sie rozlaczy/podda. Poprawne odczytywanie z serwera informacji o jencach. Komentarze">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Board.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/GameClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GameClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/GameServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GameServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Stone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Stone.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -196,7 +188,7 @@
       <workItem from="1576441713705" duration="5042000" />
       <workItem from="1576451122700" duration="4797000" />
       <workItem from="1576536609884" duration="7066000" />
-      <workItem from="1576584284060" duration="1562000" />
+      <workItem from="1576584284060" duration="5407000" />
     </task>
     <task id="LOCAL-00001" summary="board">
       <created>1575056393338</created>
@@ -324,7 +316,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576530742556</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Testy boarda, gui, pair, stona i clienta, naprawa 1 bugu w rysowaniu">
+      <created>1576586048235</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1576586048235</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -364,7 +363,9 @@
     <MESSAGE value="Etykieta z tura u graczy; Brak bledu przy laczeniu sie gracza przy wylaczonym serwerze; Oczekiwanie na dolaczenie przeciwnika; Ustawienie rozmiaru planszy, w zaleznosci od wyboru gracza nr 1, u obu graczy" />
     <MESSAGE value="Zmniejszenie sprzężenia miedzy klasami zwiazanymi z klientem" />
     <MESSAGE value="Zmniejszenie sprzężenia miedzy klasami zwiazanymi z klientem, naprawa spasowania jesli pierwszy sie nie zgodzil a drugi tak" />
-    <option name="LAST_COMMIT_MESSAGE" value="Zmniejszenie sprzężenia miedzy klasami zwiazanymi z klientem, naprawa spasowania jesli pierwszy sie nie zgodzil a drugi tak" />
+    <MESSAGE value="Testy boarda, gui, pair, stona i clienta, naprawa 1 bugu w rysowaniu" />
+    <MESSAGE value="Zakonczenie gry bez bledu jak gracz sie rozlaczy/podda. Poprawne odczytywanie z serwera informacji o jencach. Komentarze" />
+    <option name="LAST_COMMIT_MESSAGE" value="Zakonczenie gry bez bledu jak gracz sie rozlaczy/podda. Poprawne odczytywanie z serwera informacji o jencach. Komentarze" />
   </component>
   <component name="WindowStateProjectService">
     <state x="517" y="88" key="#GameClient" timestamp="1576479721356">
