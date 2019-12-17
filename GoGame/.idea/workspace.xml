@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="23df1589-9a88-484b-b16c-0d131e237639" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Bot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Bot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GameHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GameHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/GameServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GameServer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -333,7 +335,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576602708207</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="liczba jeńców (teraz działa)">
+      <created>1576603675128</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1576603675128</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -376,7 +385,8 @@
     <MESSAGE value="blokada kliknięcia w kamień, który istnieje" />
     <MESSAGE value="zasada KO" />
     <MESSAGE value="liczba jeńców" />
-    <option name="LAST_COMMIT_MESSAGE" value="liczba jeńców" />
+    <MESSAGE value="liczba jeńców (teraz działa)" />
+    <option name="LAST_COMMIT_MESSAGE" value="liczba jeńców (teraz działa)" />
   </component>
   <component name="WindowStateProjectService">
     <state x="517" y="88" key="#GameClient" timestamp="1576479721356">
@@ -422,10 +432,10 @@
     </state>
     <state x="677" y="132" key="#xdebugger.evaluate/0.0.1600.860@0.0.1600.860" timestamp="1576484977844" />
     <state x="716" y="161" width="254" height="593" key="#xdebugger.evaluate/67.27.1533.873@67.27.1533.873" timestamp="1576576649170" />
-    <state x="398" y="59" width="860" height="807" key="CommitChangelistDialog2" timestamp="1576602708082">
+    <state x="398" y="59" width="860" height="807" key="CommitChangelistDialog2" timestamp="1576603675019">
       <screen x="67" y="27" width="1533" height="873" />
     </state>
-    <state x="398" y="59" width="860" height="807" key="CommitChangelistDialog2/67.27.1533.873@67.27.1533.873" timestamp="1576602708082" />
+    <state x="398" y="59" width="860" height="807" key="CommitChangelistDialog2/67.27.1533.873@67.27.1533.873" timestamp="1576603675019" />
     <state width="423" height="466" key="DebuggerActiveHint" timestamp="1576573359125">
       <screen x="67" y="27" width="1533" height="873" />
     </state>
@@ -486,10 +496,10 @@
       <screen x="67" y="27" width="1533" height="873" />
     </state>
     <state x="316" y="40" width="1024" height="845" key="SettingsEditor/67.27.1533.873@67.27.1533.873" timestamp="1576515811969" />
-    <state x="428" y="198" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1576602968572">
+    <state x="428" y="198" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1576603682542">
       <screen x="67" y="27" width="1533" height="873" />
     </state>
-    <state x="428" y="198" width="800" height="528" key="Vcs.Push.Dialog.v2/67.27.1533.873@67.27.1533.873" timestamp="1576602968572" />
+    <state x="428" y="198" width="800" height="528" key="Vcs.Push.Dialog.v2/67.27.1533.873@67.27.1533.873" timestamp="1576603682542" />
     <state x="601" y="382" width="464" height="160" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1576602280134">
       <screen x="67" y="27" width="1533" height="873" />
     </state>
@@ -509,87 +519,87 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/GameHandler.java</url>
-          <line>87</line>
+          <line>94</line>
           <option name="timeStamp" value="142" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/GameHandler.java</url>
-          <line>91</line>
+          <line>98</line>
           <option name="timeStamp" value="143" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/GameHandler.java</url>
-          <line>92</line>
+          <line>99</line>
           <option name="timeStamp" value="144" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/GameHandler.java</url>
-          <line>93</line>
+          <line>100</line>
           <option name="timeStamp" value="145" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/GameHandler.java</url>
-          <line>94</line>
+          <line>101</line>
           <option name="timeStamp" value="146" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/GameHandler.java</url>
-          <line>112</line>
+          <line>119</line>
           <option name="timeStamp" value="148" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/GameHandler.java</url>
-          <line>113</line>
+          <line>120</line>
           <option name="timeStamp" value="149" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/GameHandler.java</url>
-          <line>114</line>
+          <line>121</line>
           <option name="timeStamp" value="150" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/GameHandler.java</url>
-          <line>130</line>
+          <line>137</line>
           <option name="timeStamp" value="152" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/GameHandler.java</url>
-          <line>131</line>
+          <line>138</line>
           <option name="timeStamp" value="153" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/GameHandler.java</url>
-          <line>135</line>
+          <line>142</line>
           <option name="timeStamp" value="155" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/GameHandler.java</url>
-          <line>136</line>
+          <line>143</line>
           <option name="timeStamp" value="156" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/GameHandler.java</url>
-          <line>137</line>
+          <line>144</line>
           <option name="timeStamp" value="157" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/GameHandler.java</url>
-          <line>139</line>
+          <line>146</line>
           <option name="timeStamp" value="158" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/GameHandler.java</url>
-          <line>134</line>
+          <line>141</line>
           <option name="timeStamp" value="159" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/GameHandler.java</url>
-          <line>124</line>
+          <line>131</line>
           <option name="timeStamp" value="163" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/GameHandler.java</url>
-          <line>125</line>
+          <line>132</line>
           <option name="timeStamp" value="164" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">

@@ -23,6 +23,8 @@ class Bot implements Runnable {
     /** Bot */
     int boardSize;
 
+    int canBotMove = 1;
+
     /** Konstruktor klienta */
     Bot() {
         Thread thread = new Thread(this);
