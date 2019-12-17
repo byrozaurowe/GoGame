@@ -3,12 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="23df1589-9a88-484b-b16c-0d131e237639" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/diagram.uml" beforeDir="false" afterPath="$PROJECT_DIR$/diagram.uml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/GameHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GameHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/StoneChain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/StoneChain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GameServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GameServer.java" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -86,19 +83,7 @@
       <recent name="C:\Users\wojte\git\IntelliJ_TP\GoGame\src\main\resources" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
-  <component name="RunManager" selected="Application.GameClient">
+  <component name="RunManager" selected="Application.GameServer">
     <configuration name="GUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="11.0.4" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -129,7 +114,7 @@
     </configuration>
     <configuration name="GameServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="GameServer" />
-      <module name="go" />
+      <module name="GoGame" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value=".*" />
@@ -155,11 +140,23 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.GameClient" />
         <item itemvalue="Application.GameServer" />
+        <item itemvalue="Application.GameClient" />
         <item itemvalue="Application.GUI" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -189,7 +186,6 @@
       <workItem from="1576451122700" duration="4797000" />
       <workItem from="1576536609884" duration="7066000" />
       <workItem from="1576584284060" duration="1562000" />
-      <workItem from="1576598665928" duration="2669000" />
     </task>
     <task id="LOCAL-00001" summary="board">
       <created>1575056393338</created>
@@ -324,7 +320,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576589965476</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="zasada KO">
+      <created>1576598208992</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1576598208992</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -365,7 +368,8 @@
     <MESSAGE value="Zmniejszenie sprzężenia miedzy klasami zwiazanymi z klientem" />
     <MESSAGE value="Zmniejszenie sprzężenia miedzy klasami zwiazanymi z klientem, naprawa spasowania jesli pierwszy sie nie zgodzil a drugi tak" />
     <MESSAGE value="blokada kliknięcia w kamień, który istnieje" />
-    <option name="LAST_COMMIT_MESSAGE" value="blokada kliknięcia w kamień, który istnieje" />
+    <MESSAGE value="zasada KO" />
+    <option name="LAST_COMMIT_MESSAGE" value="zasada KO" />
   </component>
   <component name="WindowStateProjectService">
     <state x="517" y="88" key="#GameClient" timestamp="1576479721356">
@@ -411,10 +415,10 @@
     </state>
     <state x="677" y="132" key="#xdebugger.evaluate/0.0.1600.860@0.0.1600.860" timestamp="1576484977844" />
     <state x="716" y="161" width="254" height="593" key="#xdebugger.evaluate/67.27.1533.873@67.27.1533.873" timestamp="1576576649170" />
-    <state x="398" y="59" width="860" height="807" key="CommitChangelistDialog2" timestamp="1576589965287">
+    <state x="398" y="59" width="860" height="807" key="CommitChangelistDialog2" timestamp="1576598208892">
       <screen x="67" y="27" width="1533" height="873" />
     </state>
-    <state x="398" y="59" width="860" height="807" key="CommitChangelistDialog2/67.27.1533.873@67.27.1533.873" timestamp="1576589965287" />
+    <state x="398" y="59" width="860" height="807" key="CommitChangelistDialog2/67.27.1533.873@67.27.1533.873" timestamp="1576598208892" />
     <state width="423" height="466" key="DebuggerActiveHint" timestamp="1576573359125">
       <screen x="67" y="27" width="1533" height="873" />
     </state>
@@ -423,26 +427,26 @@
       <screen x="67" y="27" width="1533" height="873" />
     </state>
     <state x="455" y="206" width="735" height="513" key="FileChooserDialogImpl/67.27.1533.873@67.27.1533.873" timestamp="1576342696829" />
-    <state width="1487" height="181" key="GridCell.Tab.0.bottom" timestamp="1576598079406">
+    <state width="1487" height="88" key="GridCell.Tab.0.bottom" timestamp="1576602682930">
       <screen x="67" y="27" width="1533" height="873" />
     </state>
     <state width="1557" height="276" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1576485274597" />
-    <state width="1487" height="181" key="GridCell.Tab.0.bottom/67.27.1533.873@67.27.1533.873" timestamp="1576598079406" />
-    <state width="1487" height="181" key="GridCell.Tab.0.center" timestamp="1576598079405">
+    <state width="1487" height="88" key="GridCell.Tab.0.bottom/67.27.1533.873@67.27.1533.873" timestamp="1576602682930" />
+    <state width="1487" height="88" key="GridCell.Tab.0.center" timestamp="1576602682929">
       <screen x="67" y="27" width="1533" height="873" />
     </state>
     <state width="1557" height="276" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1576485274597" />
-    <state width="1487" height="181" key="GridCell.Tab.0.center/67.27.1533.873@67.27.1533.873" timestamp="1576598079405" />
-    <state width="1487" height="181" key="GridCell.Tab.0.left" timestamp="1576598079405">
+    <state width="1487" height="88" key="GridCell.Tab.0.center/67.27.1533.873@67.27.1533.873" timestamp="1576602682929" />
+    <state width="1487" height="88" key="GridCell.Tab.0.left" timestamp="1576602682929">
       <screen x="67" y="27" width="1533" height="873" />
     </state>
     <state width="1557" height="276" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1576485274597" />
-    <state width="1487" height="181" key="GridCell.Tab.0.left/67.27.1533.873@67.27.1533.873" timestamp="1576598079405" />
-    <state width="1487" height="181" key="GridCell.Tab.0.right" timestamp="1576598079406">
+    <state width="1487" height="88" key="GridCell.Tab.0.left/67.27.1533.873@67.27.1533.873" timestamp="1576602682929" />
+    <state width="1487" height="88" key="GridCell.Tab.0.right" timestamp="1576602682930">
       <screen x="67" y="27" width="1533" height="873" />
     </state>
     <state width="1557" height="276" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1576485274597" />
-    <state width="1487" height="181" key="GridCell.Tab.0.right/67.27.1533.873@67.27.1533.873" timestamp="1576598079406" />
+    <state width="1487" height="88" key="GridCell.Tab.0.right/67.27.1533.873@67.27.1533.873" timestamp="1576602682930" />
     <state width="1487" height="362" key="GridCell.Tab.1.bottom" timestamp="1576579105955">
       <screen x="67" y="27" width="1533" height="873" />
     </state>
@@ -467,18 +471,22 @@
       <screen x="67" y="27" width="1533" height="873" />
     </state>
     <state x="366" y="120" width="924" height="684" key="Maven.ArtifactSearchDialog/67.27.1533.873@67.27.1533.873" timestamp="1576342588084" />
+    <state x="538" y="180" width="580" height="564" key="MultipleFileMergeDialog" timestamp="1576602341118">
+      <screen x="67" y="27" width="1533" height="873" />
+    </state>
+    <state x="538" y="180" width="580" height="564" key="MultipleFileMergeDialog/67.27.1533.873@67.27.1533.873" timestamp="1576602341118" />
     <state x="316" y="40" width="1024" height="845" key="SettingsEditor" timestamp="1576515811969">
       <screen x="67" y="27" width="1533" height="873" />
     </state>
     <state x="316" y="40" width="1024" height="845" key="SettingsEditor/67.27.1533.873@67.27.1533.873" timestamp="1576515811969" />
-    <state x="428" y="198" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1576346966231">
+    <state x="428" y="198" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1576598252116">
       <screen x="67" y="27" width="1533" height="873" />
     </state>
-    <state x="428" y="198" width="800" height="528" key="Vcs.Push.Dialog.v2/67.27.1533.873@67.27.1533.873" timestamp="1576346966231" />
-    <state x="601" y="382" width="464" height="160" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1576583535313">
+    <state x="428" y="198" width="800" height="528" key="Vcs.Push.Dialog.v2/67.27.1533.873@67.27.1533.873" timestamp="1576598252116" />
+    <state x="601" y="382" width="464" height="160" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1576602280134">
       <screen x="67" y="27" width="1533" height="873" />
     </state>
-    <state x="601" y="382" width="464" height="160" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/67.27.1533.873@67.27.1533.873" timestamp="1576583535313" />
+    <state x="601" y="382" width="464" height="160" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/67.27.1533.873@67.27.1533.873" timestamp="1576602280134" />
     <state x="361" y="201" width="934" height="522" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1576578603558">
       <screen x="67" y="27" width="1533" height="873" />
     </state>
@@ -488,5 +496,116 @@
     </state>
     <state x="448" y="182" width="702" height="668" key="search.everywhere.popup/0.0.1600.860@0.0.1600.860" timestamp="1576416925577" />
     <state x="496" y="212" width="672" height="678" key="search.everywhere.popup/67.27.1533.873@67.27.1533.873" timestamp="1576403357925" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/GameHandler.java</url>
+          <line>87</line>
+          <option name="timeStamp" value="142" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/GameHandler.java</url>
+          <line>91</line>
+          <option name="timeStamp" value="143" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/GameHandler.java</url>
+          <line>92</line>
+          <option name="timeStamp" value="144" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/GameHandler.java</url>
+          <line>93</line>
+          <option name="timeStamp" value="145" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/GameHandler.java</url>
+          <line>94</line>
+          <option name="timeStamp" value="146" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/GameHandler.java</url>
+          <line>112</line>
+          <option name="timeStamp" value="148" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/GameHandler.java</url>
+          <line>113</line>
+          <option name="timeStamp" value="149" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/GameHandler.java</url>
+          <line>114</line>
+          <option name="timeStamp" value="150" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/GameHandler.java</url>
+          <line>130</line>
+          <option name="timeStamp" value="152" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/GameHandler.java</url>
+          <line>131</line>
+          <option name="timeStamp" value="153" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/GameHandler.java</url>
+          <line>135</line>
+          <option name="timeStamp" value="155" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/GameHandler.java</url>
+          <line>136</line>
+          <option name="timeStamp" value="156" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/GameHandler.java</url>
+          <line>137</line>
+          <option name="timeStamp" value="157" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/GameHandler.java</url>
+          <line>139</line>
+          <option name="timeStamp" value="158" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/GameHandler.java</url>
+          <line>134</line>
+          <option name="timeStamp" value="159" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/GameHandler.java</url>
+          <line>124</line>
+          <option name="timeStamp" value="163" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/GameHandler.java</url>
+          <line>125</line>
+          <option name="timeStamp" value="164" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/StoneChain.java</url>
+          <line>78</line>
+          <option name="timeStamp" value="166" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/StoneChain.java</url>
+          <line>77</line>
+          <option name="timeStamp" value="167" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/StoneChain.java</url>
+          <line>76</line>
+          <option name="timeStamp" value="168" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/StoneChain.java</url>
+          <line>75</line>
+          <option name="timeStamp" value="170" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

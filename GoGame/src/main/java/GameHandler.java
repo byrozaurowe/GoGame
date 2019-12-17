@@ -186,6 +186,9 @@ class GameHandler {
             StoneChain chain = it.next();
             if (chain.owner != whoseTurn && chain.liberties.isEmpty()) {
                 for(Pair pair: chain.stoneChain) {
+                    if (stoneLogicTable[pair.getKey()][pair.getValue()] !=0) {
+                        GameServer.gameServer.captives[whoseTurn-1]++;
+                    }
                     stoneLogicTable[pair.getKey()][pair.getValue()] = 0;
                     lastKilled = new Pair(pair.getKey(), pair.getValue());
                     killer = new Pair(moveX, moveY);

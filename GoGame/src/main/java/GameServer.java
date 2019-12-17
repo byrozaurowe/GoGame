@@ -31,10 +31,8 @@ public class GameServer implements Runnable {
     private boolean gameIsFinished = true;
     /** Czy jakis gracz opuscil gre? */
     private boolean playerLeft = false;
-    /** Liczba jencow gracza nr 1 */
-    private int captives1 = 0;
-    /** Liczba jencow gracza nr 2 */
-    private int captives2 = 0;
+    /** Liczba jencow gracza nr 1 i 2 */
+    public int captives[];
     /** Licznik spasowan */
     private int passCounter = 0;
     /** Czy z botem? */
@@ -61,7 +59,7 @@ public class GameServer implements Runnable {
                 msg = msg + stoneLogicTable[i][j];
             }
         }
-        msg += " " + captives1 + " " + captives2;
+        msg += " " + captives[0] + " " + captives[1];
         System.out.println(msg);
         dataOutPlayer1.println(msg);
         dataOutPlayer2.println(msg);
