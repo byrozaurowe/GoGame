@@ -33,7 +33,7 @@ public class GameServer {
     private int passCounter = 0;
 
     /** Konstruktor serwera */
-    private GameServer() {
+    GameServer() {
         System.out.println("----Game Server----");
         numPlayers = 0;
         try {
@@ -100,7 +100,13 @@ public class GameServer {
     private void setBoardSize() throws IOException {
         String line;
         line = dataInPlayer1.readLine(); //informacje o rozmiarze planszy
-        boardSize = Integer.parseInt(String.valueOf(line));
+        try {
+            boardSize = Integer.parseInt(String.valueOf(line));
+        }
+        catch(NumberFormatException e) {
+            System.out.println("Podano zly rozmiar planszy - ustawiam domyslny");
+            boardSize = 13;
+        }
         stoneLogicTable = new int[boardSize][boardSize];
     }
 
@@ -119,7 +125,7 @@ public class GameServer {
             connectClient();
         }
         catch (IOException ex) {
-            ex.printStackTrace();
+            System.out.println("Blad przy polaczeniu");
         }
     }
     /** Ustaw sockety klientow */

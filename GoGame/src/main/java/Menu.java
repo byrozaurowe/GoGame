@@ -91,7 +91,6 @@ class Menu extends JFrame implements ActionListener {
         Object event = actionEvent.getSource();
         if (event == playerStartButton) { // laczenie z serwerem, tworzenie okna rozgrywki
             int playerID = GameClient.gameClient.connectClient();
-            int boardSize;
             if (playerID == 1) {
                 if (big.isSelected()) {
                     frame = new GUI(19);

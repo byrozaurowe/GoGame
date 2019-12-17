@@ -15,13 +15,13 @@ public class GameClient implements Runnable {
     /** Wysylanie danych do serwera */
     private PrintWriter dataOut;
     static GameClient gameClient;
-    boolean isYourTurn;
+    boolean isYourTurn = false;
     static GUI gui;
     private String moveMsg;
     boolean gameIsFinished = true;
     private int boardSize;
     /** Konstruktor klienta */
-    private GameClient() {
+    GameClient() {
         menu = new Menu();
     }
 

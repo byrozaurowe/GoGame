@@ -60,8 +60,13 @@ class Stone {
 		return ((x - this.x) * (x - this.x)) + ((y - this.y) * (y - this.y)) <= Board.STONERADIUS * Board.STONERADIUS;
 	}
 
+	Player getPlayer() {
+		return player;
+	}
+
 	/** Ustaw widocznosc */
 	void setVisibility(Visibility visibility) {
 		this.visibility = visibility;
+		if(visibility == Visibility.INVISIBLE) player = null;
 	}
 }

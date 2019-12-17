@@ -213,4 +213,17 @@ public class GUI extends JFrame implements ActionListener, MouseListener, MouseM
     /** Implementowana funkcja mouse listenera */
     @Override
     public void mouseMoved(MouseEvent mouseEvent) {}
+
+    void setMsg(String msg) { this.msg = msg;}
+
+    int getPlayerID() { return playerID; }
+
+    Player getPlayerColor() {
+        if(getPlayerID() == 1) return Player.BLACK;
+        else return Player.WHITE;
+    }
+
+    String getLabelText() {
+        return gameStatusLabel.getText();
+    }
 }
