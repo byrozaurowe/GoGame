@@ -13,6 +13,9 @@ public class StoneChain {
         findLiberties(findNeighbours(x, y), liberties);
         this.owner = owner;
     }
+    public StoneChain (int owner) {
+        this.owner = owner;
+    }
 
     ArrayList<Pair> findNeighbours (int x, int y) {
         ArrayList<Pair> neighbours = new ArrayList<Pair>();
@@ -45,7 +48,6 @@ public class StoneChain {
         for (Pair field: stoneChain) {
             if ((field.getKey() == x && abs(field.getValue() - y) == 1) ||  (field.getValue() == y && abs(field.getKey() - x) == 1)) {
                 if (!listContains(new Pair(x,y), stoneChain)) {
-                    stoneChain.add(new Pair(x, y)); // tu dodaje do listy
                     findLiberties(findNeighbours(x, y), liberties);
                     removeLiberty(x, y);
                     System.out.println("Found chain of: " + x + y);
@@ -56,7 +58,7 @@ public class StoneChain {
         return false;
     }
 
-    boolean isPartOfThisChainFake(int x, int y) {
+    /*boolean isPartOfThisChainFake(int x, int y) {
         for (Pair field: stoneChain) {
             if ((field.getKey() == x && abs(field.getValue() - y) == 1) ||  (field.getValue() == y && abs(field.getKey() - x) == 1)) {
                 if (!listContains(new Pair(x,y), stoneChain)) {
@@ -66,7 +68,7 @@ public class StoneChain {
             }
         }
         return false;
-    }
+    } */
 
     void removeLiberty (int x, int y) {
         // zle bo nie mozesz usuwac w foreachu
@@ -87,14 +89,10 @@ public class StoneChain {
 
     void mergeChains(StoneChain toMerge) {
         for (Pair pair: toMerge.stoneChain) {
-            if (!listContains(pair, stoneChain)) {
-                stoneChain.add(pair);
-            }
+            this.stoneChain.add(pair);
         }
         for (Pair pair: toMerge.liberties) {
-            if (!listContains(pair, liberties)) {
-                liberties.add(pair);
-            }
+            this.liberties.add(pair);
         }
     }
 
@@ -103,9 +101,10 @@ public class StoneChain {
             System.out.println("Restoring Liberties to neighbours of:" + pair.getKey() + pair.getValue());
             for (Pair neighbour: findNeighbours(pair.getKey(), pair.getValue())) {
                 System.out.println("Neigbour: " + neighbour.getKey() + neighbour.getValue());
-                if (!listContains(neighbour, stoneChain) && GameServer.gameServer.gameHandler.stoneLogicTable[neighbour.getKey()][neighbour.getValue()] != owner && GameServer.gameServer.gameHandler.stoneLogicTable[neighbour.getKey()][neighbour.getValue()] != 0)
+                if (!listContains(neighbour, stoneChain) && GameServer.gameServer.gameHandler.stoneLogicTable[neighbour.getKey()][neighbour.getValue()] != owner && GameServer.gameServer.gameHandler.stoneLogicTable[neighbour.getKey()][neighbour.getValue()] != 0) {
                     System.out.println("jestem w ifie w restoreliberties");
-                     GameServer.gameServer.gameHandler.findStonesChain(neighbour).liberties.add(pair);
+                    GameServer.gameServer.gameHandler.findStonesChain(neighbour).liberties.add(pair);
+                }
             }
         }
     }

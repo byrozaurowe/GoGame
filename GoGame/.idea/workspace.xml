@@ -3,12 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="23df1589-9a88-484b-b16c-0d131e237639" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/diagram.uml" beforeDir="false" afterPath="$PROJECT_DIR$/diagram.uml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/GameHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GameHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GameServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GameServer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/StoneChain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/StoneChain.java" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -86,18 +83,6 @@
       <recent name="C:\Users\wojte\git\IntelliJ_TP\GoGame\src\main\resources" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
   <component name="RunManager" selected="Application.GameServer">
     <configuration name="GUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="11.0.4" />
@@ -129,7 +114,7 @@
     </configuration>
     <configuration name="GameServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="GameServer" />
-      <module name="go" />
+      <module name="GoGame" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value=".*" />
@@ -160,6 +145,18 @@
         <item itemvalue="Application.GUI" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -362,10 +359,11 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="517" y="88" key="#GameClient/0.0.1600.860@0.0.1600.860" timestamp="1576479721356" />
-    <state x="517" y="88" key="#GameServer" timestamp="1576479743889">
-      <screen x="0" y="0" width="1600" height="860" />
+    <state x="562" y="116" width="671" height="609" key="#GameServer" timestamp="1576573030493">
+      <screen x="67" y="27" width="1533" height="873" />
     </state>
     <state x="517" y="88" key="#GameServer/0.0.1600.860@0.0.1600.860" timestamp="1576479743889" />
+    <state x="562" y="116" width="671" height="609" key="#GameServer/67.27.1533.873@67.27.1533.873" timestamp="1576573030493" />
     <state x="493" y="104" width="671" height="717" key="#Main" timestamp="1575055351978">
       <screen x="67" y="27" width="1533" height="873" />
     </state>
@@ -395,58 +393,63 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="596" y="314" width="407" height="240" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1600.860@0.0.1600.860" timestamp="1576418443062" />
-    <state x="677" y="132" key="#xdebugger.evaluate" timestamp="1576484977844">
-      <screen x="0" y="0" width="1600" height="860" />
+    <state x="716" y="161" width="254" height="593" key="#xdebugger.evaluate" timestamp="1576576649170">
+      <screen x="67" y="27" width="1533" height="873" />
     </state>
     <state x="677" y="132" key="#xdebugger.evaluate/0.0.1600.860@0.0.1600.860" timestamp="1576484977844" />
+    <state x="716" y="161" width="254" height="593" key="#xdebugger.evaluate/67.27.1533.873@67.27.1533.873" timestamp="1576576649170" />
     <state x="398" y="59" width="860" height="807" key="CommitChangelistDialog2" timestamp="1576517639724">
       <screen x="67" y="27" width="1533" height="873" />
     </state>
     <state x="398" y="59" width="860" height="807" key="CommitChangelistDialog2/67.27.1533.873@67.27.1533.873" timestamp="1576517639724" />
+    <state width="423" height="466" key="DebuggerActiveHint" timestamp="1576573359125">
+      <screen x="67" y="27" width="1533" height="873" />
+    </state>
+    <state width="423" height="466" key="DebuggerActiveHint/67.27.1533.873@67.27.1533.873" timestamp="1576573359125" />
     <state x="455" y="206" width="735" height="513" key="FileChooserDialogImpl" timestamp="1576342696829">
       <screen x="67" y="27" width="1533" height="873" />
     </state>
     <state x="455" y="206" width="735" height="513" key="FileChooserDialogImpl/67.27.1533.873@67.27.1533.873" timestamp="1576342696829" />
-    <state width="1487" height="261" key="GridCell.Tab.0.bottom" timestamp="1576518696794">
+    <state width="1487" height="2" key="GridCell.Tab.0.bottom" timestamp="1576583199450">
       <screen x="67" y="27" width="1533" height="873" />
     </state>
     <state width="1557" height="276" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1576485274597" />
-    <state width="1487" height="261" key="GridCell.Tab.0.bottom/67.27.1533.873@67.27.1533.873" timestamp="1576518696794" />
-    <state width="1487" height="261" key="GridCell.Tab.0.center" timestamp="1576518696794">
+    <state width="1487" height="2" key="GridCell.Tab.0.bottom/67.27.1533.873@67.27.1533.873" timestamp="1576583199450" />
+    <state width="1487" height="2" key="GridCell.Tab.0.center" timestamp="1576583199449">
       <screen x="67" y="27" width="1533" height="873" />
     </state>
     <state width="1557" height="276" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1576485274597" />
-    <state width="1487" height="261" key="GridCell.Tab.0.center/67.27.1533.873@67.27.1533.873" timestamp="1576518696794" />
-    <state width="1487" height="261" key="GridCell.Tab.0.left" timestamp="1576518696794">
+    <state width="1487" height="2" key="GridCell.Tab.0.center/67.27.1533.873@67.27.1533.873" timestamp="1576583199449" />
+    <state width="1487" height="2" key="GridCell.Tab.0.left" timestamp="1576583199449">
       <screen x="67" y="27" width="1533" height="873" />
     </state>
     <state width="1557" height="276" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1576485274597" />
-    <state width="1487" height="261" key="GridCell.Tab.0.left/67.27.1533.873@67.27.1533.873" timestamp="1576518696794" />
-    <state width="1487" height="261" key="GridCell.Tab.0.right" timestamp="1576518696794">
+    <state width="1487" height="2" key="GridCell.Tab.0.left/67.27.1533.873@67.27.1533.873" timestamp="1576583199449" />
+    <state width="1487" height="2" key="GridCell.Tab.0.right" timestamp="1576583199449">
       <screen x="67" y="27" width="1533" height="873" />
     </state>
     <state width="1557" height="276" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1576485274597" />
-    <state width="1487" height="261" key="GridCell.Tab.0.right/67.27.1533.873@67.27.1533.873" timestamp="1576518696794" />
-    <state width="1487" height="261" key="GridCell.Tab.1.bottom" timestamp="1576518380941">
+    <state width="1487" height="2" key="GridCell.Tab.0.right/67.27.1533.873@67.27.1533.873" timestamp="1576583199449" />
+    <state width="1487" height="362" key="GridCell.Tab.1.bottom" timestamp="1576579105955">
       <screen x="67" y="27" width="1533" height="873" />
     </state>
     <state width="1557" height="276" key="GridCell.Tab.1.bottom/0.0.1600.860@0.0.1600.860" timestamp="1576485310910" />
-    <state width="1487" height="261" key="GridCell.Tab.1.bottom/67.27.1533.873@67.27.1533.873" timestamp="1576518380941" />
-    <state width="1487" height="261" key="GridCell.Tab.1.center" timestamp="1576518380941">
+    <state width="1487" height="362" key="GridCell.Tab.1.bottom/67.27.1533.873@67.27.1533.873" timestamp="1576579105955" />
+    <state width="1487" height="362" key="GridCell.Tab.1.center" timestamp="1576579105954">
       <screen x="67" y="27" width="1533" height="873" />
     </state>
     <state width="1557" height="276" key="GridCell.Tab.1.center/0.0.1600.860@0.0.1600.860" timestamp="1576485310910" />
-    <state width="1487" height="261" key="GridCell.Tab.1.center/67.27.1533.873@67.27.1533.873" timestamp="1576518380941" />
-    <state width="1487" height="261" key="GridCell.Tab.1.left" timestamp="1576518380941">
+    <state width="1487" height="362" key="GridCell.Tab.1.center/67.27.1533.873@67.27.1533.873" timestamp="1576579105954" />
+    <state width="1487" height="362" key="GridCell.Tab.1.left" timestamp="1576579105954">
       <screen x="67" y="27" width="1533" height="873" />
     </state>
     <state width="1557" height="276" key="GridCell.Tab.1.left/0.0.1600.860@0.0.1600.860" timestamp="1576485310910" />
-    <state width="1487" height="261" key="GridCell.Tab.1.left/67.27.1533.873@67.27.1533.873" timestamp="1576518380941" />
-    <state width="1487" height="261" key="GridCell.Tab.1.right" timestamp="1576518380941">
+    <state width="1487" height="362" key="GridCell.Tab.1.left/67.27.1533.873@67.27.1533.873" timestamp="1576579105954" />
+    <state width="1487" height="362" key="GridCell.Tab.1.right" timestamp="1576579105955">
       <screen x="67" y="27" width="1533" height="873" />
     </state>
     <state width="1557" height="276" key="GridCell.Tab.1.right/0.0.1600.860@0.0.1600.860" timestamp="1576485310910" />
-    <state width="1487" height="261" key="GridCell.Tab.1.right/67.27.1533.873@67.27.1533.873" timestamp="1576518380941" />
+    <state width="1487" height="362" key="GridCell.Tab.1.right/67.27.1533.873@67.27.1533.873" timestamp="1576579105955" />
     <state x="366" y="120" width="924" height="684" key="Maven.ArtifactSearchDialog" timestamp="1576342588084">
       <screen x="67" y="27" width="1533" height="873" />
     </state>
@@ -459,10 +462,14 @@
       <screen x="67" y="27" width="1533" height="873" />
     </state>
     <state x="428" y="198" width="800" height="528" key="Vcs.Push.Dialog.v2/67.27.1533.873@67.27.1533.873" timestamp="1576346966231" />
-    <state x="601" y="382" width="454" height="160" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1576401867310">
+    <state x="601" y="382" width="464" height="160" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1576583535313">
       <screen x="67" y="27" width="1533" height="873" />
     </state>
-    <state x="601" y="382" width="454" height="160" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/67.27.1533.873@67.27.1533.873" timestamp="1576401867310" />
+    <state x="601" y="382" width="464" height="160" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/67.27.1533.873@67.27.1533.873" timestamp="1576583535313" />
+    <state x="361" y="201" width="934" height="522" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1576578603558">
+      <screen x="67" y="27" width="1533" height="873" />
+    </state>
+    <state x="361" y="201" width="934" height="522" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/67.27.1533.873@67.27.1533.873" timestamp="1576578603558" />
     <state x="448" y="182" width="702" height="668" key="search.everywhere.popup" timestamp="1576416925577">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -479,88 +486,113 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/GameHandler.java</url>
-          <line>65</line>
+          <line>75</line>
           <option name="timeStamp" value="142" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/GameHandler.java</url>
-          <line>66</line>
+          <line>76</line>
           <option name="timeStamp" value="143" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/GameHandler.java</url>
-          <line>67</line>
+          <line>77</line>
           <option name="timeStamp" value="144" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/GameHandler.java</url>
-          <line>68</line>
+          <line>78</line>
           <option name="timeStamp" value="145" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/GameHandler.java</url>
-          <line>69</line>
+          <line>79</line>
           <option name="timeStamp" value="146" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/GameHandler.java</url>
-          <line>70</line>
+          <line>80</line>
           <option name="timeStamp" value="147" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/GameHandler.java</url>
-          <line>71</line>
+          <line>96</line>
           <option name="timeStamp" value="148" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/GameHandler.java</url>
-          <line>72</line>
+          <line>97</line>
           <option name="timeStamp" value="149" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/GameHandler.java</url>
-          <line>73</line>
+          <line>98</line>
           <option name="timeStamp" value="150" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/GameHandler.java</url>
-          <line>75</line>
-          <option name="timeStamp" value="151" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/GameHandler.java</url>
-          <line>78</line>
+          <line>114</line>
           <option name="timeStamp" value="152" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/GameHandler.java</url>
-          <line>79</line>
+          <line>115</line>
           <option name="timeStamp" value="153" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/GameHandler.java</url>
-          <line>82</line>
-          <option name="timeStamp" value="154" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/GameHandler.java</url>
-          <line>83</line>
+          <line>119</line>
           <option name="timeStamp" value="155" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/GameHandler.java</url>
-          <line>84</line>
+          <line>120</line>
           <option name="timeStamp" value="156" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/GameHandler.java</url>
-          <line>85</line>
+          <line>121</line>
           <option name="timeStamp" value="157" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/GameHandler.java</url>
-          <line>87</line>
+          <line>123</line>
           <option name="timeStamp" value="158" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/GameHandler.java</url>
+          <line>118</line>
+          <option name="timeStamp" value="159" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/GameHandler.java</url>
+          <line>108</line>
+          <option name="timeStamp" value="163" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/GameHandler.java</url>
+          <line>109</line>
+          <option name="timeStamp" value="164" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/StoneChain.java</url>
+          <line>52</line>
+          <option name="timeStamp" value="166" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/StoneChain.java</url>
+          <line>51</line>
+          <option name="timeStamp" value="167" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/StoneChain.java</url>
+          <line>50</line>
+          <option name="timeStamp" value="168" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/StoneChain.java</url>
+          <line>49</line>
+          <option name="timeStamp" value="170" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
