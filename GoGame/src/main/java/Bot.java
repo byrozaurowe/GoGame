@@ -23,7 +23,7 @@ class Bot implements Runnable {
     /** Bot */
     private int boardSize;
 
-    int canBotMove = 1;
+    private boolean canBotMove = true;
 
     /** Konstruktor klienta */
     Bot() {
@@ -49,10 +49,12 @@ class Bot implements Runnable {
                 if(gameIsFinished) break;
                 try {
                     line = dataIn.readLine();
+                    canBotMove = true;
                     readServerMsg(line);
                 } catch(IOException e){
                     e.printStackTrace();
                 }
+
             }
             else {
                 try {
@@ -76,6 +78,7 @@ class Bot implements Runnable {
      * @param line informacja z serwera
      * */
     private void readServerMsg (String line) {
+        String[] tab = line.split(" ");
         if((Character.toString(line.charAt(0)).equals("#"))) {
             if(playerID == 1)
                 doWeEnd();
@@ -93,6 +96,9 @@ class Bot implements Runnable {
         if(line.equals("Opponent left")) {
             gameIsFinished = true;
             return;
+        }
+        if(tab.length == 4 && tab[3].equals("0")) {
+            canBotMove = false;
         }
         if (line.charAt(0) - 48 == playerID ) {
             isYourTurn = true;
@@ -155,8 +161,12 @@ class Bot implements Runnable {
 
     }
 
+    /** Ruch bota */
     private void doMove() {
-        String move = (int) Math.floor(Math.random()*boardSize) + " " + (int) Math.floor(Math.random()*boardSize);
-        dataOut.println(move);
+        if(canBotMove) {
+            String move = (int) Math.floor(Math.random() * boardSize) + " " + (int) Math.floor(Math.random() * boardSize);
+            dataOut.println(move);
+        }
+        else dataOut.println("pass");
     }
 }

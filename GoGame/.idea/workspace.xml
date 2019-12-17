@@ -2,10 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="23df1589-9a88-484b-b16c-0d131e237639" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/goServer_jar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/diagram.uml" beforeDir="false" afterPath="$PROJECT_DIR$/diagram.uml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Bot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Bot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GameHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GameHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GameServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GameServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GameClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GameClient.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +86,19 @@
       <recent name="C:\Users\wojte\git\IntelliJ_TP\GoGame\src\main\resources" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.GameServer">
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.GameClient">
     <configuration name="GUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="11.0.4" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -115,7 +129,7 @@
     </configuration>
     <configuration name="GameServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="GameServer" />
-      <module name="GoGame" />
+      <module name="go" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value=".*" />
@@ -146,18 +160,6 @@
         <item itemvalue="Application.GUI" />
       </list>
     </recent_temporary>
-  </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -529,23 +531,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/GameHandler.java</url>
-          <line>99</line>
-          <option name="timeStamp" value="144" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/GameHandler.java</url>
-          <line>100</line>
-          <option name="timeStamp" value="145" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/GameHandler.java</url>
           <line>101</line>
           <option name="timeStamp" value="146" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/GameHandler.java</url>
-          <line>119</line>
-          <option name="timeStamp" value="148" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/GameHandler.java</url>
@@ -561,11 +548,6 @@
           <url>file://$PROJECT_DIR$/src/main/java/GameHandler.java</url>
           <line>137</line>
           <option name="timeStamp" value="152" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/GameHandler.java</url>
-          <line>138</line>
-          <option name="timeStamp" value="153" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/GameHandler.java</url>
@@ -603,24 +585,9 @@
           <option name="timeStamp" value="164" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/StoneChain.java</url>
-          <line>78</line>
-          <option name="timeStamp" value="166" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/StoneChain.java</url>
-          <line>77</line>
-          <option name="timeStamp" value="167" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/StoneChain.java</url>
-          <line>76</line>
-          <option name="timeStamp" value="168" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/StoneChain.java</url>
-          <line>75</line>
-          <option name="timeStamp" value="170" />
+          <url>file://$PROJECT_DIR$/src/main/java/Bot.java</url>
+          <line>169</line>
+          <option name="timeStamp" value="182" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

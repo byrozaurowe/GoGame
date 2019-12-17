@@ -42,7 +42,10 @@ public class GameClient implements Runnable {
                 gameIsFinished = false;
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            gui.setGameStatusLabel("Oops! Server has been disconnected");
+            System.out.println("Oops! Server has been disconnected");
+            gameIsFinished = true;
+            return;
         }
         while (!gameIsFinished) {
             String line;
@@ -60,7 +63,11 @@ public class GameClient implements Runnable {
                     line = dataIn.readLine();
                     readServerMsg(line);
                 } catch(IOException e){
-                    e.printStackTrace();
+                    System.out.println("Oops! Server has been disconnected");
+                    gui.setGameStatusLabel("Oops! Server has been disconnected");
+                    gameIsFinished = true;
+                    gui.showSummary();
+                    return;
                 }
             }
             else {
