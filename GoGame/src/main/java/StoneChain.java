@@ -45,9 +45,21 @@ public class StoneChain {
         for (Pair field: stoneChain) {
             if ((field.getKey() == x && abs(field.getValue() - y) == 1) ||  (field.getValue() == y && abs(field.getKey() - x) == 1)) {
                 if (!listContains(new Pair(x,y), stoneChain)) {
-                    stoneChain.add(new Pair(x, y));
+                    stoneChain.add(new Pair(x, y)); // tu dodaje do listy
                     findLiberties(findNeighbours(x, y), liberties);
                     removeLiberty(x, y);
+                    System.out.println("Found chain of: " + x + y);
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    boolean isPartOfThisChainFake(int x, int y) {
+        for (Pair field: stoneChain) {
+            if ((field.getKey() == x && abs(field.getValue() - y) == 1) ||  (field.getValue() == y && abs(field.getKey() - x) == 1)) {
+                if (!listContains(new Pair(x,y), stoneChain)) {
                     System.out.println("Found chain of: " + x + y);
                     return true;
                 }
@@ -91,7 +103,7 @@ public class StoneChain {
             System.out.println("Restoring Liberties to neighbours of:" + pair.getKey() + pair.getValue());
             for (Pair neighbour: findNeighbours(pair.getKey(), pair.getValue())) {
                 System.out.println("Neigbour: " + neighbour.getKey() + neighbour.getValue());
-                if (!listContains(neighbour, stoneChain)&& GameServer.gameServer.gameHandler.stoneLogicTable[neighbour.getKey()][neighbour.getValue()] != owner && GameServer.gameServer.gameHandler.stoneLogicTable[neighbour.getKey()][neighbour.getValue()] != 0)
+                if (!listContains(neighbour, stoneChain) && GameServer.gameServer.gameHandler.stoneLogicTable[neighbour.getKey()][neighbour.getValue()] != owner && GameServer.gameServer.gameHandler.stoneLogicTable[neighbour.getKey()][neighbour.getValue()] != 0)
                     System.out.println("jestem w ifie w restoreliberties");
                      GameServer.gameServer.gameHandler.findStonesChain(neighbour).liberties.add(pair);
             }

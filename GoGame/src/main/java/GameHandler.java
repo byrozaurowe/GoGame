@@ -29,8 +29,8 @@ public class GameHandler {
             for (StoneChain chain: stoneChainList) {
                 fakeStoneChainList.add(chain);
             }
-            if (isLibertyLeft(isPartOfChain(fakeStoneChainList)) || doesItKill(fakeStoneChainList)) {
-                isPartOfChain(stoneChainList);
+            if (isLibertyLeft(isPartOfChainFake(fakeStoneChainList)) || doesItKill(fakeStoneChainList)) {
+                isPartOfChain(stoneChainList); // dwa razy robi nowy lancuch tutaj
                 stoneLogicTable[moveX][moveY] = whoseTurn;
                 /* System.out.println("Przypisuje graczowi " + whoseTurn);
                 System.out.println("przed zabiciem"); */
@@ -63,32 +63,14 @@ public class GameHandler {
     }
     private StoneChain isPartOfChain(ArrayList<StoneChain> list) {
         StoneChain lastFoundIn = null;
-        /*
-        for (StoneChain stoneChain: list) {
-            if (stoneChain.owner == whoseTurn) {
-                if (stoneChain.isPartOfThisChain(moveX, moveY)) {
-                    if (lastFoundIn == null) {
-                        lastFoundIn = stoneChain;
-                    }
-                    else {
-                        stoneChain.mergeChains(lastFoundIn);
-                        list.remove(lastFoundIn);
-                        lastFoundIn = stoneChain;
-                    }
-                }
-            }
-            if (stoneChain.owner != whoseTurn) {
-                stoneChain.removeLiberty(moveX, moveY);
-            }
-        }*/
         for (Iterator<StoneChain> it = list.iterator(); it.hasNext();) {
             StoneChain stoneChain = it.next();
             if (stoneChain.owner == whoseTurn) {
                 if (stoneChain.isPartOfThisChain(moveX, moveY)) {
                     if (lastFoundIn != null) {
-                        System.out.println("Łączę łańcuchy");
+                        System.out.println("Lacze lancuchy");
                         lastFoundIn.mergeChains(stoneChain);
-                        System.out.println("połączyłem łańcuchy");
+                        System.out.println("polaczylem łancuchy");
                         it.remove();
                     }
                     lastFoundIn = stoneChain;
@@ -99,7 +81,34 @@ public class GameHandler {
             }
         }
         if (lastFoundIn == null) {
-            System.out.println("Nie znalazłem łańcucha dla:" + moveX + moveY + "tworzę nowy");
+            System.out.println("Nie znalazlem łancucha dla:" + moveX + moveY + "tworze nowy");
+            lastFoundIn = new StoneChain(whoseTurn, moveX, moveY);
+            list.add(lastFoundIn);
+        }
+        return lastFoundIn;
+    }
+
+    private StoneChain isPartOfChainFake(ArrayList<StoneChain> list) {
+        StoneChain lastFoundIn = null;
+        for (Iterator<StoneChain> it = list.iterator(); it.hasNext();) {
+            StoneChain stoneChain = it.next();
+            if (stoneChain.owner == whoseTurn) {
+                if (stoneChain.isPartOfThisChainFake(moveX, moveY)) {
+                    if (lastFoundIn != null) {
+                        System.out.println("Lacze lancuchy");
+                        lastFoundIn.mergeChains(stoneChain);
+                        System.out.println("polaczylem łancuchy");
+                        it.remove();
+                    }
+                    lastFoundIn = stoneChain;
+                }
+            }
+            if (stoneChain.owner != whoseTurn) {
+                stoneChain.removeLiberty(moveX, moveY);
+            }
+        }
+        if (lastFoundIn == null) {
+            System.out.println("Nie znalazlem łancucha dla:" + moveX + moveY + "tworze nowy");
             lastFoundIn = new StoneChain(whoseTurn, moveX, moveY);
             list.add(lastFoundIn);
         }

@@ -73,7 +73,7 @@ public class GameServer {
             }
         } catch (IOException e) {
             System.out.println("Player left the game");
-
+            gameIsFinished = true;
         }
     }
 
