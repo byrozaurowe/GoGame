@@ -14,12 +14,19 @@ public class GameClient implements Runnable {
     private BufferedReader dataIn;
     /** Wysylanie danych do serwera */
     private PrintWriter dataOut;
+    /** Klient gracza */
     static GameClient gameClient;
+    /** Czy jest twoja tura */
     boolean isYourTurn = false;
+    /** Gui gracza */
     static GUI gui;
+    /** Wiadomosc o ruchu */
     private String moveMsg;
+    /** Czy gra jest skonczona */
     boolean gameIsFinished = true;
+    /** Rozmiar planszy */
     private int boardSize;
+
     /** Konstruktor klienta */
     GameClient() {
         menu = new Menu();
@@ -43,10 +50,10 @@ public class GameClient implements Runnable {
                 while (moveMsg == null) {
                     if(isYourTurn)
                         moveMsg = gui.getMsg(); // Oczekiwanie, aż gracz zrobi jakiś ruch
-
                 }
                 System.out.println(moveMsg);
                 dataOut.println(moveMsg);
+                if(gameIsFinished) break;
                 try {
                     line = dataIn.readLine();
                     readServerMsg(line);
@@ -64,16 +71,13 @@ public class GameClient implements Runnable {
 
             }
         }
+        gui.setGameStatusLabel("Game has ended");
         gui.showSummary();
     }
 
-    /**
-     * @return liczba jencow gracza
+    /** Wyslij odpowiedz do serwera
+     * @param response Y / N
      */
-    int getCaptives() {
-        return 2; // do zmiany
-    }
-
     private void sendSummaryResponse(String response) {
         dataOut.println(response);
     }
@@ -94,6 +98,11 @@ public class GameClient implements Runnable {
                 }
             }
             else return;
+        }
+        if(line.equals("Opponent left")) {
+            gui.opponentLeft();
+            gameIsFinished = true;
+            return;
         }
         if (line.charAt(0)- 48 == playerID ) {
             isYourTurn = true;
@@ -160,6 +169,7 @@ public class GameClient implements Runnable {
         return playerID;
     }
 
+    /** Ustawienia poczatkowe */
     void setSettings(int boardSize) {
         gui.setTitle("Gracz #" + playerID);
         gui.setPlayerID(playerID);
@@ -181,14 +191,4 @@ public class GameClient implements Runnable {
         gameClient = new GameClient();
     }
 
-    /** Zamyka socket */
-     void close () {
-        try {
-            dataIn.close();
-            dataOut.close();
-            socket.close();
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
-    }
 }

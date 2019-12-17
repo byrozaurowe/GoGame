@@ -29,11 +29,17 @@ public class GameServer {
     private int moveX, moveY;
     /** Czy gra jest skończona */
     private boolean gameIsFinished = true;
-
+    /** Czy jakis gracz opuscil gre? */
+    private boolean playerLeft = false;
+    /** Liczba jencow gracza nr 1 */
+    private int captives1 = 0;
+    /** Liczba jencow gracza nr 2 */
+    private int captives2 = 0;
+    /** Licznik spasowan */
     private int passCounter = 0;
 
     /** Konstruktor serwera */
-    GameServer() {
+    private GameServer() {
         System.out.println("----Game Server----");
         numPlayers = 0;
         try {
@@ -44,7 +50,7 @@ public class GameServer {
         }
     }
 
-    /** Wyslij wiadomosc do obu graczy */
+    /** Wyslij stan planszy do obu graczy */
     private void sendToPlayers () {
         System.out.println("czyja tura po ruchu " + whoseTurn);
         String msg = Integer.toString(whoseTurn);
@@ -53,6 +59,7 @@ public class GameServer {
                 msg = msg + stoneLogicTable[i][j];
             }
         }
+        msg += " " + captives1 + " " + captives2;
         System.out.println(msg);
         dataOutPlayer1.println(msg);
         dataOutPlayer2.println(msg);
@@ -74,6 +81,7 @@ public class GameServer {
         } catch (IOException e) {
             System.out.println("Player left the game");
             gameIsFinished = true;
+            opponentLeft();
         }
     }
 
@@ -166,11 +174,14 @@ public class GameServer {
             }
             if(passCounter > 0) passCounter--;
             if(passCounter == 2) gameIsFinished = true;
+            if(gameIsFinished && playerLeft) break;
             if(gameIsFinished) finishGame();
             sendToPlayers();
         }
     }
-    void finishGame() {
+
+    /** Wywolywane gdy gra zakonczy sie poprawnie */
+    private void finishGame() {
         String input1;
         String input2;
         passCounter = 0;
@@ -202,6 +213,18 @@ public class GameServer {
         else {
             dataOutPlayer1.println(":(");
             dataOutPlayer2.println(":(");
+        }
+    }
+
+    /** Wywolywane gdy gracz opusci gre */
+    private void opponentLeft() {
+        if(whoseTurn == 1) {
+            dataOutPlayer2.println("Opponent left");
+            playerLeft = true;
+        }
+        else {
+            dataOutPlayer1.println("Opponent left");
+            playerLeft = true;
         }
     }
     /** Main

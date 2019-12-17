@@ -30,7 +30,7 @@ public class Board extends JPanel{
 
 	/** Konstruktor planszy */
 	Board(GUI gui, int size) {
-		MARGIN = 3*STONERADIUS;
+		MARGIN = 4*STONERADIUS;
 	    switch (size) {
             case 9:
                 STONERADIUS = 25;
