@@ -8,6 +8,11 @@ public class GameHandler {
     int moveX, moveY;
     boolean isMoveAllowed;
 
+    private Pair lastKilled;
+    private Pair killer;
+    private Pair toKill;
+    private int roundCounter =0;
+
     ArrayList<StoneChain> stoneChainList = new ArrayList<StoneChain>();
     ArrayList<StoneChain> fakeStoneChainList;
 
@@ -38,16 +43,18 @@ public class GameHandler {
             }
 
            // System.out.println("fejkowa tura");
-            if (isLibertyLeft(isPartOfChain(fakeStoneChainList)) || doesItKill(fakeStoneChainList)) {
-               // System.out.println("normalna tura");
-                isPartOfChain(stoneChainList); // dwa razy robi nowy lancuch tutaj
-                stoneLogicTable[moveX][moveY] = whoseTurn;
+            if (isLibertyLeft(isPartOfChain(fakeStoneChainList)) || doesItKill(fakeStoneChainList )) {
+                if (!isKo()) {
+                    // System.out.println("normalna tura");
+                    isPartOfChain(stoneChainList); // dwa razy robi nowy lancuch tutaj
+                    stoneLogicTable[moveX][moveY] = whoseTurn;
                 /* System.out.println("Przypisuje graczowi " + whoseTurn);
                 System.out.println("przed zabiciem"); */
-                removeDead(stoneChainList);
-                //System.out.println("po zabiciu");
-                if (whoseTurn == 1) whoseTurn = 2;
-                else whoseTurn = 1;
+                    removeDead(stoneChainList);
+                    //System.out.println("po zabiciu");
+                    roundCounter ++;
+                    if (whoseTurn == 1) whoseTurn = 2;
+                    else whoseTurn = 1;
                /* System.out.println("Stan listy łańcuchów:");
                  for (StoneChain chain: stoneChainList) {
                     System.out.println("Lista: ");
@@ -59,11 +66,21 @@ public class GameHandler {
                         System.out.println("Oddech: " +  pair.getKey() + pair.getValue());
                     }
                 } */
+                }
             }
         }
 
         GameServer.gameServer.setTable(stoneLogicTable);
         return whoseTurn;
+    }
+
+    private boolean isKo() {
+        if (toKill != null && killer != null && lastKilled != null && roundCounter == 1) {
+            if (toKill.getKey() == killer.getKey() && toKill.getValue() == killer.getValue() && lastKilled.getKey() == moveX && lastKilled.getValue() == moveY) {
+                return true;
+            }
+        }
+        return false;
     }
 
     private void isFieldEmpty() {
@@ -161,6 +178,7 @@ public class GameHandler {
     private boolean doesItKill(ArrayList<StoneChain> fakeList) {
         for (StoneChain chain: fakeList) {
             if (chain.owner != whoseTurn && chain.liberties.isEmpty()) {
+                toKill = chain.stoneChain.get(0);
                 return true;
             }
         }
@@ -183,6 +201,9 @@ public class GameHandler {
             if (chain.owner != whoseTurn && chain.liberties.isEmpty()) {
                 for(Pair pair: chain.stoneChain) {
                     stoneLogicTable[pair.getKey()][pair.getValue()] = 0;
+                    lastKilled = new Pair(pair.getKey(), pair.getValue());
+                    killer = new Pair(moveX, moveY);
+                    roundCounter = 0;
                 }
                 StoneChain temp = chain;
                 it.remove();
