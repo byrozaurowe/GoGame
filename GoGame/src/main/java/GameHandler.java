@@ -8,6 +8,11 @@ public class GameHandler {
     int moveX, moveY;
     boolean isMoveAllowed;
 
+    private Pair lastKilled;
+    private Pair killer;
+    private Pair toKill;
+    private int roundCounter =0;
+
     ArrayList<StoneChain> stoneChainList = new ArrayList<StoneChain>();
     ArrayList<StoneChain> fakeStoneChainList;
 
@@ -37,18 +42,20 @@ public class GameHandler {
                 fakeStoneChainList.add(newChain);
             }
 
-            System.out.println("fejkowa tura");
-            if (isLibertyLeft(isPartOfChain(fakeStoneChainList)) || doesItKill(fakeStoneChainList)) {
-                System.out.println("normalna tura");
-                isPartOfChain(stoneChainList); // dwa razy robi nowy lancuch tutaj
-                stoneLogicTable[moveX][moveY] = whoseTurn;
+           // System.out.println("fejkowa tura");
+            if (isLibertyLeft(isPartOfChain(fakeStoneChainList)) || doesItKill(fakeStoneChainList )) {
+                if (!isKo()) {
+                    // System.out.println("normalna tura");
+                    isPartOfChain(stoneChainList); // dwa razy robi nowy lancuch tutaj
+                    stoneLogicTable[moveX][moveY] = whoseTurn;
                 /* System.out.println("Przypisuje graczowi " + whoseTurn);
                 System.out.println("przed zabiciem"); */
-                removeDead(stoneChainList);
-                System.out.println("po zabiciu");
-                if (whoseTurn == 1) whoseTurn = 2;
-                else whoseTurn = 1;
-                System.out.println("Stan listy łańcuchów:");
+                    removeDead(stoneChainList);
+                    //System.out.println("po zabiciu");
+                    roundCounter ++;
+                    if (whoseTurn == 1) whoseTurn = 2;
+                    else whoseTurn = 1;
+               /* System.out.println("Stan listy łańcuchów:");
                  for (StoneChain chain: stoneChainList) {
                     System.out.println("Lista: ");
                     for (Pair pair: chain.stoneChain) {
@@ -58,12 +65,22 @@ public class GameHandler {
                     for (Pair pair: chain.liberties) {
                         System.out.println("Oddech: " +  pair.getKey() + pair.getValue());
                     }
+                } */
                 }
             }
         }
 
         GameServer.gameServer.setTable(stoneLogicTable);
         return whoseTurn;
+    }
+
+    private boolean isKo() {
+        if (toKill != null && killer != null && lastKilled != null && roundCounter == 1) {
+            if (toKill.getKey() == killer.getKey() && toKill.getValue() == killer.getValue() && lastKilled.getKey() == moveX && lastKilled.getValue() == moveY) {
+                return true;
+            }
+        }
+        return false;
     }
 
     private void isFieldEmpty() {
@@ -78,7 +95,7 @@ public class GameHandler {
             if (stoneChain.owner == whoseTurn) {
                 if (stoneChain.isPartOfThisChain(moveX, moveY)) {
                     if (lastFoundIn != null) {
-                        System.out.println("Lacze lancuch:");
+                       /* System.out.println("Lacze lancuch:");
                         for (Pair pair: lastFoundIn.stoneChain) {
                             System.out.println("Para: " + pair.getKey() + pair.getValue());
                         }
@@ -93,18 +110,18 @@ public class GameHandler {
                         System.out.println("Lista oddechów: ");
                         for (Pair pair: stoneChain.liberties) {
                             System.out.println("Oddech: " +  pair.getKey() + pair.getValue());
-                        }
+                        } */
                         lastFoundIn.mergeChains(stoneChain);
-                        System.out.println("polaczylem łancuchy");
+                        //System.out.println("polaczylem łancuchy");
                         it.remove();
-                        System.out.println("Połączony łańcuch: ");
+                        /*System.out.println("Połączony łańcuch: ");
                         for (Pair pair: lastFoundIn.stoneChain) {
                             System.out.println("Para: " + pair.getKey() + pair.getValue());
                         }
                         System.out.println("Lista oddechów: ");
                         for (Pair pair: lastFoundIn.liberties) {
                             System.out.println("Oddech: " +  pair.getKey() + pair.getValue());
-                        }
+                        } */
                     }
                     else {
                         stoneChain.stoneChain.add(new Pair(moveX,moveY));
@@ -161,6 +178,7 @@ public class GameHandler {
     private boolean doesItKill(ArrayList<StoneChain> fakeList) {
         for (StoneChain chain: fakeList) {
             if (chain.owner != whoseTurn && chain.liberties.isEmpty()) {
+                toKill = chain.stoneChain.get(0);
                 return true;
             }
         }
@@ -183,6 +201,9 @@ public class GameHandler {
             if (chain.owner != whoseTurn && chain.liberties.isEmpty()) {
                 for(Pair pair: chain.stoneChain) {
                     stoneLogicTable[pair.getKey()][pair.getValue()] = 0;
+                    lastKilled = new Pair(pair.getKey(), pair.getValue());
+                    killer = new Pair(moveX, moveY);
+                    roundCounter = 0;
                 }
                 StoneChain temp = chain;
                 it.remove();
