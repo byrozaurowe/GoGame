@@ -5,22 +5,12 @@ import java.util.ArrayList;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class GameHandlerTest {
-    GameHandler gameHandler;
+    private GameHandler gameHandler;
 
     @Before
     public void settings() {
         gameHandler = new GameHandler(13);
     }
-   /* @Test
-    public void doesItKill() {
-        gameHandler.whoseTurn = 2;
-        int owner = 1;
-        StoneChain stoneChain = new StoneChain(owner, 2, 3);
-        ArrayList<StoneChain> fakeList = new ArrayList<>();
-        fakeList.add(stoneChain);
-
-        assertTrue(gameHandler.doesItKill(fakeList));
-    } */
 
     @Test
     public void isLibertyLeft() {

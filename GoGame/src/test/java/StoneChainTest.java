@@ -3,17 +3,12 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 import java.util.ArrayList;
 
-public class StoneChainTest {
-    StoneChain stoneChain;
-
-    @Before
-    public void settings() {
-        stoneChain = new StoneChain(1);
-    }
+class StoneChainTest {
 
     @Test
-    public void listContains() {
+    void listContains() {
         ArrayList<Pair> list = new ArrayList<>();
+        StoneChain stoneChain = new StoneChain(1);
         list.add(new Pair(1,2));
         list.add(new Pair(10, 9));
         list.add(new Pair (6, 0));

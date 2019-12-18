@@ -4,7 +4,7 @@ import java.util.Iterator;
 /** Glowna klasa obslugujaca sie logike */
 class GameHandler {
     /** Id gracza czyja tura */
-    protected int whoseTurn;
+    private int whoseTurn;
     /** Logiczna tablica zawierajaca stan planszy */
     int[][] stoneLogicTable;
     /** Rozmiar planszy */
@@ -23,11 +23,11 @@ class GameHandler {
     private Pair toKill;
     /** Licznik rund */
     private int roundCounter = 0;
-
     /** Lista lancuchow */
     private ArrayList<StoneChain> stoneChainList = new ArrayList<>();
     /** Podrobka listy lancuchu uzywana do sprawdzania samobojczych ruchow */
     private ArrayList<StoneChain> fakeStoneChainList;
+    /** List uzywana do symulacji czy bot ma ruchy */
     private ArrayList<StoneChain> fakeStoneChainList2;
 
     /** Konstrukor
@@ -168,14 +168,14 @@ class GameHandler {
      * @param chain lancuch w ktorym sprawdzamy oddechy
      * @return tak lub nie
      */
-    protected boolean isLibertyLeft(StoneChain chain) {
+    boolean isLibertyLeft(StoneChain chain) {
         return chain.liberties.size() > 0;
     }
 
     /** Sprawdza czy ruch udusi jakieś kamienie
      * @return tak lub nie
      * */
-    protected boolean doesItKill(ArrayList<StoneChain> fakeList) {
+    private boolean doesItKill(ArrayList<StoneChain> fakeList) {
         for (StoneChain chain: fakeList) {
             if (chain.owner != whoseTurn && chain.liberties.isEmpty()) {
                 toKill = chain.stoneChain.get(0);

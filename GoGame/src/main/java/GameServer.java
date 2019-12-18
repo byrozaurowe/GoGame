@@ -36,8 +36,8 @@ public class GameServer {
     /** Licznik spasowan */
     private int passCounter = 0;
     /** Czy z botem? */
-    public boolean bot = false;
-    public int canBotMove = 1;
+    boolean bot = false;
+    private int canBotMove = 1;
 
     /** Konstruktor serwera */
     private GameServer() {
