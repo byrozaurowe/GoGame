@@ -23,11 +23,12 @@ class GameHandler {
     private Pair toKill;
     /** Licznik rund */
     private int roundCounter = 0;
-
     /** Lista lancuchow */
     private ArrayList<StoneChain> stoneChainList = new ArrayList<>();
     /** Podrobka listy lancuchu uzywana do sprawdzania samobojczych ruchow */
     private ArrayList<StoneChain> fakeStoneChainList;
+    /** List uzywana do symulacji czy bot ma ruchy */
+    private ArrayList<StoneChain> fakeStoneChainList2;
 
     /** Konstrukor
      * @param boardSize rozmiar planszy
@@ -50,6 +51,12 @@ class GameHandler {
         stoneLogicTable = table;
         isMoveAllowed = true;
 
+        if(GameServer.gameServer.bot && whoseTurn == 2) {
+            if (!isAnyMoveLeft()) {
+                return 3;
+            }
+        }
+
         isFieldEmpty();
 
         if(isMoveAllowed) {
@@ -66,10 +73,10 @@ class GameHandler {
             }
 
            // System.out.println("fejkowa tura");
-            if (isLibertyLeft(isPartOfChain(fakeStoneChainList)) || doesItKill(fakeStoneChainList )) {
-                if (!isKo()) {
+            if (isLibertyLeft(isPartOfChain(fakeStoneChainList, moveX, moveY)) || doesItKill(fakeStoneChainList )) {
+                if (!isKo(moveX, moveY)) {
                     // System.out.println("normalna tura");
-                    isPartOfChain(stoneChainList); // dwa razy robi nowy lancuch tutaj
+                    isPartOfChain(stoneChainList, moveX, moveY); // dwa razy robi nowy lancuch tutaj
                     stoneLogicTable[moveX][moveY] = whoseTurn;
                     /* System.out.println("Przypisuje graczowi " + whoseTurn);
                     System.out.println("przed zabiciem"); */
@@ -89,7 +96,7 @@ class GameHandler {
     /** Sprawdza czy to sytuacja ko
      * @return tak lub nie
      */
-    private boolean isKo() {
+    private boolean isKo(int moveX, int moveY) {
         if (toKill != null && killer != null && lastKilled != null && roundCounter == 1) {
             return toKill.getKey() == killer.getKey() && toKill.getValue() == killer.getValue() && lastKilled.getKey() == moveX && lastKilled.getValue() == moveY;
         }
@@ -103,8 +110,8 @@ class GameHandler {
         }
     }
 
-    /** Sprawdza czy jest */
-    private StoneChain isPartOfChain(ArrayList<StoneChain> list) {
+    /** Sprawdza do jakiego łańcucha będzie należał nowy kamięń */
+    private StoneChain isPartOfChain(ArrayList<StoneChain> list, int moveX, int moveY) {
         StoneChain lastFoundIn = null;
         for (Iterator<StoneChain> it = list.iterator(); it.hasNext();) {
             StoneChain stoneChain = it.next();
@@ -161,11 +168,11 @@ class GameHandler {
      * @param chain lancuch w ktorym sprawdzamy oddechy
      * @return tak lub nie
      */
-    private boolean isLibertyLeft (StoneChain chain) {
+    boolean isLibertyLeft(StoneChain chain) {
         return chain.liberties.size() > 0;
     }
 
-    /** Sprawdza czy ginie
+    /** Sprawdza czy ruch udusi jakieś kamienie
      * @return tak lub nie
      * */
     private boolean doesItKill(ArrayList<StoneChain> fakeList) {
@@ -217,5 +224,30 @@ class GameHandler {
             }
         }
         return null;
+    }
+
+    /** Sprawdza czy bot ma jeszcze hjakiś możliwy ruch */
+    private boolean isAnyMoveLeft() {
+        for (int i=0; i<boardSize; i++) {
+            for (int j=0; j<boardSize; j++) {
+                if (stoneLogicTable[i][j] == 0) {
+                    fakeStoneChainList2 = new ArrayList<>();
+                    for (StoneChain chain: stoneChainList) {
+                        StoneChain newChain = new StoneChain(chain.owner);
+                        for (Pair pair: chain.stoneChain) {
+                            newChain.stoneChain.add(new Pair(pair.getKey(), pair.getValue()));
+                        }
+                        for (Pair pair: chain.liberties) {
+                            newChain.liberties.add(new Pair(pair.getKey(), pair.getValue()));
+                        }
+                        fakeStoneChainList2.add(newChain);
+                    }
+                    if ((isLibertyLeft(isPartOfChain(fakeStoneChainList2, i, j)) || doesItKill(fakeStoneChainList2)) && !isKo(i,j)) {
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
     }
 }

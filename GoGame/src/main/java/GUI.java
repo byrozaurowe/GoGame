@@ -10,8 +10,6 @@ public class GUI extends JFrame implements ActionListener, MouseListener, MouseM
     private JMenu optionsMenu;
     /** Info na pasku menu */
     private JMenu infoMenu;
-    /** Opcja nowa gra */
-    private JMenuItem newGameItem;
     /** Opcja wyjdz z gry */
     private JMenuItem exitItem;
     /** Opcja spasuj kolejke */
@@ -44,10 +42,13 @@ public class GUI extends JFrame implements ActionListener, MouseListener, MouseM
         if (event == exitItem) {
             System.exit(0);
         } else if (event == authorsItem) {
-            JOptionPane.showMessageDialog(null, "Authors: Wiktoria Byra, Wojciech Pakulski", "Authors", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Authors: Wiktoria Byra, Wojciech Pakulski", "Authors", JOptionPane.INFORMATION_MESSAGE);
         }
         else if(event == passItem) {
             msg = "pass";
+        }
+        else if(event == rulesItem) {
+            JOptionPane.showMessageDialog(this, "You can find rules on dr Macyna's website", "Rules", JOptionPane.INFORMATION_MESSAGE);
         }
     }
 
@@ -57,11 +58,9 @@ public class GUI extends JFrame implements ActionListener, MouseListener, MouseM
         menuBar = new JMenuBar();
         optionsMenu = new JMenu("Options");
         passItem = new JMenuItem("Pass");
-        newGameItem = new JMenuItem("Menu");
         exitItem = new JMenuItem("Surrender/Exit");
         // dodawanie elementow do menu
         optionsMenu.add(passItem);
-        optionsMenu.add(newGameItem);
         optionsMenu.add(exitItem);
         menuBar.add(optionsMenu);
         setJMenuBar(menuBar);
@@ -83,7 +82,6 @@ public class GUI extends JFrame implements ActionListener, MouseListener, MouseM
 
         // action Listenery
         passItem.addActionListener(this);
-        newGameItem.addActionListener(this);
         exitItem.addActionListener(this);
         rulesItem.addActionListener(this);
         authorsItem.addActionListener(this);

@@ -42,7 +42,8 @@ public class GameClient implements Runnable {
                 gameIsFinished = false;
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            serverDisconnected();
+            return;
         }
         while (!gameIsFinished) {
             String line;
@@ -60,7 +61,8 @@ public class GameClient implements Runnable {
                     line = dataIn.readLine();
                     readServerMsg(line);
                 } catch(IOException e){
-                    e.printStackTrace();
+                    serverDisconnected();
+                    break;
                 }
             }
             else {
@@ -96,7 +98,8 @@ public class GameClient implements Runnable {
                 try {
                     line = dataIn.readLine();
                 } catch (IOException e) {
-                    e.printStackTrace();
+                    serverDisconnected();
+                    return;
                 }
             }
             else return;
@@ -120,7 +123,8 @@ public class GameClient implements Runnable {
         try {
             if(dataIn.readLine().equals("Do you want to resume?")) doWeEnd();
         } catch (IOException e) {
-            e.printStackTrace();
+            serverDisconnected();
+            return;
         }
     }
 
@@ -141,7 +145,8 @@ public class GameClient implements Runnable {
         try {
             if(dataIn.readLine().equals("Game is continuing")) gameIsFinished = false;
         } catch (IOException e) {
-            e.printStackTrace();
+            serverDisconnected();
+            return;
         }
     }
 
@@ -192,6 +197,13 @@ public class GameClient implements Runnable {
 
     void startGameWithBot() {
         bot = true;
+    }
+
+    private void serverDisconnected() {
+        System.out.println("Oops! Server has been disconnected");
+        gui.setGameStatusLabel("Oops! Server has been disconnected");
+        gameIsFinished = true;
+        gui.showSummary();
     }
 
     /** Main

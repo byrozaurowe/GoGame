@@ -130,7 +130,7 @@ class StoneChain {
      * @param list lista
      * @return tak lub nie
      */
-    private boolean listContains(Pair checkPair, ArrayList<Pair> list) {
+    protected boolean listContains(Pair checkPair, ArrayList<Pair> list) {
         for (Pair pair: list) {
             if (pair.getKey() == checkPair.getKey() && pair.getValue() == checkPair.getValue()) {
                 return true;

@@ -36,7 +36,8 @@ public class GameServer {
     /** Licznik spasowan */
     private int passCounter = 0;
     /** Czy z botem? */
-    private boolean bot = false;
+    boolean bot = false;
+    private int canBotMove = 1;
 
     /** Konstruktor serwera */
     private GameServer() {
@@ -60,6 +61,8 @@ public class GameServer {
             }
         }
         msg += " " + captives[0] + " " + captives[1];
+        msg += " " + canBotMove;
+        canBotMove = 1;
         System.out.println(msg);
         dataOutPlayer1.println(msg);
         dataOutPlayer2.println(msg);
@@ -94,6 +97,10 @@ public class GameServer {
         moveY = Integer.parseInt(coordinates[1]);
         System.out.println(moveX +" " + moveY);
         whoseTurn = gameHandler.move(moveX, moveY, whoseTurn, stoneLogicTable);
+        if (whoseTurn == 3) {
+            whoseTurn = 1;
+            canBotMove = 0;
+        }
         System.out.println(whoseTurn);
     }
 
