@@ -34,7 +34,7 @@ class StoneChain {
      * @param y wspolrzedna y pola ktorego szukamy sasiada
      * @return lista sasiadow
      */
-    private ArrayList<Pair> findNeighbours (int x, int y) {
+     ArrayList<Pair> findNeighbours (int x, int y) {
         ArrayList<Pair> neighbours = new ArrayList<>();
         if ((x-1) >= 0) {
             neighbours.add(new Pair(x-1, y));

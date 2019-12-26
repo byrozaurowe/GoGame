@@ -38,6 +38,8 @@ public class GameServer {
     /** Czy z botem? */
     boolean bot = false;
     private int canBotMove = 1;
+    /** terytorium graczy */
+    int[] territory = new int[3];
 
     /** Konstruktor serwera */
     private GameServer() {
@@ -132,6 +134,11 @@ public class GameServer {
         stoneLogicTable = table;
     }
 
+    void setTerritory(int player1, int player2) {
+        territory[1] = player1;
+        territory[2] = player2;
+    }
+
     /** Metoda podlaczająca klientow */
     private void acceptConnections() {
         try {
@@ -193,6 +200,8 @@ public class GameServer {
 
     /** Wywolywane gdy gra zakonczy sie poprawnie */
     private void finishGame() {
+        gameHandler.territory(stoneLogicTable);
+
         String input1;
         String input2;
         passCounter = 0;
