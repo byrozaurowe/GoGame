@@ -62,7 +62,10 @@ public class GameServer {
                 msg = msg + stoneLogicTable[i][j];
             }
         }
-        msg += " " + captives[0] + " " + captives[1];
+        gameHandler.territory(stoneLogicTable);
+        int score1 = captives[0]+territory[1];
+        int score2 = captives[1]+territory[2];
+        msg += " " + score1 + " " + score2;
         msg += " " + canBotMove;
         canBotMove = 1;
         System.out.println(msg);
@@ -200,7 +203,7 @@ public class GameServer {
 
     /** Wywolywane gdy gra zakonczy sie poprawnie */
     private void finishGame() {
-        gameHandler.territory(stoneLogicTable);
+
 
         String input1;
         String input2;

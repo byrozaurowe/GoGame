@@ -70,7 +70,8 @@ public class GameClient implements Runnable {
                     line = dataIn.readLine();
                     readServerMsg(line);
                 } catch (IOException e) {
-                    e.printStackTrace();
+                    serverDisconnected();
+                    break;
                 }
 
             }
