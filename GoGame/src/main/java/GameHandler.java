@@ -29,6 +29,10 @@ class GameHandler {
     private ArrayList<StoneChain> fakeStoneChainList;
     /** List uzywana do symulacji czy bot ma ruchy */
     private ArrayList<StoneChain> fakeStoneChainList2;
+    /** terytorium danego gracza */
+    int[] territory = new int[3];
+    /** łańcuchy pustych pól */
+    private  ArrayList<StoneChain> territoryList;
 
     /** Konstrukor
      * @param boardSize rozmiar planszy
@@ -37,6 +41,58 @@ class GameHandler {
         this.boardSize = boardSize;
     }
 
+    /** Obliczanie terytorium */
+    void territory (int[][] table) {
+        territoryList = new ArrayList<>();
+        whoseTurn = 0;
+        stoneLogicTable = table;
+        territory[1] = 0;
+        territory[2] = 0;
+        /** szukanie łańcuchów pustych pól */
+        for (int i = 0; i < boardSize; i++) {
+            for (int j = 0; j < boardSize; j++) {
+                if (stoneLogicTable[i][j] == 0) {
+                    isPartOfChain(territoryList, i, j);
+                }
+            }
+        }
+        /** usuwanie z listy terytoriów które do nikogo nie należą */
+        for (Iterator<StoneChain> it = territoryList.iterator(); it.hasNext();) {
+            boolean rm = false;
+            StoneChain chain = it.next();
+            int territoryOwner = 0;
+            for (Pair pair: chain.stoneChain) {
+                ArrayList<Pair> neighbours = chain.findNeighbours(pair.getKey(), pair.getValue());
+                for (Pair neighbour: neighbours) {
+                    if (stoneLogicTable[neighbour.getKey()][neighbour.getValue()] != 0) {
+                        if (territoryOwner == 0) {
+                            chain.owner = stoneLogicTable[neighbour.getKey()][neighbour.getValue()];
+                            territoryOwner = stoneLogicTable[neighbour.getKey()][neighbour.getValue()];
+                        }
+                        else if (territoryOwner != stoneLogicTable[neighbour.getKey()][neighbour.getValue()]) {
+                            rm = true;
+                        }
+                    }
+                }
+            }
+            if (rm) it.remove();
+        }
+        /* System.out.println("Lista łańcuchów terytoriów po usunięciu tych które do nikogo nie należa:"); {
+            for (StoneChain chain: territoryList) {
+                System.out.println("Łańcuch użytkownika: " + chain.owner);
+                for (Pair pair: chain.stoneChain) {
+                    System.out.println("x:" + pair.getKey() + "y:" + pair.getValue());
+                }
+            }
+        } */
+        /** Obliczanie terytorium */
+        for (StoneChain chain: territoryList) {
+            territory[chain.owner] += chain.stoneChain.size();
+        }
+        System.out.println("terytorium 1:" + territory[1]);
+        System.out.println("terytorium 2:" + territory[2]);
+        GameServer.gameServer.setTerritory(territory[1], territory[2]);
+    }
     /** Ruch gracza
      * @param moveX wspolrzedna x ruchu gracza
      * @param moveY wspolrzedna y ruchu gracza

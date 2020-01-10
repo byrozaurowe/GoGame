@@ -27,7 +27,7 @@ public class GUI extends JFrame implements ActionListener, MouseListener, MouseM
     /** Etykieta wyswietlajaca stan gry */
     private JLabel gameStatusLabel;
     /** Twoi jency */
-    private int captives;
+    private int score[];
 
     /** Konstruktor maina
      * @param boardSize rozmiar planszy
@@ -98,8 +98,10 @@ public class GUI extends JFrame implements ActionListener, MouseListener, MouseM
 
     /** Pokaz podsumowanie jencow na koncu gry */
     void showSummary() {
-        JOptionPane.showMessageDialog(this, "You have " + captives + " captives \n",
+        JOptionPane.showMessageDialog(this, "Your score: " + score[playerID-1] + "\nOpponent's score: " + score[playerID%2],
                 "Results", JOptionPane.INFORMATION_MESSAGE);
+        if(playerID == 1 && score[0] > score[1] || playerID == 2 && score[1] > score[0]) setGameStatusLabel("Congratulations, you win!");
+        else setGameStatusLabel("You loose!");
     }
 
     /** Zapytanie czy gracz chce wznowic gre
@@ -107,8 +109,8 @@ public class GUI extends JFrame implements ActionListener, MouseListener, MouseM
      * */
     int doYouWantToEnd() {
         return JOptionPane.showConfirmDialog(this,
-                "You have " + captives + " captives \n"
-                        + "Do you want to resume the game?", "Is this the end?",
+                "Your score: " + score[playerID-1] + "\nOpponent's score: " + score[playerID%2]
+                        + "\nDo you want to resume the game?", "Is this the end?",
                 JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
     }
 
@@ -130,16 +132,16 @@ public class GUI extends JFrame implements ActionListener, MouseListener, MouseM
             }
         }
         String[] dane = line.split(" ");
-        if(playerID == 1)
-            captives = Integer.parseInt(dane[1]);
-        else captives = Integer.parseInt(dane[2]);
+        score = new int[2];
+        score[0] = Integer.parseInt(dane[1]);
+        score[1] = Integer.parseInt(dane[2]);
         repaint();
     }
 
     /** Okno mowiace ze przeciwnik podejmuje decyzje */
     void waitForOpponent() {
-        JOptionPane.showMessageDialog(this, "You have " + captives + " captives \n" +
-                "Waiting for opponent", "Results - waiting...", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(this, "Your score: " + score[playerID-1] + "\nOpponent's score: " + score[playerID%2] +
+                "\nWaiting for opponent...", "Results - waiting...", JOptionPane.INFORMATION_MESSAGE);
     }
 
     /** Okno mowiace ze przeciwnik podejmuje decyzje */
