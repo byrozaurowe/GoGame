@@ -128,7 +128,7 @@
       <option name="schema-control" value="AUTOMATIC" />
       <property name="serverTimezone" value="UTC" />
       <library>
-        <url>file://$APPLICATION_CONFIG_DIR$/jdbc-drivers/MySQL Connector/J 8/8.0.15/mysql-connector-java-8.0.15.jar</url>
+        <url>file://C:/Program Files (x86)/MySQL/Connector J 8.0/mysql-connector-java-8.0.19.jar</url>
       </library>
     </driver>
   </component>
