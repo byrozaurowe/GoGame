@@ -123,7 +123,7 @@
       <artifact name="Snowflake" use="true" />
       <option name="auto-sync" value="true" />
     </driver>
-    <driver id="java.sql.Driver" name="User Driver" driver-class="com.mysql.jdbc.Driver">
+    <driver id="java.sql.Driver" name="User Driver" driver-class="com.mysql.cj.jdbc.Driver">
       <artifact name="MySQL Connector/J 8" version="8.0.15" />
       <option name="auto-commit" value="true" />
       <option name="auto-sync" value="true" />
