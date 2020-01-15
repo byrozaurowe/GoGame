@@ -13,6 +13,7 @@ public class QueryExecutor {
             return statement.executeQuery(selectQuery);
         } catch (SQLException e) {
             e.printStackTrace();
+            return null;
         }
     }
     public static void executeQuery(String query) {
