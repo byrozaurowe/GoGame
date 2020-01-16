@@ -4,13 +4,24 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-//@org.hibernate.annotations.Entity(optimisticLock = OptimisticLockType.ALL)
 @Table(name = "onegame", uniqueConstraints = {
-        @UniqueConstraint(columnNames = "gameId"),
-        @UniqueConstraint(columnNames = "moveId"),
-        @UniqueConstraint(columnNames = "moveString")})
+        @UniqueConstraint(columnNames = "id")})
 public class OneGame {
-    @Column(name = "gameId", unique = true, nullable = false)
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", unique = true, nullable = false)
+    private int id;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    @Column(name = "gameId", nullable = false)
     private int gameId;
 
     @Column(name = "moveId", nullable = false)
