@@ -78,7 +78,7 @@ public class GameServer {
         msg += " " + canBotMove;
         canBotMove = 1;
         System.out.println(msg);
-        if(!Integer.toString(lastPlayerId).equals(msg.substring(1))) {
+        if(!Integer.toString(lastPlayerId).equals(msg.substring(1)) && simulation) {
             allowedMoveCounter++;
             insertToTable(msg);
         }
@@ -90,10 +90,10 @@ public class GameServer {
     private void insertToTable(String msg) {
 
         if(msg.equals("newGame")) {
-            DatabaseApplication.queries(new String[]{msg});
+            DatabaseApplication.queries(new String[]{msg, null, null});
         }
         else {
-            DatabaseApplication.queries(new String[]{Integer.toString(allowedMoveCounter), msg});
+            DatabaseApplication.queries(new String[]{"list of moves", Integer.toString(allowedMoveCounter), msg});
         }
     }
 

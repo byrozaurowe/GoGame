@@ -57,7 +57,7 @@ public class SimulationMenu extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == startSimulation)  {
-            Object date =  savedGamesComboBox.getSelectedItem();
+            Object date = savedGamesComboBox.getSelectedItem();
             GameClient.gameClient.sendGame(date);
             this.dispose();
         }
