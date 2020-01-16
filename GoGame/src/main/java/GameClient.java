@@ -49,8 +49,22 @@ public class GameClient implements Runnable {
         } catch (IOException e) {
             System.out.println("Server you are trying to connect is disconnected");
         }
+    }
 
-        dataOut.println("simulation");
+    public void sendGame(Object date) {
+        System.out.println(date.toString());
+        dataOut.println(date.toString());
+        watchGame();
+    }
+
+    public void watchGame() {
+        String line = null;
+        try {
+            line = dataIn.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        gui.setBoard(line);
     }
 
     /** Gra */
