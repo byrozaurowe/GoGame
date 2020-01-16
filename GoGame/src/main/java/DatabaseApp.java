@@ -20,9 +20,10 @@ class DatabaseApplication {
         else {
             Session session = HibernateUtil.getSessionFactory().openSession();
             session.beginTransaction();
-            Query query = session.createQuery("SELECT COUNT(*) FROM savedgames");
+            Query query = session.createQuery("SELECT COUNT(*) FROM SavedGames");
             List result = query.list();
             OneGame oneGame = new OneGame();
+            oneGame.setGameId(((Long) result.get(0)).intValue());
             oneGame.setMoveId(Integer.parseInt(args[0]));
             oneGame.setMoveString(args[1]);
             session.save(oneGame);
