@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.util.Date;
 
 /** Klasa obslugujaca menu glowne */
@@ -30,8 +31,6 @@ class Menu extends JFrame implements ActionListener {
     private JRadioButton normal;
     /** Radio button plansza 9x9 */
     private JRadioButton small;
-    /**Combo box z zapisanymi grami*/
-    private JComboBox savedGamesComboBox;
 
     /** Konstruktor menu */
     Menu(){
@@ -48,7 +47,6 @@ class Menu extends JFrame implements ActionListener {
         playerStartButton.setFont(labelFont);
         savedGamesButton = new JButton("Simulation of saved game");
         savedGamesButton.setFont(labelFont);
-        savedGamesComboBox = new JComboBox();
         titleLabel = new JLabel("Go Game");
         titleLabel.setFont(new Font("Segoe UI", Font.BOLD, 20));
         descLabel = new JLabel("To play, select the board size and mode");
@@ -56,10 +54,6 @@ class Menu extends JFrame implements ActionListener {
         // ustawienie panelu glownego
         menuPanel = new JPanel();
         menuPanel.setLayout(new BoxLayout(menuPanel, BoxLayout.Y_AXIS));
-
-        //dodanie historii gier do combo boxa
-        Date date;
-        savedGamesComboBox.addItem(date = new Date(1999, 10, 6));
 
         // ustawienie radio buttonow
         buttonGroup = new ButtonGroup();
@@ -90,7 +84,6 @@ class Menu extends JFrame implements ActionListener {
         botPanel.add(botStartButton);
         savedGamesPanel = new JPanel();
         savedGamesPanel.add(savedGamesButton);
-        savedGamesPanel.add(savedGamesComboBox);
         // dodawanie paneli do panelu glownego
         menuPanel.add(Box.createRigidArea(new Dimension(0, 10)));
         menuPanel.add(titlePanel);
@@ -104,7 +97,6 @@ class Menu extends JFrame implements ActionListener {
         botStartButton.addActionListener(this);
         playerStartButton.addActionListener(this);
         savedGamesButton.addActionListener(this);
-        savedGamesComboBox.addActionListener(this);
         pack();
     }
     /** Metoda actionPerformed */
@@ -140,7 +132,9 @@ class Menu extends JFrame implements ActionListener {
             this.dispose();
         }
         else if (event == savedGamesButton) {
-
+                GameClient.gameClient.startSimulation();
+                SimulationMenu simulationMenu = new SimulationMenu();
+                this.dispose();;
         }
     }
 }

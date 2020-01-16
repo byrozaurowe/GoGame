@@ -47,6 +47,7 @@ public class GameServer {
     int[] territory = new int[3];
     int allowedMoveCounter = 0;
     int lastPlayerId = 2;
+    static boolean simulation = false;
 
     /** Konstruktor serwera */
     private GameServer() {
@@ -169,6 +170,9 @@ public class GameServer {
         try {
             System.out.println("Waiting for connections...");
             connectClient();
+            if(simulation) {
+                return;
+            }
             if(bot) {
                 new Bot();
             }
@@ -187,7 +191,12 @@ public class GameServer {
             dataOutPlayer1 = new PrintWriter(socket.getOutputStream(), true);
             dataOutPlayer1.println(numPlayers);
             System.out.println("Player " + numPlayers + " has connected");
-            if(dataInPlayer1.readLine().equals("BOT")) bot = true;
+            String msg = dataInPlayer1.readLine();
+            if(msg.equals("simulation")) {
+                simulation = true;
+                return;
+            }
+            if(msg.equals("BOT")) bot = true;
             setBoardSize();
 
         }
@@ -270,14 +279,23 @@ public class GameServer {
             playerLeft = true;
         }
     }
+
+    private void simulation() {
+        System.out.println("server connected with client and ready for simulation");
+    }
     /** Main
      * @param args pusto
      * */
     public static void main(String[] args) {
         gameServer = new GameServer();
         gameServer.acceptConnections();
-        gameServer.insertToTable("newGame");
-        gameServer.play();
+        if (simulation) {
+            gameServer.simulation();
+        }
+        else {
+            gameServer.insertToTable("newGame");
+            gameServer.play();
+        }
     }
 
 }

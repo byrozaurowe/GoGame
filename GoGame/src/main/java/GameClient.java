@@ -1,6 +1,7 @@
 import java.io.*;
 import java.net.Socket;
 import java.net.UnknownHostException;
+import java.util.Date;
 
 /** Klient gry */
 public class GameClient implements Runnable {
@@ -32,6 +33,24 @@ public class GameClient implements Runnable {
     /** Konstruktor klienta */
     GameClient() {
         menu = new Menu();
+    }
+
+    /**Symulacja*/
+    public void startSimulation () {
+        System.out.println("-----Client----");
+        try {
+            socket = new Socket("localhost", 4444);
+            dataIn = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+            dataOut = new PrintWriter(socket.getOutputStream(), true);
+            playerID = Integer.parseInt(dataIn.readLine());
+            System.out.println("Connected as as client to watch simulation");
+        } catch (UnknownHostException e) {
+            System.out.println("Unknown host: localhost");
+        } catch (IOException e) {
+            System.out.println("Server you are trying to connect is disconnected");
+        }
+
+        dataOut.println("simulation");
     }
 
     /** Gra */
