@@ -1,13 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="23df1589-9a88-484b-b16c-0d131e237639" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/OneGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DatabaseApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DatabaseApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GameServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GameServer.java" afterDir="false" />
-    </list>
+    <list default="true" id="23df1589-9a88-484b-b16c-0d131e237639" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -90,12 +85,11 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DatabaseDriversLRU" value="java.sql.Driver" />
     <property name="JPA.DatabaseSchemaImportDialog" value="3df48651-c055-4d0b-b414-944944ee390e" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="findjar.last.used.dir" value="$PROJECT_DIR$/lib" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="C:/javafx-sdk-13.0.1/hibernate-annotations-3.5.6-Final.jar!/" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
@@ -115,7 +109,19 @@
       <recent name="C:\Users\wojte\git\IntelliJ_TP\GoGame\src\main\resources" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.DatabaseApplication">
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.GameClient2">
     <configuration name="DBConnector" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="DBConnector" />
       <module name="GoGame" />
@@ -125,14 +131,14 @@
     </configuration>
     <configuration name="DatabaseApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="DatabaseApplication" />
-      <module name="GoGame" />
+      <module name="go" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration name="GameClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="GameClient" />
-      <module name="GoGame" />
+      <module name="go" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value=".*" />
@@ -145,14 +151,14 @@
     </configuration>
     <configuration name="GameClient2" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="GameClient" />
-      <module name="GoGame" />
+      <module name="go" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration name="GameServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="GameServer" />
-      <module name="GoGame" />
+      <module name="go" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value=".*" />
@@ -184,25 +190,13 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.DatabaseApplication" />
-        <item itemvalue="Application.DBConnector" />
         <item itemvalue="Application.GameClient" />
         <item itemvalue="Application.GameServer" />
+        <item itemvalue="Application.DatabaseApplication" />
+        <item itemvalue="Application.DBConnector" />
         <item itemvalue="JUnit.StoneChainTest" />
       </list>
     </recent_temporary>
-  </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -239,9 +233,8 @@
       <workItem from="1579091498621" duration="4608000" />
       <workItem from="1579119789085" duration="1580000" />
       <workItem from="1579121393840" duration="1003000" />
-      <workItem from="1579124362057" duration="130000" />
-      <workItem from="1579124522976" duration="580000" />
-      <workItem from="1579168870212" duration="4228000" />
+      <workItem from="1579124362057" duration="794000" />
+      <workItem from="1579170643946" duration="7261000" />
     </task>
     <task id="LOCAL-00001" summary="board">
       <created>1575056393338</created>
@@ -459,10 +452,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="bd" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="517" y="88" key="#DatabaseApplication" timestamp="1579169234146">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state x="517" y="88" key="#DatabaseApplication/0.0.1600.860@0.0.1600.860" timestamp="1579169234146" />
     <state x="562" y="116" width="671" height="609" key="#GameClient" timestamp="1578653306793">
       <screen x="67" y="27" width="1533" height="873" />
     </state>
@@ -511,10 +500,10 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="830" y="122" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog/0.0.1600.860@0.0.1600.860" timestamp="1579097422217" />
-    <state x="648" y="318" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1579169180898">
+    <state x="648" y="318" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1578917712667">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="648" y="318" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1600.860@0.0.1600.860" timestamp="1579169180898" />
+    <state x="648" y="318" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1600.860@0.0.1600.860" timestamp="1578917712667" />
     <state x="870" y="0" key="#com.intellij.jpa.generation.ui.DatabaseSchemaImportDialog" timestamp="1579097460384">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -547,25 +536,25 @@
     </state>
     <state x="405" y="176" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1579097113000" />
     <state x="455" y="206" width="735" height="513" key="FileChooserDialogImpl/67.27.1533.873@67.27.1533.873" timestamp="1578916878325" />
-    <state width="1557" height="266" key="GridCell.Tab.0.bottom" timestamp="1579169391126">
+    <state width="1557" height="266" key="GridCell.Tab.0.bottom" timestamp="1579093004060">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="266" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1579169391126" />
+    <state width="1557" height="266" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1579093004060" />
     <state width="1487" height="373" key="GridCell.Tab.0.bottom/67.27.1533.873@67.27.1533.873" timestamp="1577365098841" />
-    <state width="1557" height="266" key="GridCell.Tab.0.center" timestamp="1579169391125">
+    <state width="1557" height="266" key="GridCell.Tab.0.center" timestamp="1579093004060">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="266" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1579169391125" />
+    <state width="1557" height="266" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1579093004060" />
     <state width="1487" height="373" key="GridCell.Tab.0.center/67.27.1533.873@67.27.1533.873" timestamp="1577365098841" />
-    <state width="1557" height="266" key="GridCell.Tab.0.left" timestamp="1579169391125">
+    <state width="1557" height="266" key="GridCell.Tab.0.left" timestamp="1579093004059">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="266" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1579169391125" />
+    <state width="1557" height="266" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1579093004059" />
     <state width="1487" height="373" key="GridCell.Tab.0.left/67.27.1533.873@67.27.1533.873" timestamp="1577365098840" />
-    <state width="1557" height="266" key="GridCell.Tab.0.right" timestamp="1579169391126">
+    <state width="1557" height="266" key="GridCell.Tab.0.right" timestamp="1579093004060">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="266" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1579169391126" />
+    <state width="1557" height="266" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1579093004060" />
     <state width="1487" height="373" key="GridCell.Tab.0.right/67.27.1533.873@67.27.1533.873" timestamp="1577365098841" />
     <state width="1487" height="362" key="GridCell.Tab.1.bottom" timestamp="1576608466657">
       <screen x="67" y="27" width="1533" height="873" />
@@ -631,5 +620,36 @@
     </state>
     <state x="448" y="182" width="702" height="668" key="search.everywhere.popup/0.0.1600.860@0.0.1600.860" timestamp="1579095287199" />
     <state x="496" y="212" width="672" height="678" key="search.everywhere.popup/67.27.1533.873@67.27.1533.873" timestamp="1578916576071" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/DatabaseApp.java</url>
+          <line>23</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/DatabaseApp.java</url>
+          <line>22</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/DatabaseApp.java</url>
+          <line>24</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/DatabaseApp.java</url>
+          <line>20</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/DatabaseApp.java</url>
+          <line>21</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
