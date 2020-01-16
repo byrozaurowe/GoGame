@@ -1,25 +1,30 @@
 import org.hibernate.*;
+import org.hibernate.boot.model.relational.Database;
+
 import java.util.Date;
 import java.util.List;
 
 class DatabaseApplication {
-    public static void main(String[] args) {
-        if(args[0].equals("newGame")) {
-            Session session = HibernateUtil.getSessionFactory().openSession();
-            session.beginTransaction();
 
+    DatabaseApplication() {}
+
+    public static List queries(String[] args) {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        session.beginTransaction();
+
+        if(args[0].equals("newGame")) {
             SavedGames savedGames = new SavedGames();
             Date date = new Date();
             java.sql.Date sDate = new java.sql.Date(date.getTime());
             savedGames.setDate(sDate);
-
             session.save(savedGames);
-
-            session.getTransaction().commit();
+        }
+        if(args[0].equals("data")) {
+            Query query = session.createQuery("FROM OneGame WHERE gameId = (SELECT id FROM SavedGames WHERE date =" + args[1] + ")");
+            List result = query.list();
+            return result;
         }
         else {
-            Session session = HibernateUtil.getSessionFactory().openSession();
-            session.beginTransaction();
             Query query = session.createQuery("SELECT COUNT(*) FROM SavedGames");
             List result = query.list();
             OneGame oneGame = new OneGame();
@@ -27,7 +32,8 @@ class DatabaseApplication {
             oneGame.setMoveId(Integer.parseInt(args[0]));
             oneGame.setMoveString(args[1]);
             session.save(oneGame);
-            session.getTransaction().commit();
         }
+        session.getTransaction().commit();
+        return null;
     }
 }
