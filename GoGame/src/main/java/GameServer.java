@@ -256,6 +256,7 @@ public class GameServer {
     public static void main(String[] args) {
         gameServer = new GameServer();
         gameServer.acceptConnections();
+
         gameServer.play();
     }
 

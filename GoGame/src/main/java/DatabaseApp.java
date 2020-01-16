@@ -11,7 +11,7 @@ class DatabaseApplication {
         // Add new Employee object
         SavedGames savedGames = new SavedGames();
         savedGames.setId(6);
-        savedGames.setDate(new Date(1996,12,20));
+        savedGames.setDate(new Date(20,12,2001));
 
         session.save(savedGames);
 
