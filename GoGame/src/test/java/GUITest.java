@@ -10,7 +10,7 @@ class GUITest {
 
     @BeforeEach
     void setUp() {
-        gui = new GUI(9);
+        gui = new GUI(9,false);
     }
 
     @Test

@@ -30,6 +30,7 @@ public class GameClient implements Runnable {
     /** Czy z botem? */
     private boolean bot = false;
 
+    private boolean isSimulation = true;
     /** Konstruktor klienta */
     GameClient() {
         menu = new Menu();
@@ -44,6 +45,7 @@ public class GameClient implements Runnable {
             dataOut = new PrintWriter(socket.getOutputStream(), true);
             playerID = Integer.parseInt(dataIn.readLine());
             System.out.println("Connected as as client to watch simulation");
+            dataOut.println("simulation");
         } catch (UnknownHostException e) {
             System.out.println("Unknown host: localhost");
         } catch (IOException e) {
@@ -54,24 +56,45 @@ public class GameClient implements Runnable {
     public void sendGame(Object date) {
         System.out.println(date.toString());
         dataOut.println(date.toString());
-        watchGame();
+        Thread thread = new Thread(gameClient);
+        thread.start();
     }
 
     public void watchGame() {
         String line = null;
         try {
-            line = dataIn.readLine();
+            line = dataIn.readLine(); // pierwszy stan planszy
         } catch (IOException e) {
             e.printStackTrace();
         }
         String[] data = line.split(" ");
         int boardSize = (int) Math.sqrt(data[0].length()-1);
-        gui = new GUI(boardSize);
+        gui = new GUI(boardSize, true);
         gui.setBoard(line);
+        isSimulation = true;
+        while(true) {
+            moveMsg = null;
+            while (moveMsg == null) {
+                moveMsg = gui.getMsg(); // Oczekiwanie, aż gracz zrobi jakiś ruch
+            }
+            System.out.println(moveMsg);
+            dataOut.println(moveMsg);
+            gui.nullMsg();
+            try {
+                line = dataIn.readLine();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            gui.setBoard(line);
+        }
     }
 
     /** Gra */
     public void run() {
+        if(isSimulation) {
+            watchGame();
+            return;
+        }
         gui.setGameStatusLabel("Waiting for opponent to join");
         try {
             if(dataIn.readLine().equals("Let's begin")) {
@@ -119,7 +142,7 @@ public class GameClient implements Runnable {
     /** Wyslij odpowiedz do serwera
      * @param response Y / N
      */
-    private void sendSummaryResponse(String response) {
+    void sendSummaryResponse(String response) {
         dataOut.println(response);
     }
     /** Odczytuje informajce z serwera

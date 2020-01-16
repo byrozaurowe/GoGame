@@ -108,23 +108,23 @@ class Menu extends JFrame implements ActionListener {
             int playerID = GameClient.gameClient.connectClient();
             if (playerID == 1) {
                 if (big.isSelected()) {
-                    frame = new GUI(19);
+                    frame = new GUI(19,false);
                     GameClient.gui = frame;
                     GameClient.gameClient.setSettings(19);
                 }
                 else if (normal.isSelected()) {
-                    frame = new GUI(13);
+                    frame = new GUI(13,false);
                     GameClient.gui = frame;
                     GameClient.gameClient.setSettings(13);
                 }
                 else if (small.isSelected()) {
-                    frame = new GUI(9);
+                    frame = new GUI(9,false);
                     GameClient.gui = frame;
                     GameClient.gameClient.setSettings(9);
                 }
             }
             else if (playerID == 2) {
-                frame = new GUI(GameClient.gameClient.getBoardSize());
+                frame = new GUI(GameClient.gameClient.getBoardSize(),false);
                 GameClient.gui = frame;
                 GameClient.gameClient.setSettings(0);
             }
@@ -134,7 +134,7 @@ class Menu extends JFrame implements ActionListener {
         else if (event == savedGamesButton) {
                 GameClient.gameClient.startSimulation();
                 SimulationMenu simulationMenu = new SimulationMenu();
-                this.dispose();;
+                this.dispose();
         }
     }
 }

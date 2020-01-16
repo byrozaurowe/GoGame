@@ -285,12 +285,12 @@ public class GameServer {
         System.out.println("Server connected with client and ready for simulation");
         String data = null;
         try {
-            data = dataInPlayer1.readLine();
+            data = dataInPlayer1.readLine(); // czyta jaka gre klient chce otworzyc
         } catch (IOException e) {
             System.out.println("Client left before he picked simulation");
             return;
         }
-        List moveList = DatabaseApplication.queries(new String[]{"data", data});
+        List moveList = DatabaseApplication.queries(new String[]{"data", data}); // lista ruchow w grze
         while(true) {
             int i = 0;
             dataOutPlayer1.println(moveList.get(i));

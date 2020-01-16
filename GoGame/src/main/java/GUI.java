@@ -29,11 +29,15 @@ public class GUI extends JFrame implements ActionListener, MouseListener, MouseM
     /** Twoi jency */
     private int score[];
 
+    private JButton nextButton;
+
+    private JButton previousButton;
+
     /** Konstruktor maina
      * @param boardSize rozmiar planszy
      * */
-    GUI(int boardSize) {
-        gameInitialize(boardSize);
+    GUI(int boardSize, boolean isSimulation) {
+        gameInitialize(boardSize, isSimulation);
     }
 
     /** Metoda actionPerformed */
@@ -50,10 +54,16 @@ public class GUI extends JFrame implements ActionListener, MouseListener, MouseM
         else if(event == rulesItem) {
             JOptionPane.showMessageDialog(this, "You can find rules on dr Macyna's website", "Rules", JOptionPane.INFORMATION_MESSAGE);
         }
+        else if(event == nextButton) {
+            msg = "next";
+        }
+        else if(event == previousButton) {
+            msg = "previous";
+        }
     }
 
     /** Tworzy okno gry */
-    private void gameInitialize(int boardSize) {
+    private void gameInitialize(int boardSize, boolean isSimulation) {
         // tworzenie menu
         menuBar = new JMenuBar();
         optionsMenu = new JMenu("Options");
@@ -75,7 +85,7 @@ public class GUI extends JFrame implements ActionListener, MouseListener, MouseM
         add(board, BorderLayout.CENTER);
 
 
-        gameStatusLabel = new JLabel("Test");
+        gameStatusLabel = new JLabel("You are in spectator mode");
         gameStatusLabel.setFont(new Font("Segoe UI", Font.BOLD, 20));
         board.add(gameStatusLabel, BorderLayout.SOUTH);
 
@@ -93,6 +103,15 @@ public class GUI extends JFrame implements ActionListener, MouseListener, MouseM
         this.setVisible(true);
         this.setResizable(false);
 
+        if(isSimulation) {
+            nextButton = new JButton("Next move");
+            previousButton = new JButton("Previous move");
+            board.add(previousButton, BorderLayout.SOUTH);
+            board.add(nextButton, BorderLayout.SOUTH);
+            // CZEMU TO TAK DZIALA?
+            nextButton.addActionListener(this);
+            previousButton.addActionListener(this);
+        }
         pack();
     }
 

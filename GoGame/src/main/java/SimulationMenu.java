@@ -5,10 +5,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
-import java.util.Date;
+import java.util.*;
 import java.util.List;
-import java.util.Vector;
 
 public class SimulationMenu extends JFrame implements ActionListener {
     /**Combo box z zapisanymi grami*/
@@ -24,11 +22,18 @@ public class SimulationMenu extends JFrame implements ActionListener {
         Session session = HibernateUtil.getSessionFactory().openSession();
         Query query = session.createQuery("SELECT date FROM SavedGames");
         List result = query.list();
-
+        String[] wynik = new String[result.size()];
+        for(int j = 0; j < result.size(); j++) {
+            for (int i = 0; i <= 18; i++) {
+                if(i==0)
+                    wynik[j] = String.valueOf(result.get(j).toString().charAt(i));
+                else wynik[j] += String.valueOf(result.get(j).toString().charAt(i));
+            }
+        }
         //dodanie historii gier do combo boxa
         Font labelFont = new Font("Segoe UI", Font.PLAIN, 20);
 
-        savedGamesComboBox = new JComboBox(result.toArray());
+        savedGamesComboBox = new JComboBox(wynik);
         savedGamesComboBox.addActionListener(this);
         savedGamesComboBox.setFont(labelFont);
         ((JLabel)savedGamesComboBox.getRenderer()).setHorizontalAlignment(DefaultListCellRenderer. CENTER);
@@ -54,6 +59,7 @@ public class SimulationMenu extends JFrame implements ActionListener {
         if (e.getSource() == startSimulation)  {
             Object date =  savedGamesComboBox.getSelectedItem();
             GameClient.gameClient.sendGame(date);
+            this.dispose();
         }
     }
 }

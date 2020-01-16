@@ -1,6 +1,8 @@
 import org.hibernate.*;
 import org.hibernate.boot.model.relational.Database;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -20,8 +22,12 @@ class DatabaseApplication {
             session.save(savedGames);
         }
         if(args[0].equals("data")) {
-            Query query = session.createQuery("FROM OneGame WHERE gameId = (SELECT id FROM SavedGames WHERE date =" + args[1] + ")");
+
+            Query query = null;
+                query = session.createQuery("SELECT id FROM SavedGames WHERE date = '" + args[1] + "'");
             List result = query.list();
+            query = session.createQuery("SELECT moveString FROM OneGame WHERE gameId = " + result.get(0) + " ORDER BY id");
+            result = query.list();
             return result;
         }
         else {
