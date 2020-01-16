@@ -64,6 +64,9 @@ public class GameClient implements Runnable {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        String[] data = line.split(" ");
+        int boardSize = (int) Math.sqrt(data[0].length()-1);
+        gui = new GUI(boardSize);
         gui.setBoard(line);
     }
 
