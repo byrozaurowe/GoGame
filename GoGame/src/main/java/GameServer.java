@@ -5,6 +5,7 @@ import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.Date;
+import java.util.Iterator;
 import java.util.List;
 
 /** Serwer gry */
@@ -89,10 +90,10 @@ public class GameServer {
     private void insertToTable(String msg) {
 
         if(msg.equals("newGame")) {
-            DatabaseApplication.main(new String[]{msg});
+            DatabaseApplication.queries(new String[]{msg});
         }
         else {
-            DatabaseApplication.main(new String[]{Integer.toString(allowedMoveCounter), msg});
+            DatabaseApplication.queries(new String[]{Integer.toString(allowedMoveCounter), msg});
         }
     }
 
@@ -281,7 +282,31 @@ public class GameServer {
     }
 
     private void simulation() {
-        System.out.println("server connected with client and ready for simulation");
+        System.out.println("Server connected with client and ready for simulation");
+        String data = null;
+        try {
+            data = dataInPlayer1.readLine();
+        } catch (IOException e) {
+            System.out.println("Client left before he picked simulation");
+            return;
+        }
+        List moveList = DatabaseApplication.queries(new String[]{"data", data});
+        while(true) {
+            int i = 0;
+            dataOutPlayer1.println(moveList.get(i));
+            try {
+                if(dataInPlayer1.readLine().equals("next"))
+                    i++;
+                else {
+                    i--;
+                    if(i < 0)
+                        i++;
+                }
+            } catch (IOException e) {
+                System.out.println("Client left");
+                break;
+            }
+        }
     }
     /** Main
      * @param args pusto
