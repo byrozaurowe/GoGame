@@ -1,6 +1,11 @@
+import org.hibernate.Query;
+import org.hibernate.Session;
+
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.Date;
+import java.util.List;
 
 /** Serwer gry */
 public class GameServer {
@@ -40,6 +45,8 @@ public class GameServer {
     private int canBotMove = 1;
     /** terytorium graczy */
     int[] territory = new int[3];
+    int allowedMoveCounter = 0;
+    int lastPlayerId = 2;
 
     /** Konstruktor serwera */
     private GameServer() {
@@ -69,8 +76,23 @@ public class GameServer {
         msg += " " + canBotMove;
         canBotMove = 1;
         System.out.println(msg);
+        if(!Integer.toString(lastPlayerId).equals(msg.substring(1))) {
+            allowedMoveCounter++;
+            insertToTable(msg);
+        }
+
         dataOutPlayer1.println(msg);
         dataOutPlayer2.println(msg);
+    }
+
+    private void insertToTable(String msg) {
+
+        if(msg.equals("newGame")) {
+            DatabaseApplication.main(new String[]{msg});
+        }
+        else {
+            DatabaseApplication.main(new String[]{Integer.toString(allowedMoveCounter), msg});
+        }
     }
 
     /** Sluchanie socketa gracza
@@ -203,8 +225,6 @@ public class GameServer {
 
     /** Wywolywane gdy gra zakonczy sie poprawnie */
     private void finishGame() {
-
-
         String input1;
         String input2;
         passCounter = 0;
@@ -256,7 +276,7 @@ public class GameServer {
     public static void main(String[] args) {
         gameServer = new GameServer();
         gameServer.acceptConnections();
-
+        gameServer.insertToTable("newGame");
         gameServer.play();
     }
 
