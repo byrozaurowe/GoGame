@@ -121,7 +121,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.GameClient2">
+  <component name="RunManager" selected="Application.GameServer">
     <configuration name="DBConnector" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="DBConnector" />
       <module name="GoGame" />
@@ -190,8 +190,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.GameServer" />
         <item itemvalue="Application.GameClient" />
+        <item itemvalue="Application.GameServer" />
         <item itemvalue="Application.DatabaseApplication" />
         <item itemvalue="Application.DBConnector" />
         <item itemvalue="JUnit.StoneChainTest" />
@@ -236,6 +236,7 @@
       <workItem from="1579124362057" duration="794000" />
       <workItem from="1579170643946" duration="12323000" />
       <workItem from="1579188744212" duration="14764000" />
+      <workItem from="1579207377631" duration="775000" />
     </task>
     <task id="LOCAL-00001" summary="board">
       <created>1575056393338</created>
@@ -653,11 +654,6 @@
           <url>file://$PROJECT_DIR$/src/main/java/GameClient.java</url>
           <line>72</line>
           <option name="timeStamp" value="43" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/GameServer.java</url>
-          <line>295</line>
-          <option name="timeStamp" value="45" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -78,7 +78,7 @@ public class GameServer {
         msg += " " + canBotMove;
         canBotMove = 1;
         System.out.println(msg);
-        if(!Integer.toString(lastPlayerId).equals(msg.substring(1)) && simulation) {
+        if(!Integer.toString(lastPlayerId).equals(msg.substring(1))) {
             allowedMoveCounter++;
             insertToTable(msg);
         }
