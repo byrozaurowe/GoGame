@@ -30,7 +30,7 @@ public class GameClient implements Runnable {
     /** Czy z botem? */
     private boolean bot = false;
 
-    private boolean isSimulation = true;
+    private boolean isSimulation = false;
     /** Konstruktor klienta */
     GameClient() {
         menu = new Menu();
@@ -56,6 +56,7 @@ public class GameClient implements Runnable {
     public void sendGame(Object date) {
         System.out.println(date.toString());
         dataOut.println(date.toString());
+        isSimulation = true;
         Thread thread = new Thread(gameClient);
         thread.start();
     }
@@ -71,7 +72,6 @@ public class GameClient implements Runnable {
         int boardSize = (int) Math.sqrt(data[0].length()-1);
         gui = new GUI(boardSize, true);
         gui.setBoard(line);
-        isSimulation = true;
         while(true) {
             moveMsg = null;
             while (moveMsg == null) {

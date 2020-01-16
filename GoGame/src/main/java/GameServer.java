@@ -90,10 +90,10 @@ public class GameServer {
     private void insertToTable(String msg) {
 
         if(msg.equals("newGame")) {
-            DatabaseApplication.queries(new String[]{msg});
+            DatabaseApplication.queries(new String[]{msg, null, null});
         }
         else {
-            DatabaseApplication.queries(new String[]{Integer.toString(allowedMoveCounter), msg});
+            DatabaseApplication.queries(new String[]{"list of moves", Integer.toString(allowedMoveCounter), msg});
         }
     }
 
