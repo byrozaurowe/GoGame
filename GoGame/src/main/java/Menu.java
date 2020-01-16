@@ -1,17 +1,23 @@
+import org.hibernate.Query;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Date;
+
 /** Klasa obslugujaca menu glowne */
 class Menu extends JFrame implements ActionListener {
 
     private GUI frame;
+    /**Guzik wyświetlający listę zapisanych gier*/
+    private JButton savedGamesButton;
     /** Guzik rozpoczynajacy gre z botem */
     private JButton botStartButton;
     /** Guzik rozpoczynajacy gre z graczem */
     private JButton playerStartButton;
     /** Panele do menu */
-    private JPanel menuPanel, titlePanel, descPanel, radioPanel, playerPanel, botPanel;
+    private JPanel menuPanel, titlePanel, descPanel, radioPanel, playerPanel, botPanel, savedGamesPanel;
     /** Etykieta z tytulem gry */
     private JLabel titleLabel;
     /** Etykieta z opisem */
@@ -24,6 +30,8 @@ class Menu extends JFrame implements ActionListener {
     private JRadioButton normal;
     /** Radio button plansza 9x9 */
     private JRadioButton small;
+    /**Combo box z zapisanymi grami*/
+    private JComboBox savedGamesComboBox;
 
     /** Konstruktor menu */
     Menu(){
@@ -38,6 +46,9 @@ class Menu extends JFrame implements ActionListener {
         botStartButton.setFont(labelFont);
         playerStartButton = new JButton("Start game against player");
         playerStartButton.setFont(labelFont);
+        savedGamesButton = new JButton("Simulation of saved game");
+        savedGamesButton.setFont(labelFont);
+        savedGamesComboBox = new JComboBox();
         titleLabel = new JLabel("Go Game");
         titleLabel.setFont(new Font("Segoe UI", Font.BOLD, 20));
         descLabel = new JLabel("To play, select the board size and mode");
@@ -45,6 +56,10 @@ class Menu extends JFrame implements ActionListener {
         // ustawienie panelu glownego
         menuPanel = new JPanel();
         menuPanel.setLayout(new BoxLayout(menuPanel, BoxLayout.Y_AXIS));
+
+        //dodanie historii gier do combo boxa
+        Date date;
+        savedGamesComboBox.addItem(date = new Date(1999, 10, 6));
 
         // ustawienie radio buttonow
         buttonGroup = new ButtonGroup();
@@ -73,6 +88,9 @@ class Menu extends JFrame implements ActionListener {
         playerPanel.add(playerStartButton);
         botPanel = new JPanel();
         botPanel.add(botStartButton);
+        savedGamesPanel = new JPanel();
+        savedGamesPanel.add(savedGamesButton);
+        savedGamesPanel.add(savedGamesComboBox);
         // dodawanie paneli do panelu glownego
         menuPanel.add(Box.createRigidArea(new Dimension(0, 10)));
         menuPanel.add(titlePanel);
@@ -81,9 +99,12 @@ class Menu extends JFrame implements ActionListener {
         menuPanel.add(radioPanel);
         menuPanel.add(playerPanel);
         menuPanel.add(botPanel);
+        menuPanel.add(savedGamesPanel);
         add(menuPanel);
         botStartButton.addActionListener(this);
         playerStartButton.addActionListener(this);
+        savedGamesButton.addActionListener(this);
+        savedGamesComboBox.addActionListener(this);
         pack();
     }
     /** Metoda actionPerformed */
@@ -117,6 +138,9 @@ class Menu extends JFrame implements ActionListener {
             }
             else return;
             this.dispose();
+        }
+        else if (event == savedGamesButton) {
+
         }
     }
 }
