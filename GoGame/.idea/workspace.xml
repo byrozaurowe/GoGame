@@ -235,7 +235,7 @@
       <workItem from="1579121393840" duration="1003000" />
       <workItem from="1579124362057" duration="794000" />
       <workItem from="1579170643946" duration="12323000" />
-      <workItem from="1579188744212" duration="10559000" />
+      <workItem from="1579188744212" duration="12231000" />
     </task>
     <task id="LOCAL-00001" summary="board">
       <created>1575056393338</created>
@@ -668,31 +668,6 @@
           <url>file://$PROJECT_DIR$/src/main/java/GameClient.java</url>
           <line>81</line>
           <option name="timeStamp" value="35" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/GameServer.java</url>
-          <line>295</line>
-          <option name="timeStamp" value="37" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/GameServer.java</url>
-          <line>297</line>
-          <option name="timeStamp" value="38" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/GUI.java</url>
-          <line>57</line>
-          <option name="timeStamp" value="39" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/GameServer.java</url>
-          <line>300</line>
-          <option name="timeStamp" value="40" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/GameServer.java</url>
-          <line>298</line>
-          <option name="timeStamp" value="41" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/GameClient.java</url>

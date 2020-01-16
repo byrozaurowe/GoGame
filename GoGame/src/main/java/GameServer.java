@@ -291,16 +291,23 @@ public class GameServer {
             return;
         }
         List moveList = DatabaseApplication.queries(new String[]{"data", data}); // lista ruchow w grze
+        int i = 0;
         while(true) {
-            int i = 0;
             dataOutPlayer1.println(moveList.get(i));
+            System.out.println("Wysyłam stan planszy...");
             try {
-                if(dataInPlayer1.readLine().equals("next"))
-                    i++;
-                else {
-                    i--;
-                    if(i < 0)
+                String line = dataInPlayer1.readLine();
+                if(line.equals("next")) {
+                    if (i < moveList.size() - 1) {
                         i++;
+                        System.out.println("Następny");
+                    }
+                }
+                else if(line.equals("previous")) {
+                    if(i > 0) {
+                        i--;
+                        System.out.println("Poprzedni");
+                    }
                 }
             } catch (IOException e) {
                 System.out.println("Client left");

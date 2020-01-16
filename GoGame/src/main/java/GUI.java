@@ -28,9 +28,9 @@ public class GUI extends JFrame implements ActionListener, MouseListener, MouseM
     private JLabel gameStatusLabel;
     /** Twoi jency */
     private int score[];
-
+    /** Przycisk nastepnego ruchu w symulacji */
     private JButton nextButton;
-
+    /** Przycisk poprzedniego ruchu w symulacji */
     private JButton previousButton;
 
     /** Konstruktor maina
