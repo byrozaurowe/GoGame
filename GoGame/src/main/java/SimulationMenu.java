@@ -19,15 +19,14 @@ public class SimulationMenu extends JFrame implements ActionListener {
         setVisible(true);
         setResizable(false);
 
-        Session session = HibernateUtil.getSessionFactory().openSession();
-        Query query = session.createQuery("SELECT date FROM SavedGames");
-        List result = query.list();
-        String[] wynik = new String[result.size()];
-        for(int j = 0; j < result.size(); j++) {
+        String dates = GameClient.dates;
+        String[] result = dates.split(";");
+        String[] wynik = new String[result.length];
+        for(int j = 0; j < result.length; j++) {
             for (int i = 0; i <= 18; i++) {
                 if(i==0)
-                    wynik[j] = String.valueOf(result.get(j).toString().charAt(i));
-                else wynik[j] += String.valueOf(result.get(j).toString().charAt(i));
+                    wynik[j] = String.valueOf(result[j].charAt(i));
+                else wynik[j] += String.valueOf(result[j].charAt(i));
             }
         }
         //dodanie historii gier do combo boxa

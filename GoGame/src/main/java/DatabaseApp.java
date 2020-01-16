@@ -13,7 +13,11 @@ class DatabaseApplication {
     public static List queries(String[] args) {
         Session session = HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
-
+        if(args[0].equals("date list")) {
+            Query query = session.createQuery("SELECT date FROM SavedGames");
+            List result = query.list();
+            return result;
+        }
         if(args[0].equals("newGame")) {
             SavedGames savedGames = new SavedGames();
             Date date = new Date();
