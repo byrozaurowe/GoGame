@@ -31,6 +31,8 @@ public class GameClient implements Runnable {
     private boolean bot = false;
 
     private boolean isSimulation = false;
+
+    static String dates;
     /** Konstruktor klienta */
     GameClient() {
         menu = new Menu();
@@ -46,6 +48,7 @@ public class GameClient implements Runnable {
             playerID = Integer.parseInt(dataIn.readLine());
             System.out.println("Connected as as client to watch simulation");
             dataOut.println("simulation");
+            dates = dataIn.readLine();
         } catch (UnknownHostException e) {
             System.out.println("Unknown host: localhost");
         } catch (IOException e) {

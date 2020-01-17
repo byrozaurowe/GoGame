@@ -3,6 +3,7 @@ import org.hibernate.boot.model.relational.Database;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -13,11 +14,19 @@ class DatabaseApplication {
     public static List queries(String[] args) {
         Session session = HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
-
+        if(args[0].equals("date list")) {
+            Query query = session.createSQLQuery("SELECT DATE_SUB(gameDate, INTERVAL 1 HOUR ) FROM SavedGames");
+            List result = query.list();
+            return result;
+        }
         if(args[0].equals("newGame")) {
             SavedGames savedGames = new SavedGames();
             Date date = new Date();
-            java.sql.Date sDate = new java.sql.Date(date.getTime());
+            Calendar cal = Calendar.getInstance(); // creates calendar
+            cal.setTime(date); // sets calendar time/date
+            cal.add(Calendar.HOUR, 1); // adds one hour
+            Date data = cal.getTime();
+            java.sql.Date sDate = new java.sql.Date(data.getTime());
             savedGames.setDate(sDate);
             session.save(savedGames);
         }

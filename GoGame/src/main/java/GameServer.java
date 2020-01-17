@@ -82,7 +82,6 @@ public class GameServer {
             allowedMoveCounter++;
             insertToTable(msg);
         }
-
         dataOutPlayer1.println(msg);
         dataOutPlayer2.println(msg);
     }
@@ -283,6 +282,13 @@ public class GameServer {
 
     private void simulation() {
         System.out.println("Server connected with client and ready for simulation");
+        List list = DatabaseApplication.queries(new String[]{"date list"});
+        String dates = "";
+        Iterator it = list.iterator();
+        while(it.hasNext()) {
+            dates += it.next().toString() + ";";
+        }
+        dataOutPlayer1.println(dates);
         String data = null;
         try {
             data = dataInPlayer1.readLine(); // czyta jaka gre klient chce otworzyc

@@ -3,109 +3,26 @@
   <ID>JAVA</ID>
   <OriginalElement />
   <nodes>
-    <node x="55.81759259259257" y="86.0">StoneChain</node>
-    <node x="395.0546825396825" y="152.0">Player</node>
-    <node x="293.0546825396825" y="152.0">Board</node>
-    <node x="276.38611111111106" y="0.0">GameClient</node>
-    <node x="164.3861111111111" y="162.0">Bot</node>
-    <node x="2.5833333333333144" y="162.0">GameHandler</node>
-    <node x="298.6796825396825" y="76.0">GUI</node>
-    <node x="41.69537037037034" y="238.0">GameServer</node>
-    <node x="310.78611111111104" y="228.0">Stone</node>
-    <node x="23.208333333333314" y="0.0">Pair</node>
+    <node x="0.0" y="213.0">StoneChain</node>
+    <node x="0.0" y="142.0">SavedGames</node>
+    <node x="163.0" y="213.0">GameClient</node>
+    <node x="127.0" y="355.0">Bot</node>
+    <node x="184.0" y="71.0">GameHandler</node>
+    <node x="0.0" y="71.0">HibernateUtil</node>
+    <node x="148.0" y="284.0">OneGame</node>
+    <node x="227.0" y="0.0">SimulationMenu</node>
+    <node x="0.0" y="284.0">MiniBase</node>
+    <node x="289.0" y="284.0">Stone</node>
+    <node x="0.0" y="355.0">Board</node>
+    <node x="239.0" y="355.0">GUI</node>
+    <node x="0.0" y="0.0">DatabaseApplication</node>
+    <node x="163.0" y="142.0">GameServer</node>
   </nodes>
   <notes />
-  <edges>
-    <edge source="Stone" target="Player">
-      <point x="23.428571428571416" y="-13.0" />
-      <point x="375.2146825396825" y="198.0" />
-      <point x="417.3046825396825" y="198.0" />
-      <point x="-22.25" y="13.0" />
-    </edge>
-    <edge source="GameHandler" target="StoneChain">
-      <point x="31.25" y="-13.0" />
-      <point x="96.33333333333331" y="137.0" />
-      <point x="100.06759259259258" y="137.0" />
-      <point x="-14.75" y="13.0" />
-    </edge>
-    <edge source="GameHandler" target="GameServer">
-      <point x="41.66666666666666" y="13.0" />
-      <point x="106.74999999999997" y="218.0" />
-      <point x="100.69537037037034" y="218.0" />
-      <point x="0.0" y="-13.0" />
-    </edge>
-    <edge source="GameServer" target="Bot">
-      <point x="47.19999999999999" y="-13.0" />
-      <point x="147.89537037037033" y="218.0" />
-      <point x="197.8861111111111" y="218.0" />
-      <point x="0.0" y="13.0" />
-    </edge>
-    <edge source="StoneChain" target="GameServer">
-      <point x="44.25000000000001" y="13.0" />
-      <point x="159.06759259259258" y="137.0" />
-      <point x="153.8861111111111" y="137.0" />
-      <point x="153.8861111111111" y="208.0" />
-      <point x="124.29537037037034" y="208.0" />
-      <point x="23.599999999999994" y="-13.0" />
-    </edge>
-    <edge source="Board" target="Stone">
-      <point x="0.0" y="13.0" />
-      <point x="334.0546825396825" y="208.0" />
-      <point x="340.0718253968254" y="208.0" />
-      <point x="-11.714285714285722" y="-13.0" />
-    </edge>
-    <edge source="StoneChain" target="Pair">
-      <point x="0.0" y="-13.0" />
-      <point x="114.81759259259258" y="56.0" />
-      <point x="78.70833333333331" y="56.0" />
-      <point x="18.5" y="13.0" />
-    </edge>
-    <edge source="Stone" target="Board">
-      <point x="-35.14285714285714" y="-13.0" />
-      <point x="316.64325396825393" y="208.0" />
-      <point x="301.2546825396825" y="208.0" />
-      <point x="-32.8" y="13.0" />
-    </edge>
-    <edge source="GameHandler" target="Pair">
-      <point x="-31.25" y="-13.0" />
-      <point x="34.31759259259257" y="56.0" />
-      <point x="41.708333333333314" y="56.0" />
-      <point x="-18.5" y="13.0" />
-    </edge>
-    <edge source="GameServer" target="GameHandler">
-      <point x="-23.599999999999994" y="-13.0" />
-      <point x="77.09537037037035" y="218.0" />
-      <point x="65.08333333333331" y="218.0" />
-      <point x="0.0" y="13.0" />
-    </edge>
-    <edge source="GUI" target="GameClient">
-      <point x="-16.75" y="-13.0" />
-      <point x="315.4296825396825" y="51.0" />
-      <point x="305.88611111111106" y="51.0" />
-      <point x="-29.5" y="13.0" />
-    </edge>
-    <edge source="GUI" target="Board">
-      <point x="8.375" y="13.0" />
-      <point x="340.5546825396825" y="127.0" />
-      <point x="344.3046825396825" y="127.0" />
-      <point x="10.25" y="-13.0" />
-    </edge>
-    <edge source="GameClient" target="GUI">
-      <point x="29.5" y="13.0" />
-      <point x="364.88611111111106" y="51.0" />
-      <point x="348.9296825396825" y="51.0" />
-      <point x="16.75" y="-13.0" />
-    </edge>
-    <edge source="Board" target="GUI">
-      <point x="-30.75" y="-13.0" />
-      <point x="303.3046825396825" y="127.0" />
-      <point x="307.0546825396825" y="127.0" />
-      <point x="-25.125" y="13.0" />
-    </edge>
-  </edges>
-  <settings layout="Hierarchic Group" zoom="1.0" x="242.5" y="132.0" />
+  <edges />
+  <settings layout="Hierarchic Group" zoom="1.0" x="243.0" y="280.0" />
   <SelectedNodes>
-    <node>Bot</node>
+    <node>StoneChain</node>
   </SelectedNodes>
   <Categories />
   <SCOPE>All</SCOPE>
