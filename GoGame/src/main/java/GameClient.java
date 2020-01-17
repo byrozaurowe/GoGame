@@ -48,7 +48,7 @@ public class GameClient implements Runnable {
             playerID = Integer.parseInt(dataIn.readLine());
             System.out.println("Connected as as client to watch simulation");
             dataOut.println("simulation");
-            dates = dataIn.readLine();
+            dates = dataIn.readLine(); // czyta tablice dat
         } catch (UnknownHostException e) {
             System.out.println("Unknown host: localhost");
         } catch (IOException e) {

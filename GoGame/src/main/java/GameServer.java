@@ -46,7 +46,7 @@ public class GameServer {
     private int canBotMove = 1;
     /** terytorium graczy */
     int[] territory = new int[3];
-    int allowedMoveCounter = 0;
+    int allowedMoveCounter = 1;
     int lastPlayerId = 2;
     static boolean simulation = false;
 
@@ -78,10 +78,12 @@ public class GameServer {
         msg += " " + canBotMove;
         canBotMove = 1;
         System.out.println(msg);
-        if(!Integer.toString(lastPlayerId).equals(msg.substring(1))) {
+        if(lastPlayerId != whoseTurn) {
             allowedMoveCounter++;
             insertToTable(msg);
         }
+        lastPlayerId = whoseTurn;
+
         dataOutPlayer1.println(msg);
         dataOutPlayer2.println(msg);
     }

@@ -23,7 +23,7 @@ public class SimulationMenu extends JFrame implements ActionListener {
         String[] result = dates.split(";");
         String[] wynik = new String[result.length];
         for(int j = 0; j < result.length; j++) {
-            for (int i = 0; i <= 18; i++) {
+            for (int i = 0; i < result[j].length() - 2; i++) {
                 if(i==0)
                     wynik[j] = String.valueOf(result[j].charAt(i));
                 else wynik[j] += String.valueOf(result[j].charAt(i));

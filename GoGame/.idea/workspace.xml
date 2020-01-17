@@ -38,13 +38,6 @@
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="godatabase: schema" type="76f4a085:MysqlImplModel$Schema" />
       </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="GoDatabase" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="godatabase: schema" type="76f4a085:MysqlImplModel$Schema" />
-        <item name="savedgames: table" type="285a2a93:MysqlImplModel$Table" />
-      </path>
     </expand>
     <select />
   </component>
@@ -121,7 +114,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.GameClient2">
+  <component name="RunManager" selected="Application.GameClient">
     <configuration name="DBConnector" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="DBConnector" />
       <module name="GoGame" />
@@ -238,6 +231,7 @@
       <workItem from="1579188744212" duration="14764000" />
       <workItem from="1579207377631" duration="775000" />
       <workItem from="1579209074756" duration="8809000" />
+      <workItem from="1579219150830" duration="2512000" />
     </task>
     <task id="LOCAL-00001" summary="board">
       <created>1575056393338</created>
