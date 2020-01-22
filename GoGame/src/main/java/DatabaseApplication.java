@@ -19,11 +19,12 @@ class DatabaseApplication {
         Session session = HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
         List result = null;
-        if(args[0].equals("date list")) {
-            Query query = session.createSQLQuery("SELECT DATE_SUB(gameDate, INTERVAL 1 HOUR ) FROM SavedGames");
-            result = query.list();
-        }
-         switch (args[0]) {
+        Query query;
+        switch (args[0]) {
+             case "date list":
+                 query = session.createSQLQuery("SELECT DATE_SUB(gameDate, INTERVAL 1 HOUR ) FROM SavedGames");
+                 result = query.list();
+                 break;
              case "newGame":
                  SavedGames savedGames = new SavedGames();
                  Date date = new Date();
@@ -35,11 +36,13 @@ class DatabaseApplication {
 
                  Date data = cal.getTime();
                  java.sql.Date sDate = new java.sql.Date(data.getTime());
+                 query = session.createQuery("SELECT COUNT(*) FROM SavedGames");
+                 savedGames.setId(Integer.parseInt(String.valueOf(query.list().get(0))));
                  savedGames.setDate(sDate);
                  session.save(savedGames);
                  break;
              case "data": {
-                 Query query = session.createQuery("SELECT id FROM SavedGames WHERE date = '" + args[1] + "'");
+                 query = session.createQuery("SELECT id FROM SavedGames WHERE date = '" + args[1] + "'");
                  result = query.list();
                  query = session.createQuery("SELECT moveString FROM OneGame WHERE gameId = :gameId ORDER BY id");
                  query.setParameter("gameId", result.get(0));
@@ -47,7 +50,7 @@ class DatabaseApplication {
                  break;
              }
              case "doMove": {
-                 Query query = session.createQuery("SELECT COUNT(*) FROM SavedGames");
+                 query = session.createQuery("SELECT COUNT(*) FROM SavedGames");
                  result = query.list();
                  OneGame oneGame = new OneGame();
                  oneGame.setGameId(Integer.parseInt(String.valueOf(result.get(0))));
