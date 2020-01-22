@@ -6,7 +6,6 @@ import java.util.Date;
 /** Klient gry */
 public class GameClient implements Runnable {
 
-    private Menu menu;
     /** Id gracza */
     private int playerID;
     /** Socket klienta */
@@ -29,17 +28,17 @@ public class GameClient implements Runnable {
     private int boardSize;
     /** Czy z botem? */
     private boolean bot = false;
-
+    /** Czy trwa symulacja */
     private boolean isSimulation = false;
 
     static String dates;
     /** Konstruktor klienta */
     GameClient() {
-        menu = new Menu();
+        Menu menu = new Menu();
     }
 
     /**Symulacja*/
-    public void startSimulation () {
+     void startSimulation () {
         System.out.println("-----Client----");
         try {
             socket = new Socket("localhost", 4444);
@@ -56,7 +55,8 @@ public class GameClient implements Runnable {
         }
     }
 
-    public void sendGame(Object date) {
+    /** Rozpoczyna symulacje */
+     void sendGame(Object date) {
         System.out.println(date.toString());
         dataOut.println(date.toString());
         isSimulation = true;
@@ -64,7 +64,8 @@ public class GameClient implements Runnable {
         thread.start();
     }
 
-    public void watchGame() {
+    /** Podmetoda, w ktorej trwa symulacja */
+    private void watchGame() {
         String line = null;
         try {
             line = dataIn.readLine(); // pierwszy stan planszy
@@ -86,7 +87,8 @@ public class GameClient implements Runnable {
             try {
                 line = dataIn.readLine();
             } catch (IOException e) {
-                e.printStackTrace();
+                gui.setGameStatusLabel("Oops, disconnected!");
+                break;
             }
             gui.setBoard(line);
         }
@@ -145,7 +147,7 @@ public class GameClient implements Runnable {
     /** Wyslij odpowiedz do serwera
      * @param response Y / N
      */
-    void sendSummaryResponse(String response) {
+    private void sendSummaryResponse(String response) {
         dataOut.println(response);
     }
     /** Odczytuje informajce z serwera
@@ -187,7 +189,6 @@ public class GameClient implements Runnable {
             if(dataIn.readLine().equals("Do you want to resume?")) doWeEnd();
         } catch (IOException e) {
             serverDisconnected();
-            return;
         }
     }
 
@@ -209,7 +210,6 @@ public class GameClient implements Runnable {
             if(dataIn.readLine().equals("Game is continuing")) gameIsFinished = false;
         } catch (IOException e) {
             serverDisconnected();
-            return;
         }
     }
 

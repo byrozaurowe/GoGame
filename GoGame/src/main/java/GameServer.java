@@ -45,9 +45,12 @@ public class GameServer {
     boolean bot = false;
     private int canBotMove = 1;
     /** terytorium graczy */
-    int[] territory = new int[3];
-    int allowedMoveCounter = 1;
-    int lastPlayerId = 2;
+    private int[] territory = new int[3];
+    /** Licznik prawidlowych ruchow */
+    private int allowedMoveCounter = 1;
+    /** Id ostatniego gracza */
+    private int lastPlayerId = 1;
+    /** Czy rozgrywana jest symulacja? */
     static boolean simulation = false;
 
     /** Konstruktor serwera */
@@ -88,13 +91,15 @@ public class GameServer {
         dataOutPlayer2.println(msg);
     }
 
+    /** Dodanie do bazy danych
+     * @param msg tresc ruchu lub informacja o tym ze rozpoczynamy gre
+     */
     private void insertToTable(String msg) {
-
         if(msg.equals("newGame")) {
-            DatabaseApplication.queries(new String[]{msg, null, null});
+            DatabaseApplication.queries(new String[]{msg});
         }
         else {
-            DatabaseApplication.queries(new String[]{"list of moves", Integer.toString(allowedMoveCounter), msg});
+            DatabaseApplication.queries(new String[]{"doMove", Integer.toString(allowedMoveCounter), msg});
         }
     }
 
@@ -282,6 +287,7 @@ public class GameServer {
         }
     }
 
+    /** Tu odbywa sie symulacja */
     private void simulation() {
         System.out.println("Server connected with client and ready for simulation");
         List list = DatabaseApplication.queries(new String[]{"date list"});
@@ -291,7 +297,7 @@ public class GameServer {
             dates += it.next().toString() + ";";
         }
         dataOutPlayer1.println(dates);
-        String data = null;
+        String data;
         try {
             data = dataInPlayer1.readLine(); // czyta jaka gre klient chce otworzyc
         } catch (IOException e) {
@@ -337,5 +343,4 @@ public class GameServer {
             gameServer.play();
         }
     }
-
 }

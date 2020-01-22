@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="23df1589-9a88-484b-b16c-0d131e237639" name="Default Changelist" comment="" />
+    <list default="true" id="23df1589-9a88-484b-b16c-0d131e237639" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,17 +30,6 @@
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
         <item name="GoDatabase" type="feb32156:DbDataSourceImpl" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="GoDatabase" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="GoDatabase" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="godatabase: schema" type="76f4a085:MysqlImplModel$Schema" />
       </path>
     </expand>
     <select />
@@ -89,7 +82,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.35411766" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
@@ -115,20 +108,6 @@
     </option>
   </component>
   <component name="RunManager" selected="Application.GameClient">
-    <configuration name="DBConnector" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="DBConnector" />
-      <module name="GoGame" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="DatabaseApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="DatabaseApplication" />
-      <module name="go" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="GameClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="GameClient" />
       <module name="go" />
@@ -177,16 +156,12 @@
       <item itemvalue="Application.GameClient2" />
       <item itemvalue="Application.GameServer" />
       <item itemvalue="Application.GameClient" />
-      <item itemvalue="Application.DBConnector" />
-      <item itemvalue="Application.DatabaseApplication" />
       <item itemvalue="JUnit.StoneChainTest" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.GameServer" />
         <item itemvalue="Application.GameClient" />
-        <item itemvalue="Application.DatabaseApplication" />
-        <item itemvalue="Application.DBConnector" />
+        <item itemvalue="Application.GameServer" />
         <item itemvalue="JUnit.StoneChainTest" />
       </list>
     </recent_temporary>
@@ -232,6 +207,11 @@
       <workItem from="1579207377631" duration="775000" />
       <workItem from="1579209074756" duration="8809000" />
       <workItem from="1579219150830" duration="2512000" />
+      <workItem from="1579459331297" duration="3368000" />
+      <workItem from="1579533120577" duration="1077000" />
+      <workItem from="1579547041782" duration="658000" />
+      <workItem from="1579705656359" duration="3826000" />
+      <workItem from="1579711031083" duration="918000" />
     </task>
     <task id="LOCAL-00001" summary="board">
       <created>1575056393338</created>
@@ -435,7 +415,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="stawianie pojedyńczych kamieni" />
     <MESSAGE value="Naprawienie paru errorow w rysowaniu" />
     <MESSAGE value="Komentarze i drobna korekta rysowania tymczasowych kamyków" />
     <MESSAGE value="Menu główne" />
@@ -460,7 +439,8 @@
     <MESSAGE value="Jeden test" />
     <MESSAGE value="bd" />
     <MESSAGE value="simulation menu" />
-    <option name="LAST_COMMIT_MESSAGE" value="simulation menu" />
+    <MESSAGE value="Mała korekta errora" />
+    <option name="LAST_COMMIT_MESSAGE" value="Mała korekta errora" />
   </component>
   <component name="WindowStateProjectService">
     <state x="392" y="88" key="#Assign_Data_Sources" timestamp="1579183945210">
